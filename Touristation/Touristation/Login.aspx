@@ -15,9 +15,16 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            Username <asp:TextBox ID="TbUsername" runat="server"></asp:TextBox>
+            <br />
+            
+            Password <asp:TextBox ID="TbPassword" runat="server"></asp:TextBox><br />
+            <asp:Button ID="btnLogin" runat="server" Text="Login" />
         </div>
     </form>
 </body>
 </html>
+
+    </form>
 
 </asp:Content>
