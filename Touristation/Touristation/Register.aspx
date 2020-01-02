@@ -1,9 +1,6 @@
 ﻿<%@ Page Language="C#"  MasterPageFile="~/Touristation.Master" 
     AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Touristation.Resgiter" %>
 
-<!DOCTYPE html>
-
-
 <asp:Content
     ID="Content1"
     ContentPlaceHolderID="ContentPlaceHolder1"
@@ -22,8 +19,10 @@
             Password <asp:TextBox ID="tbPass" runat="server"></asp:TextBox><br /> 
             Confirm Password <asp:TextBox ID="tbConfirmpass" runat="server"></asp:TextBox><br />
             <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
+           
         </div>
-    </form>
+    </form> 
+    <asp:Label Visible="false" ID="errorMsg" runat="server"></asp:Label>
 </body>
 </html>
     

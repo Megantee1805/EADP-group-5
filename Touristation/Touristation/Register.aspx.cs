@@ -11,8 +11,6 @@ namespace Touristation
 
     {
 
-        string errorMsg; 
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -20,25 +18,31 @@ namespace Touristation
 
         private bool validate()
         {
-            bool valid = true; 
+            bool valid = true;
+            errorMsg.Text = String.Empty; 
+
             if (tbEmail.Text.Contains("@") == false)
             {
-                valid = false; 
+                valid = false;
+                errorMsg.Text += "Invalid Email entered" + "<br/>"; 
             }
 
             else if (tbUsername.Text.Length == 0)
             {
-                valid = false; 
+                valid = false;
+                errorMsg.Text += "Invalid Username entered" + "<br/>";
             }
 
             else if (tbPass.Text.Length <= 6)
             {
-                valid = false; 
+                valid = false;
+                errorMsg.Text += "Password is too short" + "<br/>";
             }
 
             else if (tbConfirmpass.Text != tbPass.Text)
             {
-                valid = false; 
+                valid = false;
+                errorMsg.Text += "Passwords do not match" + "<br/>";
             }
 
             return false; 
@@ -46,7 +50,7 @@ namespace Touristation
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            
+            Validate(); 
         }
     }
 }
