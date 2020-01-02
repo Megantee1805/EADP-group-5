@@ -27,30 +27,30 @@ namespace Touristation
                 errorMsg.Text += "Invalid Email entered" + "<br/>"; 
             }
 
-            else if (tbUsername.Text.Length == 0)
-            {
-                valid = false;
+            if (tbUsername.Text.Length == 0)
+            {                valid = false;
                 errorMsg.Text += "Invalid Username entered" + "<br/>";
             }
 
-            else if (tbPass.Text.Length <= 6)
+            if (tbPass.Text.Length <= 6)
             {
                 valid = false;
                 errorMsg.Text += "Password is too short" + "<br/>";
             }
 
-            else if (tbConfirmpass.Text != tbPass.Text)
+            if (tbConfirmpass.Text != tbPass.Text)
             {
                 valid = false;
                 errorMsg.Text += "Passwords do not match" + "<br/>";
             }
 
-            return false; 
+            return valid; 
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            Validate(); 
+            validate(); 
+
         }
     }
 }

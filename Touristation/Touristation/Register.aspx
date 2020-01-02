@@ -7,9 +7,6 @@
     Runat="Server">
 
 <html>
-<head runat="server">
-    <title></title>
-</head>
 <body>
     <form id="form1" runat="server">
         <div>
@@ -22,7 +19,7 @@
            
         </div>
     </form> 
-    <asp:Label Visible="false" ID="errorMsg" runat="server"></asp:Label>
+    <asp:Label ID="errorMsg" runat="server"></asp:Label>
 </body>
 </html>
     
