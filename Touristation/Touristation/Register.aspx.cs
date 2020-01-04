@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Touristation.BLL;
+using System.Web.Helpers;
+using System.Drawing;
 
 namespace Touristation
 {
@@ -38,19 +41,55 @@ namespace Touristation
                 errorMsg.Text += "Password is too short" + "<br/>";
             }
 
-            if (tbConfirmpass.Text != tbPass.Text)
+            if (tbConfirm.Text != tbPass.Text)
             {
                 valid = false;
                 errorMsg.Text += "Passwords do not match" + "<br/>";
             }
 
+            errorMsg.ForeColor = Color.Red; 
             return valid; 
+           
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            validate(); 
+
+            User emp = new User();
+            string pass = tbPass.Text;
+            string hash = Crypto.HashPassword(pass); 
+
+            if (emp.GetUserByUsername(tbUsername.Text) != null)
+            {
+                errorMsg.Text = "User is already registered";
+                errorMsg.ForeColor = Color.Red;
+            }
+
+            else
+            {
+                if (validate())
+                   {
+                    emp = new User(tbUsername.Text, tbEmail.Text, hash);
+                    int result = emp.AddUser(); 
+                    if (result == 1)
+                    {
+                        errorMsg.Text = "Registration is successful";
+                        errorMsg.ForeColor = Color.Green; 
+                    }
+
+                    else
+                    {
+                        errorMsg.Text = "There is an issue with registering you, please ask system administrator";
+                        errorMsg.ForeColor = Color.Red; 
+                    }
+                   }
+            }
+
+         
+
 
         }
+
+
     }
 }

@@ -44,7 +44,7 @@ namespace Touristation.DAL
             return empList;
         }
 
-        public User SelectById(string nric)
+        public User SelectByUsername(string name)
         {
             //Step 1 -  Define a connection to the database by getting
             //          the connection string from web.config
@@ -52,10 +52,10 @@ namespace Touristation.DAL
             SqlConnection myConn = new SqlConnection(DBConnect);
 
             //Step 2 -  Create a DataAdapter to retrieve data from the database table
-            string sqlStmt = "Select * from Employee where nric = @paraNric";
+            string sqlStmt = "Select * from [User] where username = @paraUsername";
             SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
 
-            da.SelectCommand.Parameters.AddWithValue("@paraNric", nric);
+            da.SelectCommand.Parameters.AddWithValue("@paraUsername", name);
 
             //Step 3 -  Create a DataSet to store the data to be retrieved
             DataSet ds = new DataSet();
@@ -69,10 +69,48 @@ namespace Touristation.DAL
             if (rec_cnt == 1)
             {
                 DataRow row = ds.Tables[0].Rows[0];  // Sql command returns only one record
-                string name = row["Username"].ToString();
+                string uname = row["Username"].ToString();
                 string email = row["Email"].ToString();
                 string pass = row["password"].ToString();
-                emp = new User(name, email, pass);
+                emp = new User(uname, email, pass);
+            }
+            else
+            {
+                emp = null;
+            }
+
+            return emp;
+        }
+
+        public User SelectByEmail(string email)
+        {
+            //Step 1 -  Define a connection to the database by getting
+            //          the connection string from web.config
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+
+            //Step 2 -  Create a DataAdapter to retrieve data from the database table
+            string sqlStmt = "Select * from User where Email = @paraEmail";
+            SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
+
+            da.SelectCommand.Parameters.AddWithValue("@paraEmail", email);
+
+            //Step 3 -  Create a DataSet to store the data to be retrieved
+            DataSet ds = new DataSet();
+
+            //Step 4 -  Use the DataAdapter to fill the DataSet with data retrieved
+            da.Fill(ds);
+
+            //Step 5 -  Read data from DataSet.
+            User emp = null;
+            int rec_cnt = ds.Tables[0].Rows.Count;
+            if (rec_cnt == 1)
+            {
+                DataRow row = ds.Tables[0].Rows[0];  // Sql command returns only one record
+                string uname = row["Username"].ToString();
+                string mail = row["Email"].ToString();
+                string pass = row["password"].ToString();
+                emp = new User(uname, mail, pass);
             }
             else
             {
@@ -95,8 +133,8 @@ namespace Touristation.DAL
 
             // Step 2 - Instantiate SqlCommand instance to add record 
             //          with INSERT statement
-            string sqlStmt = "INSERT INTO Employee (Username, Email, Password) " +
-                "VALUES (@paraName, @paraEmail, @paraPassword, @paraMthlySalary)";
+            string sqlStmt = "INSERT INTO [User] (Username, Email, Password) " +
+                "VALUES (@paraName, @paraEmail, @paraPassword)";
             sqlCmd = new SqlCommand(sqlStmt, myConn);
 
             // Step 3 : Add each parameterised variable with value

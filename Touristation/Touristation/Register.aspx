@@ -13,8 +13,8 @@
             
             Username <asp:TextBox ID="tbUsername" runat="server"></asp:TextBox><br />
             Email <asp:TextBox ID="tbEmail" runat="server"></asp:TextBox> <br /> 
-            Password <asp:TextBox ID="tbPass" runat="server"></asp:TextBox><br /> 
-            Confirm Password <asp:TextBox ID="tbConfirmpass" runat="server"></asp:TextBox><br />
+            Password <asp:TextBox ID="tbPass" TextMode="Password" runat="server"></asp:TextBox><br /> 
+            Confirm Password <asp:TextBox ID="tbConfirm" TextMode="Password" runat="server"></asp:TextBox><br />
             <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
            
         </div>
