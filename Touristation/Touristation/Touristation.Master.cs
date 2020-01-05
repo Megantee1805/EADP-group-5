@@ -10,10 +10,23 @@ namespace Touristation
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
-        public Boolean loggedIn = false;
+        public static bool LoggedIn { get; set; } 
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            
 
+            if (LoggedIn == true)
+            {
+                userPanel.Visible = true;
+                guestPanel.Visible = false;
+            }
+
+            else
+            {
+                guestPanel.Visible = true;
+                userPanel.Visible = false; 
+            }
         }
 
         private void checkUser()

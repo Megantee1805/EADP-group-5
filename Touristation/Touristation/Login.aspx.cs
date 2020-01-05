@@ -17,7 +17,7 @@ namespace Touristation
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Touristation.Site1.LoggedIn = false; 
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -37,7 +37,9 @@ namespace Touristation
                     errorMsg.ForeColor = Color.Green;
                     Session["Username"] = TbUsername.Text;
                     Session["Password"] = unhashedPassword;
-                    Response.Redirect("Homepage.aspx"); 
+                    Touristation.Site1.LoggedIn = true; 
+                    Response.Redirect("Homepage.aspx");
+                    
                 }
 
                 else

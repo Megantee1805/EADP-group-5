@@ -1,11 +1,19 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="Touristation.Homepage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" 
+    MasterPageFile="~/Touristation.Master"
+    CodeBehind="Homepage.aspx.cs" Inherits="Touristation.Homepage" %>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<asp:Content
+    ID="Content1"
+    ContentPlaceHolderID="ContentPlaceHolder1"
+    Runat="Server">
 <body>
     <form id="form1" runat="server">
         <div>
+            Hello, welcome to my site  
+            
         </div>
     </form>
 </body>
 </html>
+
+    </asp:Content>

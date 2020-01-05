@@ -19,20 +19,21 @@
 	        <!-- Navigation menu-->
 	        <nav>
 		        <ul>
-                    
+                    <asp:Panel ID="userPanel" visible="false" runat="server">
                     <li><a href="">Home</a></li>
 			        <li><a href="">Events</a></li>
 			        <li><a href="">Deals </a></li>
 			        <li><a href="">Competitions</a></li>
                     <li><a href="">Itinerary</a></li>
                     <li><a href="">My Account</a></li>
-                    
+                    </asp:Panel>
+                    <asp:Panel ID="guestPanel" visible="false" runat="server">
                     
                     <li><a href="">Events</a></li>
 			        <li><a href="">Deals </a></li>
                     <li><a href="Login.aspx">Login</a></li>
 			        <li><a href="Register.aspx">Signup </a></li>
-                    
+                    </asp:Panel>
                     
 		        </ul>
 	        </nav>
