@@ -13,7 +13,7 @@ namespace Touristation
 {
     public partial class Login : System.Web.UI.Page
     {
-
+        public string user; 
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,8 +32,12 @@ namespace Touristation
                 
                 if (hash)
                 {
+
                     errorMsg.Text = "Login Successful";
                     errorMsg.ForeColor = Color.Green;
+                    Session["Username"] = TbUsername.Text;
+                    Session["Password"] = unhashedPassword;
+                    Response.Redirect("Homepage.aspx"); 
                 }
 
                 else

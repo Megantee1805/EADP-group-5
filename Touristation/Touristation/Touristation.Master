@@ -14,21 +14,31 @@
 </head>
 <body>
         <div>
-
             <header>
 	        <p class="banner" >Touristation</p>
 	        <!-- Navigation menu-->
 	        <nav>
 		        <ul>
-			        <li><a href="">Home</a></li>
+                    
+                    <li><a href="">Home</a></li>
 			        <li><a href="">Events</a></li>
 			        <li><a href="">Deals </a></li>
 			        <li><a href="">Competitions</a></li>
                     <li><a href="">Itinerary</a></li>
                     <li><a href="">My Account</a></li>
+                    
+                    
+                    <li><a href="">Events</a></li>
+			        <li><a href="">Deals </a></li>
+                    <li><a href="Login.aspx">Login</a></li>
+			        <li><a href="Register.aspx">Signup </a></li>
+                    
+                    
 		        </ul>
 	        </nav>
         </header>
+
+          
 
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

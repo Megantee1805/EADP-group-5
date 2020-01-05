@@ -13,10 +13,9 @@ namespace Touristation
     public partial class Resgiter : System.Web.UI.Page
 
     {
-
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private bool validate()
