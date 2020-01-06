@@ -14,12 +14,20 @@ namespace Touristation
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+           
 
             if (LoggedIn == true)
             {
                 userPanel.Visible = true;
+                string user = Session["Username"].ToString();
+                Message.Text = "Welcome, " + user; 
                 guestPanel.Visible = false;
+
+                if (Session["Username"].ToString() == null)
+                {
+                    guestPanel.Visible = true;
+                    Response.Redirect("Login.aspx");
+                }
             }
 
             else
@@ -29,9 +37,10 @@ namespace Touristation
             }
         }
 
-        private void checkUser()
+        protected void Logout()
         {
-             
+            Session.Clear(); 
+            Response.Redirect("Login.aspx");
         }
     }
 }
