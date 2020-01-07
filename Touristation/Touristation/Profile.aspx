@@ -13,8 +13,35 @@
     <form id="form1" runat="server">
         <div>
             <asp:Label runat="server" ID="uname"></asp:Label>
-
-            <asp:Button ID="editPage" runat="server" Text="Edit Profile" />
+            <br />  
+            
+            
+            <asp:Button ID="editPage" runat="server" Text="Edit Profile" OnClick="editPage_Click" />
+            <br /> 
+            <asp:Panel runat="server" ID="editPanel" Visible="false">
+                Username: 
+                <asp:TextBox runat="server" ID="tbEditName"> 
+                </asp:TextBox>
+                <br />
+                Email: 
+                <asp:TextBox runat="server" ID="tbEditEmail"> 
+                </asp:TextBox>
+                <br /> 
+                Password: 
+                     <asp:TextBox runat="server" ID="tbEditPass"> 
+                </asp:TextBox>
+                <br /> 
+                Confirm Password
+                 <asp:TextBox runat="server" ID="tbEditConfirm"> 
+                </asp:TextBox>
+                <br />
+               
+                <asp:DropDownList ID="DDCountry" runat="server" Width="100"></asp:DropDownList>
+                <br /> 
+                <asp:Button runat="server" ID="btnEditProfile" Text="Edit" OnClick="btnEditProfile_Click">
+                </asp:Button>
+                
+            </asp:Panel>
         </div>
     </form>
 </body>
