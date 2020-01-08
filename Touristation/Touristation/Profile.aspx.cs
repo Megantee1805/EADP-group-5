@@ -67,7 +67,7 @@ namespace Touristation
                 complete = false;
             }
 
-            if (tbEditPass.Text == tbEditConfirm.Text)
+            if (tbEditPass.Text != tbEditConfirm.Text)
             {
                 LblMsg.Text += "Passwords do not match !";
                 complete = false;
