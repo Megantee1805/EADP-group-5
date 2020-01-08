@@ -28,11 +28,11 @@
                 </asp:TextBox>
                 <br /> 
                 Password: 
-                     <asp:TextBox runat="server" ID="tbEditPass"> 
+                     <asp:TextBox runat="server" TextMode="Password" ID="tbEditPass"> 
                 </asp:TextBox>
                 <br /> 
                 Confirm Password
-                 <asp:TextBox runat="server" ID="tbEditConfirm"> 
+                 <asp:TextBox runat="server" TextMode="Password" ID="tbEditConfirm"> 
                 </asp:TextBox>
                 <br />
                
@@ -40,7 +40,7 @@
                 <br /> 
                 <asp:Button runat="server" ID="btnEditProfile" Text="Edit" OnClick="btnEditProfile_Click">
                 </asp:Button>
-                
+                <asp:Label runat="server" ID="LblMsg"></asp:Label>
             </asp:Panel>
         </div>
     </form>

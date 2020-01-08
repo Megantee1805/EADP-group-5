@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Web;
@@ -37,9 +38,44 @@ namespace Touristation
 
         protected void btnEditProfile_Click(object sender, EventArgs e)
         {
-
+            LblMsg.ForeColor = Color.Red;
+            if (validate() == true)
+            {
+                LblMsg.ForeColor = Color.Green;
+                LblMsg.Text = "Success";
+            }
         }
 
+        public bool validate()
+        {
+            bool complete = true; 
+            if (tbEditName.Text.Length == 0)
+            {
+                LblMsg.Text += "Name cannot be empty!";
+                complete = false; 
+            }
+
+            if (tbEditEmail.Text.Contains("@") == false)
+            {
+                LblMsg.Text += "Email cannot be empty!";
+                complete = false;
+            }
+
+            if (tbEditPass.Text.Length <= 6)
+            {
+                LblMsg.Text += "Password is too short !";
+                complete = false;
+            }
+
+            if (tbEditPass.Text == tbEditConfirm.Text)
+            {
+                LblMsg.Text += "Passwords do not match !";
+                complete = false;
+            }
+
+            return complete; 
+
+        }
 
 
         public static List<string> CountryList()
