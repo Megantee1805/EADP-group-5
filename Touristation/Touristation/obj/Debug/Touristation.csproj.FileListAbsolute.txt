@@ -73,3 +73,7 @@ D:\EADP\EADP-group-5\Touristation\Touristation\bin\System.Web.WebPages.Deploymen
 D:\EADP\EADP-group-5\Touristation\Touristation\bin\System.Web.WebPages.Razor.xml
 D:\EADP\EADP-group-5\Touristation\Touristation\bin\WebMatrix.Data.xml
 D:\EADP\EADP-group-5\Touristation\Touristation\bin\WebMatrix.WebData.xml
+D:\EADP\EADP-group-5\Touristation\Touristation\bin\EntityFramework.dll
+D:\EADP\EADP-group-5\Touristation\Touristation\bin\EntityFramework.SqlServer.dll
+D:\EADP\EADP-group-5\Touristation\Touristation\bin\EntityFramework.xml
+D:\EADP\EADP-group-5\Touristation\Touristation\bin\EntityFramework.SqlServer.xml

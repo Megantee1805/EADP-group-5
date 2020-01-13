@@ -1,58 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Touristation.DAL; 
-
 namespace Touristation.BLL
 {
-    public class User
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+    using Touristation.DAL;
+
+    [Table("User")]
+    public partial class User
     {
-        public string Username;
-        public string Email; 
-        public string Password;
-        public User()
-        {
+        public int Id { get; set; }
 
-        }
+        [Required]
+        [StringLength(50)]
+        public string username { get; set; }
 
-        public User(string username, string email, string password)
-        {
-            Username = username;
-            Email = email;
-            Password = password; 
-        }
+        [Required]
+        [StringLength(50)]
+        public string email { get; set; }
 
-        public int AddUser()
-        {
-            UserDAO dao = new UserDAO();
-            int result = dao.Insert(this);
-            return result;
-        }
+        [Required]
+        [StringLength(256)]
+        public string password { get; set; }
 
-        internal List<User> ToList()
-        {
-            throw new NotImplementedException();
-        }
+        [StringLength(50)]
+        public string country { get; set; }
 
-        public List<User> GetAllUser()
-        {
-            UserDAO dao = new UserDAO();
-            return dao.SelectAll();
-        }
+        public byte[] profilePic { get; set; }
 
-        public User GetUserByUsername(string name)
-        {
-            UserDAO dao = new UserDAO();
-            return dao.SelectByUsername(name);
-        }
+        public bool? isAdmin { get; set; }
 
-        public User GetUserByEmail(string email)
-        {
-            UserDAO dao = new UserDAO();
-            return dao.SelectByEmail(email); 
-        }
+        public bool? isBusiness { get; set; }
+
+       
     }
-
-   
 }
