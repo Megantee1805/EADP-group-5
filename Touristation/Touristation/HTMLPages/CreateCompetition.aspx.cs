@@ -11,18 +11,23 @@ namespace Touristation.HTMLPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
 
+            }
         }
 
         protected void ComStart_SelectionChanged(object sender, EventArgs e)
         {
+            
             tbStart_PopupControlExtender.Commit(ComStart.SelectedDate.ToShortDateString());
-
+            UpdateCalender.Update(); 
         }
 
         protected void ComEnd_SelectionChanged(object sender, EventArgs e)
         {
             tbEnd_PopupControlExtender.Commit(ComEnd.SelectedDate.ToShortDateString());
+            UpdateCalender.Update(); 
         }
     }
 }

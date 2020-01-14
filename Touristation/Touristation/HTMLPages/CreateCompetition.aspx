@@ -17,7 +17,9 @@
             <asp:TextBox ID="tbComDesc" runat="server"></asp:TextBox>
             <br />
             Start Date
-            <asp:TextBox ID="tbStart" runat="server"></asp:TextBox>
+            <asp:UpdatePanel ID="UpdateCalender" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+            <asp:TextBox ID="tbStart" runat="server" AutoPostBack="True"></asp:TextBox>
             <ajaxToolkit:PopupControlExtender ID="tbStart_PopupControlExtender" runat="server" BehaviorID="tbStart_PopupControlExtender" DynamicServicePath="" ExtenderControlID="" TargetControlID="tbStart" PopupControlID="ComStart" Position="Bottom">
             </ajaxToolkit:PopupControlExtender>
             
@@ -32,7 +34,7 @@
                 <WeekendDayStyle BackColor="#CCCCFF" />
             </asp:Calendar>
             End Date 
-            <asp:TextBox ID="tbEnd" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tbEnd" runat="server" AutoPostBack="True"></asp:TextBox>
              <ajaxToolkit:PopupControlExtender ID="tbEnd_PopupControlExtender" runat="server" BehaviorID="tbEnd_PopupControlExtender" DynamicServicePath="" ExtenderControlID="" TargetControlID="tbEnd" PopupControlID="ComEnd" Position="Bottom">
             </ajaxToolkit:PopupControlExtender>
             
@@ -47,6 +49,10 @@
                 <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
                 <WeekendDayStyle BackColor="#CCCCFF" />
             </asp:Calendar>
+            </ContentTemplate>
+            </asp:UpdatePanel>
+
+            <asp:Button ID="btnComCreate" runat="server" Text="Button" />
         </div>
     </form>
 </body>
