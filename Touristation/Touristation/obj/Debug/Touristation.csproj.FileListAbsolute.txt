@@ -77,3 +77,4 @@ D:\EADP\EADP-group-5\Touristation\Touristation\bin\EntityFramework.dll
 D:\EADP\EADP-group-5\Touristation\Touristation\bin\EntityFramework.SqlServer.dll
 D:\EADP\EADP-group-5\Touristation\Touristation\bin\EntityFramework.xml
 D:\EADP\EADP-group-5\Touristation\Touristation\bin\EntityFramework.SqlServer.xml
+D:\EADP\EADP-group-5\Touristation\Touristation\bin\AjaxControlToolkit.dll
