@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateCompetition.aspx.cs" Inherits="Touristation.HTMLPages.CreateCompetition" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Touristation.Master"  CodeBehind="CreateCompetition.aspx.cs" Inherits="Touristation.HTMLPages.CreateCompetition" %>
 
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<body>
+<asp:Content ID="Content1"
+    ContentPlaceHolderID="ContentPlaceHolder1"
+    Runat="Server">
+    <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div>
@@ -52,8 +52,10 @@
             </ContentTemplate>
             </asp:UpdatePanel>
 
-            <asp:Button ID="btnComCreate" runat="server" Text="Button" />
+            <asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn-primary" OnClick="btnComCreate_Click" />
         </div>
     </form>
-</body>
-</html>
+
+    </body>
+
+    </asp:Content>

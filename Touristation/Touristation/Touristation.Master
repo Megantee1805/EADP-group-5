@@ -5,10 +5,11 @@
 <html>
 <head runat="server">
     <title></title>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" type="text/css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" type="text/css"rel="stylesheet" />
     <script src="Scripts/jquery-2.2.4.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+    <link href="Content/StyleSheet.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -17,27 +18,37 @@
             <header>
 	        <p class="banner" >Touristation</p>
 	        <!-- Navigation menu-->
-	        <nav>
-		        <ul>
-                    <asp:Panel ID="userPanel" visible="false" runat="server">
+                <asp:Panel ID="userPanel" visible="false" runat="server">
+	        <nav class="navbar navbar-light navbar-expand-sm bg-white">
+		        
+                    <div>
+                        <ul class="">
                     <li><a href="">Home</a></li>
 			        <li><a href="">Events</a></li>
 			        <li><a href="">Deals </a></li>
 			        <li><a href="">Competitions</a></li>
                     <li><a href="">Itinerary</a></li>
-                    <li><a href="Profile.aspx"> <asp:Label runat="server" ID="Message">Welcome </asp:Label> </a></li>
-                    <li><a Id="logout">Logout</a></li>
-                    </asp:Panel>
-                    <asp:Panel ID="guestPanel" visible="false" runat="server">
+                    <li><a href="Profile.aspx"> <asp:Label runat="server" ID="Message">Welcome </asp:Label>
+                        <li><a Id="logout">Logout</a></li>
+                        </a> 
+                        </ul> 
                     
-                    <li><a href="">Events</a></li>
-			        <li><a href="">Deals </a></li>
-                    <li><a href="Login.aspx">Login</a></li>
-			        <li><a href="Register.aspx">Signup </a></li>
+                    </div>
+                    
+                    </nav> 
+                    </asp:Panel>
+                    <asp:Panel ID="guestPanel" visible="false" runat="server" CssClass="panel">
+                    <nav class="nav navbar">
+                        <ul> 
+                            <li><a href="">Events</a></li>
+			                <li><a href="">Deals </a></li>
+                            <li><a href="Login.aspx">Login</a></li>
+			                <li><a href="Register.aspx">Signup </a></li>
+                        </ul>
+	                </nav> 
                     </asp:Panel>
                     
-		        </ul>
-	        </nav>
+		        
         </header>
 
           

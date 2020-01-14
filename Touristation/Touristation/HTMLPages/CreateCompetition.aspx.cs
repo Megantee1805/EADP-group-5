@@ -29,5 +29,10 @@ namespace Touristation.HTMLPages
             tbEnd_PopupControlExtender.Commit(ComEnd.SelectedDate.ToShortDateString());
             UpdateCalender.Update(); 
         }
+
+        protected void btnComCreate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

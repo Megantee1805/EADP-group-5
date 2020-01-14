@@ -1,0 +1,26 @@
+﻿body {
+}
+
+nav {
+    margin-top: 0px;
+    background-color: rgba(255,0,0,0.1);
+}
+
+    nav ul {
+        list-style-type: none;
+    }
+
+        nav ul li {
+            display: inline-block; /*inline-Block display the url link in block style */
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid rgba(255,0,0,0.2);
+        }
+
+    nav a {
+        text-decoration: none;
+    }
+
+        nav a:hover, nav li:hover {
+            background-color: white;
+        }
