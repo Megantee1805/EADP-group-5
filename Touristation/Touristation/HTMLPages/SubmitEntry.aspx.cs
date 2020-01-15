@@ -11,7 +11,7 @@ namespace Touristation.HTMLPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LblComName.Text = Session["ComName"].ToString(); 
         }
     }
 }

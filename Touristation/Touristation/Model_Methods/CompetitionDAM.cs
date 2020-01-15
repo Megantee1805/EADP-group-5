@@ -16,6 +16,11 @@ namespace Touristation.BLL
             competition.Insert(com);
         }
 
+        public List<Competiton> SelectAvailableCompetitions()
+        {
+            CompetitionDAO com = new CompetitionDAO();
+            return com.SelectByDate(); 
+        }
        
     }
 } 

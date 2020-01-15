@@ -21,15 +21,15 @@
                 <asp:Panel ID="userPanel" visible="false" runat="server">
 	        <nav class="navbar navbar-light navbar-expand-sm bg-white">
 		        
-                    <div>
-                        <ul class="">
-                    <li><a href="">Home</a></li>
-			        <li><a href="">Events</a></li>
-			        <li><a href="">Deals </a></li>
-			        <li><a href="CreateCompetition.aspx">Competitions</a></li>
-                    <li><a href="">Itinerary</a></li>
-                    <li><a href="Profile.aspx"> <asp:Label runat="server" ID="Message">Welcome </asp:Label>
-                        <li><a Id="logout">Logout</a></li>
+                    <div class="container col-xs-12">
+                        <ul>
+                    <li class="active nav-tabs col-xs-1"><a href="">Home</a></li>
+			        <li class="nav-tabs col-xs-1"><a href="">Events</a></li>
+			        <li class="col-xs-1"><a href="">Deals </a></li>
+			        <li class="active col-xs-1"><a href="ViewCompetitions.aspx">Competitions</a></li>
+                    <li class="active col-xs-1"><a href="">Itinerary</a></li>
+                    <li class="active col-xs-1"><a href="Profile.aspx"> <asp:Label runat="server" ID="Message">Welcome </asp:Label>
+                        <li class="col-xs-1"><a Id="logout">Logout</a></li>
                         </a> 
                         </ul> 
                     
@@ -38,13 +38,15 @@
                     </nav> 
                     </asp:Panel>
                     <asp:Panel ID="guestPanel" visible="false" runat="server" CssClass="panel">
-                    <nav class="nav navbar">
+                    <nav class="navbar navbar-light navbar-expand-sm bg-white">
+                         <div class="container col-xs-12">
                         <ul> 
-                            <li><a href="">Events</a></li>
-			                <li><a href="">Deals </a></li>
-                            <li><a href="Login.aspx">Login</a></li>
-			                <li><a href="Register.aspx">Signup </a></li>
+                            <li class="col-xs-2"><a href="">Events</a></li>
+			                <li class="col-xs-2"><a href="">Deals </a></li>
+                            <li class="col-xs-2"><a href="Login.aspx">Login</a></li>
+			                <li class="col-xs-2"><a href="Register.aspx">Signup </a></li>
                         </ul>
+                    </div>
 	                </nav> 
                     </asp:Panel>
                     

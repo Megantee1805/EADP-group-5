@@ -22,6 +22,15 @@ namespace Touristation.HTMLPages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// LblComName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblComName;
+        
+        /// <summary>
         /// tbEntryName control.
         /// </summary>
         /// <remarks>
