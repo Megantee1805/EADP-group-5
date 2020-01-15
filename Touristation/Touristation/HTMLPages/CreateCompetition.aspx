@@ -8,24 +8,21 @@
     <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <div>
+        <div class="container">
 
-    <table style="width:100%;">
-        <tr>
-            <td>Title </td>
-            <td><asp:TextBox ID="tbTitle" runat="server"></asp:TextBox>;</td>
-        </tr>
-        <tr>
-            <td>Description</td>
-            <td><asp:TextBox ID="tbComDesc" runat="server"></asp:TextBox></td>
+            Title 
+            <asp:TextBox ID="tbTitle" CssClass="form-control" runat="server"></asp:TextBox>;
+        
+            Description
+            <asp:TextBox ID="tbComDesc" CssClass="form-control" runat="server"></asp:TextBox>
             
-        </tr>
-        <tr>
-            <td>Start Date</td>
-            <td>
+       
+            Start Date
+            
                 <asp:UpdatePanel ID="UpdateCalender" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
-            <asp:TextBox ID="tbStart" runat="server" AutoPostBack="True"></asp:TextBox>
+           <div class="col-xs-5">
+            <asp:TextBox ID="tbStart" CssClass="form-control" runat="server" AutoPostBack="True"></asp:TextBox>
             <ajaxToolkit:PopupControlExtender ID="tbStart_PopupControlExtender" runat="server" BehaviorID="tbStart_PopupControlExtender" DynamicServicePath="" ExtenderControlID="" TargetControlID="tbStart" PopupControlID="ComStart" Position="Bottom">
             </ajaxToolkit:PopupControlExtender>
             
@@ -39,8 +36,11 @@
                 <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
                 <WeekendDayStyle BackColor="#CCCCFF" />
             </asp:Calendar>
+
+           </div>
+                    <div class="col-xs-5"> 
                 End Date 
-             <asp:TextBox ID="tbEnd" runat="server" AutoPostBack="True"></asp:TextBox>
+             <asp:TextBox ID="tbEnd" class="form-control" runat="server" AutoPostBack="True"></asp:TextBox>
              <ajaxToolkit:PopupControlExtender ID="tbEnd_PopupControlExtender" runat="server" BehaviorID="tbEnd_PopupControlExtender" DynamicServicePath="" ExtenderControlID="" TargetControlID="tbEnd" PopupControlID="ComEnd" Position="Bottom">
             </ajaxToolkit:PopupControlExtender>
             <asp:Calendar ID="ComEnd" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" OnSelectionChanged="ComEnd_SelectionChanged">
@@ -53,28 +53,15 @@
                 <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
                 <WeekendDayStyle BackColor="#CCCCFF" />
             </asp:Calendar>
+
+                    </div>
             </ContentTemplate>
             </asp:UpdatePanel>
-            </td>
-        </tr>
-
-        <tr> 
-            <td> 
-                Select Judges 
-            </td>
-            <td> 
-                Judge One: 
-                Judge Two: 
-                Judge Three: 
-                Judge Four: 
-                Judge Five: 
-            </td>
-        </tr>
-        <tr>
-            <td>&nsbp;</td>
-            <td><asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn-primary" OnClick="btnComCreate_Click" /></td>
-        </tr>
-    </table>
+           
+               
+            <div class="col-xs-8"> 
+            <asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn btn-primary col-xs-6" OnClick="btnComCreate_Click" /></td>
+       </div>
 
     <asp:Label runat="server" ID="LblMsg"></asp:Label>
     </div>

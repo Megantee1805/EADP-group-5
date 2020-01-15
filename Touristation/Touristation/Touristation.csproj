@@ -120,6 +120,7 @@
     <Content Include="HTMLPages\Profile.aspx" />
     <Content Include="HTMLPages\Register.aspx" />
     <Content Include="HTMLPages\SubmitEntry.aspx" />
+    <Content Include="HTMLPages\ViewCompetitions.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="packages.config" />
@@ -136,6 +137,13 @@
     <Compile Include="BLL\User.cs" />
     <Compile Include="DAL\CompetitionDAO.cs" />
     <Compile Include="DAL\EntryDAO.cs" />
+    <Compile Include="HTMLPages\ViewCompetitions.aspx.cs">
+      <DependentUpon>ViewCompetitions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTMLPages\ViewCompetitions.aspx.designer.cs">
+      <DependentUpon>ViewCompetitions.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Model_Methods\CompetitionDAM.cs" />
     <Compile Include="Model_Methods\UserDAM.cs" />
     <Compile Include="DAL\UserDAO.cs" />
