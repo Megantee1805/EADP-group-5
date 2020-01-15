@@ -37,6 +37,7 @@ namespace Touristation
                     errorMsg.ForeColor = Color.Green;
                     Session["Username"] = TbUsername.Text;
                     Session["Password"] = unhashedPassword;
+                    Session["Id"] = findUser.Id; 
                     Touristation.Site1.LoggedIn = true; 
                     Response.Redirect("Homepage.aspx");
                     

@@ -132,9 +132,12 @@
   <ItemGroup>
     <Compile Include="BLL\Competiton.cs" />
     <Compile Include="BLL\Entry.cs" />
-    <Compile Include="BLL\Model_Methods\UserDAM.cs" />
     <Compile Include="BLL\TouristationEntityModel.cs" />
     <Compile Include="BLL\User.cs" />
+    <Compile Include="DAL\CompetitionDAO.cs" />
+    <Compile Include="DAL\EntryDAO.cs" />
+    <Compile Include="Model_Methods\CompetitionDAM.cs" />
+    <Compile Include="Model_Methods\UserDAM.cs" />
     <Compile Include="DAL\UserDAO.cs" />
     <Compile Include="HTMLPages\CreateCompetition.aspx.cs">
       <DependentUpon>CreateCompetition.aspx</DependentUpon>

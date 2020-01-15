@@ -9,6 +9,12 @@ namespace Touristation.BLL
     [Table("Competiton")]
     public partial class Competiton
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Competiton()
+        {
+            Entries = new HashSet<Entry>();
+        }
+
         public int Id { get; set; }
 
         [Column(TypeName = "text")]
@@ -30,5 +36,12 @@ namespace Touristation.BLL
         public DateTime endDate { get; set; }
 
         public int entriesNo { get; set; }
+
+        public int UserId { get; set; }
+
+        public virtual User User { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Entry> Entries { get; set; }
     }
 }

@@ -24,5 +24,13 @@ namespace Touristation.BLL
         public int rank { get; set; }
 
         public int votes { get; set; }
+
+        public int ComId { get; set; }
+
+        public int UserId { get; set; }
+
+        public virtual Competiton Competiton { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

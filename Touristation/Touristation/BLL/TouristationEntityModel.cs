@@ -36,6 +36,12 @@ namespace Touristation.BLL
                 .IsFixedLength()
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Competiton>()
+                .HasMany(e => e.Entries)
+                .WithRequired(e => e.Competiton)
+                .HasForeignKey(e => e.ComId)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Entry>()
                 .Property(e => e.name)
                 .IsUnicode(false);
@@ -59,6 +65,16 @@ namespace Touristation.BLL
             modelBuilder.Entity<User>()
                 .Property(e => e.country)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Competitons)
+                .WithRequired(e => e.User)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Entries)
+                .WithRequired(e => e.User)
+                .WillCascadeOnDelete(false);
         }
     }
 }

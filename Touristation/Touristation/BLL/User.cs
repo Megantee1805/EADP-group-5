@@ -5,11 +5,17 @@ namespace Touristation.BLL
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    using Touristation.DAL;
 
     [Table("User")]
     public partial class User
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            Competitons = new HashSet<Competiton>();
+            Entries = new HashSet<Entry>();
+        }
+
         public int Id { get; set; }
 
         [Required]
@@ -33,6 +39,10 @@ namespace Touristation.BLL
 
         public bool? isBusiness { get; set; }
 
-       
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Competiton> Competitons { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Entry> Entries { get; set; }
     }
 }
