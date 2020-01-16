@@ -35,9 +35,9 @@ namespace Touristation.BLL
 
         public byte[] profilePic { get; set; }
 
-        public bool? isAdmin { get; set; }
+        public bool isAdmin { get; set; }
 
-        public bool? isBusiness { get; set; }
+        public bool isBusiness { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Competiton> Competitons { get; set; }

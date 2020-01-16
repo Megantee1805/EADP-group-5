@@ -16,10 +16,32 @@ namespace Touristation.BLL
             competition.Insert(com);
         }
 
+        public void countEntries(Competiton comie)
+        {
+            int count = 0; 
+            List<Entry> all; 
+            CompetitionDAO com = new CompetitionDAO();
+            EntryDAO ent = new EntryDAO();
+            all = ent.SelectByCompetition(comie.Id); 
+            
+            foreach (Entry e in all)
+            {
+                count = count + 1; 
+            }
+            comie.entriesNo = count; 
+            com.Update(comie); 
+        }
+
         public List<Competiton> SelectAvailableCompetitions()
         {
             CompetitionDAO com = new CompetitionDAO();
             return com.SelectByDate(); 
+        }
+
+        public Competiton GetCompetitionByName(string name)
+        {
+            CompetitionDAO com = new CompetitionDAO();
+            return com.SelectByTitle(name);
         }
        
     }

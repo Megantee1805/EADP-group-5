@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Touristation.BLL;
 
 namespace Touristation
 {
@@ -39,10 +40,21 @@ namespace Touristation
         protected void btnEditProfile_Click(object sender, EventArgs e)
         {
             LblMsg.ForeColor = Color.Red;
+            LblMsg.Text = String.Empty;
+            User editUser; 
             if (validate() == true)
             {
+                User user = new User();
+                editUser = user.GetUserByUsername(uname.Text); 
+                editUser.username = tbEditName.Text;
+                editUser.email = tbEditEmail.Text; 
+                user.country = DDCountry.SelectedValue.ToString();
+                user.isAdmin = false; 
+                user.UpdateProfile(editUser); 
                 LblMsg.ForeColor = Color.Green;
                 LblMsg.Text = "Success";
+                Session["Username"] = tbEditName.Text;
+                Response.Redirect("Profile.aspx"); 
             }
         }
 
@@ -61,7 +73,7 @@ namespace Touristation
                 complete = false;
             }
 
-            if (tbEditPass.Text.Length <= 6)
+           /* if (tbEditPass.Text.Length <= 6)
             {
                 LblMsg.Text += "Password is too short !";
                 complete = false;
@@ -72,6 +84,14 @@ namespace Touristation
                 LblMsg.Text += "Passwords do not match !";
                 complete = false;
             }
+
+            */
+
+            if (DDCountry.SelectedIndex == 0)
+            {
+                LblMsg.Text += "Country is not selected !";
+                complete = false;
+            } 
 
             return complete; 
 

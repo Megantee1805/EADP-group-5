@@ -12,33 +12,33 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Label runat="server" ID="uname"></asp:Label>
+            <asp:Label runat="server" CssClass="text-info" ID="uname"></asp:Label>
             <br />  
             
             
-            <asp:Button ID="editPage" runat="server" Text="Edit Profile" OnClick="editPage_Click" />
+            <asp:Button ID="editPage" CssClass="btn btn-info" runat="server" Text="Edit Profile" OnClick="editPage_Click" />
             <br /> 
-            <asp:Panel runat="server" ID="editPanel" Visible="false">
+            <asp:Panel runat="server" CssClass="panel-body" ID="editPanel" Visible="false">
                 Username: 
-                <asp:TextBox runat="server" ID="tbEditName"> 
+                <asp:TextBox runat="server" CssClass="form-control" ID="tbEditName"> 
                 </asp:TextBox>
                 <br />
                 Email: 
-                <asp:TextBox runat="server" ID="tbEditEmail"> 
+                <asp:TextBox runat="server" CssClass="form-control" ID="tbEditEmail"> 
                 </asp:TextBox>
                 <br /> 
-                Password: 
-                     <asp:TextBox runat="server" TextMode="Password" ID="tbEditPass"> 
+                
+                     <asp:TextBox runat="server" Visible="false" CssClass="form-control" TextMode="Password" ID="tbEditPass"> 
                 </asp:TextBox>
                 <br /> 
-                Confirm Password
-                 <asp:TextBox runat="server" TextMode="Password" ID="tbEditConfirm"> 
+                
+                 <asp:TextBox runat="server" Visible="false" CssClass="form-control" TextMode="Password" ID="tbEditConfirm"> 
                 </asp:TextBox>
                 <br />
                
-                <asp:DropDownList ID="DDCountry" runat="server" Width="100"></asp:DropDownList>
+                <asp:DropDownList ID="DDCountry" CssClass="form-control" runat="server" Width="100"></asp:DropDownList>
                 <br /> 
-                <asp:Button runat="server" ID="btnEditProfile" Text="Edit" OnClick="btnEditProfile_Click">
+                <asp:Button runat="server" CssClass="btn btn-primary" ID="btnEditProfile" Text="Edit" OnClick="btnEditProfile_Click">
                 </asp:Button>
                 <asp:Label runat="server" ID="LblMsg"></asp:Label>
             </asp:Panel>

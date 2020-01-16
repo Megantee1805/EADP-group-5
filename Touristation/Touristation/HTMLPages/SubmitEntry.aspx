@@ -18,7 +18,8 @@
             <h4>Upload Your File:</h4> <br />
             <asp:FileUpload CssClass="form-control" ID="entryFile" runat="server" />
             <br />
-            <asp:Button CssClass="btn btn-primary" ID="btnEntrySubmit" runat="server" Text="Submit" />
+            <asp:Button CssClass="btn btn-primary" ID="btnEntrySubmit" runat="server" Text="Submit" OnClick="btnEntrySubmit_Click" />
+            <asp:Label ID="LblMsg" runat="server"><h3></h3></asp:Label>
         </div>
     </form>
 </body>

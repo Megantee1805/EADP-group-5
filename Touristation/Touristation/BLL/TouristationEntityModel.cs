@@ -50,6 +50,10 @@ namespace Touristation.BLL
                 .Property(e => e.description)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Entry>()
+                .Property(e => e.fileLink)
+                .IsUnicode(false);
+
             modelBuilder.Entity<User>()
                 .Property(e => e.username)
                 .IsUnicode(false);

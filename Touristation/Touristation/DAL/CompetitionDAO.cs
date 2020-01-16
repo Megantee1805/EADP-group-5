@@ -22,6 +22,20 @@ namespace Touristation.DAL
             return available;
         }
 
+        public Competiton SelectByTitle(string title)
+        {
+            Competiton available;
+            
+
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                available = db.Competitons.Where(c => c.name == title).FirstOrDefault(); 
+
+            }
+
+            return available;
+        }
+
         public void Insert(Competiton com)
         {
             using (TouristationEntityModel db = new TouristationEntityModel())

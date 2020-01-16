@@ -23,8 +23,12 @@ namespace Touristation.HTMLPages
 
         private void RefreshGridView()
         {
-            Competiton current = new Competiton();
+            Competiton current = new Competiton(); 
             cList = current.SelectAvailableCompetitions();
+            foreach (Competiton c in cList)
+            {
+                current.countEntries(c);
+            }
             gvViewCompetitions.Visible = true;
             gvViewCompetitions.DataSource = cList;
             gvViewCompetitions.DataBind();

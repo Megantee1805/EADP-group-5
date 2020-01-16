@@ -25,6 +25,18 @@ namespace Touristation.DAL
             return user; 
         }
 
+        public User SelectById(int id)
+        {
+            User user;
+
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                user = db.Users.Where(u => u.Id == id).FirstOrDefault();
+
+            }
+            return user;
+        }
+
         public User SelectByEmail(string email) {
             User user;
 
@@ -60,6 +72,8 @@ namespace Touristation.DAL
                     check.password = use.password;
                     check.email = use.email;
                     check.country = use.country;
+                    check.isAdmin = false;
+                    check.isBusiness = false; 
                     db.SaveChanges(); 
                 }
             }

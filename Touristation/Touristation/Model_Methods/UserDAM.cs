@@ -16,10 +16,22 @@ namespace Touristation.BLL
             return user.SelectByUsername(name); 
         }
 
+        public User GetUserById(int id)
+        {
+            UserDAO user = new UserDAO();
+            return user.SelectById(id);
+        }
+
         public void AddUser(User use)
         { 
             UserDAO user = new UserDAO();
             user.Insert(use); 
+        }
+
+        public void UpdateProfile(User use)
+        {
+            UserDAO user = new UserDAO();
+            user.Update(use); 
         }
     }
 }

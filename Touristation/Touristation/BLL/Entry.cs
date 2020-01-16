@@ -11,13 +11,11 @@ namespace Touristation.BLL
     {
         public int Id { get; set; }
 
-        [Column(TypeName = "text")]
         public string name { get; set; }
 
-        [Column(TypeName = "text")]
         public string description { get; set; }
 
-        public byte[] fileLink { get; set; }
+        public string fileLink { get; set; }
 
         public double score { get; set; }
 

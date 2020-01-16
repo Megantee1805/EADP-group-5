@@ -17,18 +17,16 @@ namespace Touristation.BLL
 
         public int Id { get; set; }
 
-        [Column(TypeName = "text")]
         [Required]
         public string name { get; set; }
 
-        [Column(TypeName = "text")]
         [Required]
         public string description { get; set; }
 
         [StringLength(50)]
         public string judges { get; set; }
 
-        [StringLength(10)]
+        [StringLength(50)]
         public string winners { get; set; }
 
         public DateTime startDate { get; set; }

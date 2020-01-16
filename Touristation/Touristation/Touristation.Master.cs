@@ -28,10 +28,12 @@ namespace Touristation
                 
                 userPanel.Visible = true;
                 string user = Session["Username"].ToString();
+                string Id = Session["Id"].ToString();
+                int userId = int.Parse(Id); 
                 Message.Text = "Welcome, " + user; 
                 guestPanel.Visible = false;
                 User search = new User();
-                User admin = search.GetUserByUsername(user);
+                User admin = search.GetUserById(userId);
                 bool? status = admin.isAdmin; 
 
                 if (Session["Username"].ToString() == null)
@@ -44,7 +46,10 @@ namespace Touristation
                 {
                     adminPanel.Visible = true;
                     userPanel.Visible = false; 
+                    LblWel.Text = "Welcome, " + user;
                 }
+
+   
      
                 
              }

@@ -23,8 +23,7 @@ namespace Touristation.DAL
         {
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                Entry newent = new Entry();
-                db.Entries.Add(newent);
+                db.Entries.Add(ent);
                 db.SaveChanges();
             }
 

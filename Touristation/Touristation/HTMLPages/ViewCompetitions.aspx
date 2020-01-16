@@ -14,7 +14,7 @@
                     <asp:BoundField DataField="Id" />
                     <asp:BoundField DataField="name" HeaderText="Title" />
                     <asp:BoundField DataField="description" HeaderText="Description" />
-                    <asp:BoundField DataField="startDate" HeaderText="Competition Start" />
+                    <asp:BoundField DataField="endDate" HeaderText="Competition End" />
                     <asp:BoundField DataField="entriesNo" HeaderText="No of Entries" />
                     <asp:CommandField ShowSelectButton="True" />
                 </Columns>
