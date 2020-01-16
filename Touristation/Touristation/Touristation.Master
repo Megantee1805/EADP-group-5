@@ -16,7 +16,7 @@
 <body>
         <div>
             <header>
-	        <p class="banner navbar-brand" >Touristation</p>
+	        <p class="banner" >Touristation</p>
 	        <!-- Navigation menu-->
                 <asp:Panel ID="userPanel" visible="false" runat="server">
 	        <nav class="navbar navbar-light navbar-expand-sm bg-white">
@@ -38,7 +38,7 @@
                     </nav> 
                     </asp:Panel>
                     <asp:Panel ID="guestPanel" visible="false" runat="server">
-                    <nav class="navbar navbar-light navbar-expand-sm">
+                    <nav class="navbar navbar-light navbar-expand-sm bg-white">
                          <div class="container">
                         <ul> 
                             <li class="col-xs-2"><a href="">Events</a></li>
@@ -51,12 +51,11 @@
                     </asp:Panel>
                     
                 <asp:Panel Visible="false" Id="adminPanel" runat="server"> 
-                    <nav class="navbar navbar-light navbar-expand-sm">
+                    <nav class="navbar">
                         <div class="container"> 
                             <ul>
-                                <li class="col-xs-2"><a href="CreateCompetition.aspx"> Create Competitions </a></li>
-                                <li class="col-xs-2"><a href=""> Add Deals </a></li>
-                                <li class="col-xs-2"><a href="Logout.aspx"> Logout </a></li>
+                                <li><a href="CreateCompetition.aspx"> Create Competitions </a></li>
+                                <li><a href="Logout.aspx"> Logout </a></li>
                             </ul>
                         </div>
                     </nav>
