@@ -11,6 +11,7 @@
             <asp:GridView
              ID="gvViewCompetitions" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gvViewCompetitions_SelectedIndexChanged">
                 <Columns>
+                    <asp:BoundField DataField="Id" />
                     <asp:BoundField DataField="name" HeaderText="Title" />
                     <asp:BoundField DataField="description" HeaderText="Description" />
                     <asp:BoundField DataField="startDate" HeaderText="Competition Start" />

@@ -25,17 +25,29 @@ namespace Touristation
 
             if (LoggedIn == true)
             {
+                
                 userPanel.Visible = true;
                 string user = Session["Username"].ToString();
                 Message.Text = "Welcome, " + user; 
                 guestPanel.Visible = false;
+                User search = new User();
+                User admin = search.GetUserByUsername(user);
+                bool? status = admin.isAdmin; 
 
                 if (Session["Username"].ToString() == null)
                 {
                     guestPanel.Visible = true;
                     Response.Redirect("Login.aspx");
                 }
-            }
+
+                if (status == true)
+                {
+                    adminPanel.Visible = true;
+                    userPanel.Visible = false; 
+                }
+     
+                
+             }
 
             else
             {

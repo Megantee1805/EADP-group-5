@@ -6,18 +6,19 @@
 <asp:Content ID="Content1"
     ContentPlaceHolderID="ContentPlaceHolder1"
     Runat="Server">
-<html xmlns="http://www.w3.org/1999/xhtml">
+    <html>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:Label ID="LblComName" runat="server"></asp:Label>
-            Title: <br />
-            <asp:TextBox ID="tbEntryName" runat="server"></asp:TextBox>
-            Description: <br />
-            <asp:TextBox ID="tbEntryDescription" runat="server"></asp:TextBox>
-            Upload Your File: <br />
-            <asp:FileUpload ID="entryFile" runat="server" />
-            <asp:Button ID="btnEntrySubmit" runat="server" Text="Button" />
+        <div class="container">
+            <asp:Label ID="LblComName" runat="server"><h3></h3></asp:Label>
+            <h4>Title:</h4> <br />
+            <asp:TextBox ID="tbEntryName" CssClass="form-control" runat="server"></asp:TextBox>
+            <h4> Description:</h4> <br />
+            <asp:TextBox CssClass="form-control" ID="tbEntryDescription" runat="server"></asp:TextBox>
+            <h4>Upload Your File:</h4> <br />
+            <asp:FileUpload CssClass="form-control" ID="entryFile" runat="server" />
+            <br />
+            <asp:Button CssClass="btn btn-primary" ID="btnEntrySubmit" runat="server" Text="Submit" />
         </div>
     </form>
 </body>

@@ -18,5 +18,16 @@ namespace Touristation.DAL
             }
             return entry;
         }
+
+        public void Insert(Entry ent)
+        {
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                Entry newent = new Entry();
+                db.Entries.Add(newent);
+                db.SaveChanges();
+            }
+
+        }
     }
 }

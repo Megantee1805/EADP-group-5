@@ -40,8 +40,12 @@ namespace Touristation.HTMLPages
         {
             if (gvViewCompetitions.SelectedIndex >= 0)
             {
-                string ComName = gvViewCompetitions.SelectedRow.Cells[0].Text;
+                string ComName = gvViewCompetitions.SelectedRow.Cells[1].Text;
+                int ComId = int.Parse(gvViewCompetitions.SelectedRow.Cells[0].Text);
+                int entNo = int.Parse(gvViewCompetitions.SelectedRow.Cells[4].Text);
                 Session["ComName"] = ComName;
+                Session["ComId"] = ComId;
+                Session["ComEntryNo"] = entNo; 
                 Server.Transfer("SubmitEntry.aspx");
             }
         }

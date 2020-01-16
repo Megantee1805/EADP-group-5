@@ -117,6 +117,7 @@
     <Content Include="HTMLPages\CreateCompetition.aspx" />
     <Content Include="HTMLPages\Homepage.aspx" />
     <Content Include="HTMLPages\Login.aspx" />
+    <Content Include="HTMLPages\Logout.aspx" />
     <Content Include="HTMLPages\Profile.aspx" />
     <Content Include="HTMLPages\Register.aspx" />
     <Content Include="HTMLPages\SubmitEntry.aspx" />
@@ -137,6 +138,13 @@
     <Compile Include="BLL\User.cs" />
     <Compile Include="DAL\CompetitionDAO.cs" />
     <Compile Include="DAL\EntryDAO.cs" />
+    <Compile Include="HTMLPages\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTMLPages\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HTMLPages\ViewCompetitions.aspx.cs">
       <DependentUpon>ViewCompetitions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

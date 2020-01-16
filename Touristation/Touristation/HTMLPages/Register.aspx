@@ -11,11 +11,11 @@
     <form id="form1" runat="server">
         <div>
             
-            Username <asp:TextBox ID="tbUsername" runat="server"></asp:TextBox><br />
-            Email <asp:TextBox ID="tbEmail" runat="server"></asp:TextBox> <br /> 
-            Password <asp:TextBox ID="tbPass" TextMode="Password" runat="server"></asp:TextBox><br /> 
-            Confirm Password <asp:TextBox ID="tbConfirm" TextMode="Password" runat="server"></asp:TextBox><br />
-            <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
+            Username <asp:TextBox ID="tbUsername"  CssClass="form-control" runat="server"></asp:TextBox><br />
+            Email <asp:TextBox ID="tbEmail" CssClass="form-control" runat="server"></asp:TextBox> <br /> 
+            Password <asp:TextBox ID="tbPass" CssClass="form-control" TextMode="Password" runat="server"></asp:TextBox><br /> 
+            Confirm Password <asp:TextBox ID="tbConfirm" CssClass="form-control" TextMode="Password" runat="server"></asp:TextBox><br />
+            <asp:Button ID="btnRegister" runat="server" CssClass="btn btn-primary btn-group-xs" Text="Register" OnClick="btnRegister_Click" />
            
         </div>
     </form> 

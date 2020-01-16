@@ -32,5 +32,25 @@ namespace Touristation.DAL
             }
             
         }
+
+        public void Update(Competiton com)
+        {
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                Competiton updateCome = new Competiton(); 
+                Competiton check = db.Competitons.Where(c => c.Id == com.Id).FirstOrDefault();
+                if (check != null)
+                {
+                    check.name = com.name;
+                    check.description = com.description;
+                    check.entriesNo = com.entriesNo;
+                    check.endDate = com.endDate;
+                    check.startDate = com.startDate;
+                    check.winners = com.winners;
+                    db.SaveChanges(); 
+                }
+            }
+        }
+        
     }
     }
