@@ -3,3 +3,4 @@ Touristation/Touristation/App_Data/Touristation.mdf
 *.mdf
 Touristation/Touristation/App_Data/Touristation_log.ldf
 *.mdf
+*.ldf
