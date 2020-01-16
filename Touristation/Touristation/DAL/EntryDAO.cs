@@ -19,6 +19,18 @@ namespace Touristation.DAL
             return entry;
         }
 
+        public List<Entry> SelectAll()
+        {
+            List<Entry> entries;
+
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                entries = db.Entries.Select(x => x).ToList();
+
+            }
+            return entries;
+        }
+
         public void Insert(Entry ent)
         {
             using (TouristationEntityModel db = new TouristationEntityModel())

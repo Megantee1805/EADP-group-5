@@ -15,5 +15,11 @@ namespace Touristation.BLL
             EntryDAO insert = new EntryDAO();
             insert.Insert(ent); 
         }
+
+        public List<Entry> GetAll()
+        {
+            EntryDAO all = new EntryDAO();
+            return all.SelectAll(); 
+        }
     }
 }
