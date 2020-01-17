@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"MasterPageFile="~/Touristation.Master"     
-    CodeBehind="ViewSingleEntry.aspx.cs" Inherits="Touristation.HTMLPages.ViewSingleEntry" %>
+    CodeBehind="GradeEntry.aspx.cs" Inherits="Touristation.HTMLPages.ViewSingleEntry" %>
 
 
 <asp:Content ID="Content1"
@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            
         </div>
     </form>
 </body>

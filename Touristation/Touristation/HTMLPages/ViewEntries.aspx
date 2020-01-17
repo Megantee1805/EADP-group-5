@@ -9,14 +9,15 @@
     <form id="form1" runat="server">
         <div>
              <asp:GridView
-             ID="gvViewEntries" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False">
+             ID="gvViewEntries" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False" OnRowCommand="gvViewEntries_RowCommand">
                  <Columns>
+                     <asp:BoundField DataField="Id" />
                      <asp:BoundField DataField="name" HeaderText="Name" />
                      <asp:BoundField DataField="description" HeaderText="Description" />
                      <asp:ImageField DataImageUrlField="fileLink" ControlStyle-CssClass="img-thumbnail">
 <ControlStyle CssClass="img-thumbnail"></ControlStyle>
                      </asp:ImageField>
-                     <asp:CommandField HeaderText="Select" />
+                     <asp:ButtonField CommandName="View" Text="Vote" />
                  </Columns>
                 </asp:GridView>
         </div>

@@ -123,7 +123,7 @@
     <Content Include="HTMLPages\SubmitEntry.aspx" />
     <Content Include="HTMLPages\ViewCompetitions.aspx" />
     <Content Include="HTMLPages\ViewEntries.aspx" />
-    <Content Include="HTMLPages\ViewSingleEntry.aspx" />
+    <Content Include="HTMLPages\GradeEntry.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="packages.config" />
@@ -161,12 +161,12 @@
     <Compile Include="HTMLPages\ViewEntries.aspx.designer.cs">
       <DependentUpon>ViewEntries.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HTMLPages\ViewSingleEntry.aspx.cs">
-      <DependentUpon>ViewSingleEntry.aspx</DependentUpon>
+    <Compile Include="HTMLPages\GradeEntry.aspx.cs">
+      <DependentUpon>GradeEntry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="HTMLPages\ViewSingleEntry.aspx.designer.cs">
-      <DependentUpon>ViewSingleEntry.aspx</DependentUpon>
+    <Compile Include="HTMLPages\GradeEntry.aspx.designer.cs">
+      <DependentUpon>GradeEntry.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model_Methods\CompetitionDAM.cs" />
     <Compile Include="Model_Methods\EntryDAM.cs" />
