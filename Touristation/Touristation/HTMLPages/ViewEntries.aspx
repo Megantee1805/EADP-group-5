@@ -13,8 +13,10 @@
                  <Columns>
                      <asp:BoundField DataField="name" HeaderText="Name" />
                      <asp:BoundField DataField="description" HeaderText="Description" />
-                     <asp:ImageField DataImageUrlField="fileLink">
+                     <asp:ImageField DataImageUrlField="fileLink" ControlStyle-CssClass="img-thumbnail">
+<ControlStyle CssClass="img-thumbnail"></ControlStyle>
                      </asp:ImageField>
+                     <asp:CommandField HeaderText="Select" />
                  </Columns>
                 </asp:GridView>
         </div>
