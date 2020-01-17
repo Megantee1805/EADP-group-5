@@ -13,13 +13,16 @@ namespace Touristation.HTMLPages
         List<Entry> eList; 
         protected void Page_Load(object sender, EventArgs e)
         {
-            RefreshGridView(); 
+            Competiton com = new Competiton();
+            int Id = int.Parse(Request.QueryString["Competition"]);
+            com = com.GetCompetitionById(Id);
+            RefreshGridView(Id); 
         }
 
-        private void RefreshGridView()
+        private void RefreshGridView(int comId)
         {
             Entry current = new Entry();
-            eList = current.GetAll();
+            eList = current.GetEntriesByCompetition(comId);
             gvViewEntries.Visible = true;
             gvViewEntries.DataSource = eList;
             gvViewEntries.DataBind(); 

@@ -9,14 +9,17 @@
     <form id="form1" runat="server">
         <div class="container">
             <asp:GridView
-             ID="gvViewCompetitions" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gvViewCompetitions_SelectedIndexChanged">
+             ID="gvViewCompetitions" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False" OnRowCommand="gvViewCompetitions_RowCommand">
                 <Columns>
                     <asp:BoundField DataField="Id" />
                     <asp:BoundField DataField="name" HeaderText="Title" />
                     <asp:BoundField DataField="description" HeaderText="Description" />
                     <asp:BoundField DataField="endDate" HeaderText="Competition End" />
                     <asp:BoundField DataField="entriesNo" HeaderText="No of Entries" />
-                    <asp:CommandField ShowSelectButton="True" />
+                  
+                    <asp:ButtonField CommandName="Submit" Text="Submit An Entry" />
+                    <asp:ButtonField CommandName="View" Text="View Entries" />
+                  
                 </Columns>
             </asp:GridView>
        

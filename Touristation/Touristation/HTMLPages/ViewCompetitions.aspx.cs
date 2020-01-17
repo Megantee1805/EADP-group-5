@@ -34,25 +34,48 @@ namespace Touristation.HTMLPages
             gvViewCompetitions.DataBind();
         }
 
-        
-
-       
-
-       
-
-        protected void gvViewCompetitions_SelectedIndexChanged(object sender, EventArgs e)
+        protected void gvViewCompetitions_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (gvViewCompetitions.SelectedIndex >= 0)
+            string commandName = e.CommandName; 
+            if (commandName == "Submit")
             {
-                string ComName = gvViewCompetitions.SelectedRow.Cells[1].Text;
-                int ComId = int.Parse(gvViewCompetitions.SelectedRow.Cells[0].Text);
-                int entNo = int.Parse(gvViewCompetitions.SelectedRow.Cells[4].Text);
-                Session["ComName"] = ComName;
-                Session["ComId"] = ComId;
-                Session["ComEntryNo"] = entNo; 
-                Server.Transfer("SubmitEntry.aspx");
+                int Index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow gvr = gvViewCompetitions.Rows[Index]; 
+                int ComId = int.Parse(gvr.Cells[0].Text);
+                string Name = gvr.Cells[1].Text; 
+                int entNo = int.Parse(gvr.Cells[4].Text);
+                Response.Redirect("SubmitEntry.aspx?Competition=" + ComId); 
+            }
+
+            else if (commandName == "View")
+            {
+
+                int Index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow gvr = gvViewCompetitions.Rows[Index];
+                int ComId = int.Parse(gvr.Cells[0].Text);
+                string Name = gvr.Cells[1].Text;
+                Response.Redirect("ViewEntries.aspx?Competition=" + ComId);
             }
         }
+
+
+
+
+        /* protected void gvViewCompetitions_SelectedIndexChanged(object sender, EventArgs e)
+         {
+             if (gvViewCompetitions.SelectedIndex >= 0)
+             {
+                 string ComName = gvViewCompetitions.SelectedRow.Cells[1].Text;
+                 int ComId = int.Parse(gvViewCompetitions.SelectedRow.Cells[0].Text);
+                 int entNo = int.Parse(gvViewCompetitions.SelectedRow.Cells[4].Text);
+                 Session["ComName"] = ComName;
+                 Session["ComId"] = ComId;
+                 Session["ComEntryNo"] = entNo; 
+                 Server.Transfer("SubmitEntry.aspx");
+             }
+         }
+
+     */
     }
 
 }

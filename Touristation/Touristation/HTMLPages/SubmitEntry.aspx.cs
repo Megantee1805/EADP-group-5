@@ -15,7 +15,10 @@ namespace Touristation.HTMLPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LblComName.Text = Session["ComName"].ToString(); 
+            Competiton com = new Competiton();
+            int Id = int.Parse(Request.QueryString["Competition"]);
+            com = com.GetCompetitionById(Id); 
+            LblComName.Text = com.name; 
         }
 
         protected void btnEntrySubmit_Click(object sender, EventArgs e)

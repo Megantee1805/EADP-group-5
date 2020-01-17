@@ -22,6 +22,18 @@ namespace Touristation.DAL
             return available;
         }
 
+        public Competiton SelectById(int id)
+        {
+            Competiton current;
+
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                current = db.Competitons.Where(c => c.Id == id).FirstOrDefault();
+
+            }
+            return current;
+        }
+
         public Competiton SelectByTitle(string title)
         {
             Competiton available;

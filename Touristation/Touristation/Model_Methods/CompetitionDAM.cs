@@ -43,6 +43,12 @@ namespace Touristation.BLL
             CompetitionDAO com = new CompetitionDAO();
             return com.SelectByTitle(name);
         }
-       
+
+        public Competiton GetCompetitionById(int Id)
+        {
+            CompetitionDAO com = new CompetitionDAO();
+            return com.SelectById(Id);
+        }
+
     }
 } 
