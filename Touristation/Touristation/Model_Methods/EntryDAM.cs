@@ -22,6 +22,12 @@ namespace Touristation.BLL
             return all.SelectAll(); 
         }
 
+        public Entry GetEntryById(int Id)
+        {
+            EntryDAO all = new EntryDAO();
+            return all.SelectById(Id);
+        }
+
         public List<Entry> GetEntriesByCompetition(int ComId)
         {
             EntryDAO all = new EntryDAO();

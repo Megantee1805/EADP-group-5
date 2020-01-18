@@ -9,7 +9,14 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            
+            Title: 
+            <asp:TextBox ID="tbEntryTitle" CssClass="form-control" ReadOnly="true" runat="server"></asp:TextBox>
+            Description
+            <asp:TextBox ID="tbEntryDesc" CssClass="form-control" ReadOnly="true" runat="server"></asp:TextBox>
+            Photo: 
+            <asp:Image ID="imgEntry" CssClass="img-thumbnail" runat="server" />
+            <br />
+            <asp:Button ID="btnVote" runat="server" Text="Vote" />
         </div>
     </form>
 </body>

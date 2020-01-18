@@ -12,9 +12,13 @@ namespace Touristation.HTMLPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Entry entry; 
             Entry current = new Entry();
             int Id = int.Parse(Request.QueryString["Entry"]);
-            current.GetEntriesByCompetition(Id); 
+            entry = current.GetEntryById(Id);
+            tbEntryTitle.Text = entry.name;
+            tbEntryDesc.Text = entry.description;
+            imgEntry.ImageUrl = entry.fileLink; 
         }
     }
 }

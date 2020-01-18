@@ -19,6 +19,17 @@ namespace Touristation.DAL
             return entry;
         }
 
+        public Entry SelectById(int id)
+        {
+            Entry entry;
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                entry = db.Entries.Where(e => e.Id == id).FirstOrDefault();
+
+            }
+            return entry;
+        }
+
         public List<Entry> SelectAll()
         {
             List<Entry> entries;
