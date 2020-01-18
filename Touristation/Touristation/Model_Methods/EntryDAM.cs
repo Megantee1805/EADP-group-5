@@ -33,5 +33,11 @@ namespace Touristation.BLL
             EntryDAO all = new EntryDAO();
             return all.SelectByCompetition(ComId);
         }
+
+        public void CountVotes(Entry ent)
+        {
+            EntryDAO entry = new EntryDAO();
+            entry.Update(ent); 
+        }
     }
 }

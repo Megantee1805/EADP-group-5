@@ -5,7 +5,7 @@
 <asp:Content ID="Content1"
     ContentPlaceHolderID="ContentPlaceHolder1"
     Runat="Server">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <body>
     <form id="form1" runat="server">
         <div>
@@ -16,7 +16,7 @@
             Photo: 
             <asp:Image ID="imgEntry" CssClass="img-thumbnail" runat="server" />
             <br />
-            <asp:Button ID="btnVote" runat="server" Text="Vote" />
+            <asp:Button ID="btnVote" runat="server" CssClass="btn btn-primary" Text="Vote" OnClick="btnVote_Click" />
         </div>
     </form>
 </body>

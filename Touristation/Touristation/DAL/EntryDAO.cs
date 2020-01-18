@@ -51,5 +51,24 @@ namespace Touristation.DAL
             }
 
         }
+
+        public void Update(Entry ent)
+        {
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                Entry updateEnt = new Entry();
+                Entry check = db.Entries.Where(c => c.Id == ent.Id).FirstOrDefault();
+                if (check != null)
+                {
+                    check.name = ent.name;
+                    check.description = ent.description;
+                    check.fileLink = ent.fileLink;
+                    check.rank = ent.rank;
+                    check.score = ent.rank;
+                    check.votes = ent.votes; 
+                    db.SaveChanges();
+                }
+            }
+        }
     }
 }
