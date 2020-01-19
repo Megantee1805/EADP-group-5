@@ -12,35 +12,36 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Label runat="server" CssClass="text-info" ID="uname"></asp:Label>
             <br />  
-            
-            
-            <asp:Button ID="editPage" CssClass="btn btn-info" runat="server" Text="Edit Profile" OnClick="editPage_Click" />
-            <br /> 
-            <asp:Panel runat="server" CssClass="panel-body" ID="editPanel" Visible="false">
+            <asp:Panel ID="profilePanel" runat="server">
                 Username: 
-                <asp:TextBox runat="server" CssClass="form-control" ID="tbEditName"> 
+                <asp:TextBox runat="server" CssClass="form-control" Enabled="false" ID="tbEditName"> 
                 </asp:TextBox>
                 <br />
                 Email: 
-                <asp:TextBox runat="server" CssClass="form-control" ID="tbEditEmail"> 
-                </asp:TextBox>
-                <br /> 
-                
-                     <asp:TextBox runat="server" Visible="false" CssClass="form-control" TextMode="Password" ID="tbEditPass"> 
-                </asp:TextBox>
-                <br /> 
-                
-                 <asp:TextBox runat="server" Visible="false" CssClass="form-control" TextMode="Password" ID="tbEditConfirm"> 
+                <asp:TextBox runat="server" CssClass="form-control" Enabled="false" ID="tbEditEmail"> 
                 </asp:TextBox>
                 <br />
-               
-                <asp:DropDownList ID="DDCountry" CssClass="form-control" runat="server" Width="100"></asp:DropDownList>
+                Country 
+                <asp:DropDownList ID="DDCountry" CssClass="form-control" runat="server" Width="100" Enabled="False"></asp:DropDownList>
                 <br /> 
                 <asp:Button runat="server" CssClass="btn btn-primary" ID="btnEditProfile" Text="Edit" OnClick="btnEditProfile_Click">
-                </asp:Button>
+                </asp:Button> 
+            <asp:Button runat="server" CssClass="btn btn-primary" ID="btnSaveChanges" Text="Save" OnClick="btnSaveChanges_Click" />
+                <asp:Button runat="server" CssClass="btn btn-primary" ID="btnChangePassword" Text="Change Password" OnClick="btnChangePassword_Click" />
+                </asp:Panel>
                 <asp:Label runat="server" ID="LblMsg"></asp:Label>
+            <asp:Panel ID="passwordPanel" Visible = "false" runat="server">
+                <asp:TextBox runat="server" CssClass="form-control" TextMode="Password" ID="tbEditPass"> 
+                </asp:TextBox>
+                Password
+                <br /> 
+                
+                 <asp:TextBox runat="server" CssClass="form-control" TextMode="Password" ID="tbEditConfirm"> 
+                </asp:TextBox>
+                Confirm Password 
+                <br />
+                <asp:Button runat="server" CssClass="btn btn-primary" ID="btnSavePassword" Text="Save Password" OnClick="btnSavePassword_Click" />
             </asp:Panel>
         </div>
     </form>

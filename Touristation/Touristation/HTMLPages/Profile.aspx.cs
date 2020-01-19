@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Touristation.BLL;
@@ -18,44 +19,20 @@ namespace Touristation
             {
                 Response.Redirect("Login.aspx");
             }
-
-            else
-            {
-                uname.Text = Session["Username"].ToString();
-
-               
-
-                
-            }            
-        }
-
-        protected void editPage_Click(object sender, EventArgs e)
-        {
-            editPanel.Visible = true;
+            User user = new User();
+            user = user.GetUserByUsername(Session["Username"].ToString());
+            tbEditName.Text = user.username;
+            tbEditEmail.Text = user.email; 
             DDCountry.DataSource = CountryList();
             DDCountry.DataBind();
-            
+           
         }
 
         protected void btnEditProfile_Click(object sender, EventArgs e)
         {
-            LblMsg.ForeColor = Color.Red;
-            LblMsg.Text = String.Empty;
-            User editUser; 
-            if (validate() == true)
-            {
-                User user = new User();
-                editUser = user.GetUserByUsername(uname.Text); 
-                editUser.username = tbEditName.Text;
-                editUser.email = tbEditEmail.Text; 
-                user.country = DDCountry.SelectedValue.ToString();
-                user.isAdmin = false; 
-                user.UpdateProfile(editUser); 
-                LblMsg.ForeColor = Color.Green;
-                LblMsg.Text = "Success";
-                Session["Username"] = tbEditName.Text;
-                Response.Redirect("Profile.aspx"); 
-            }
+            tbEditName.Enabled = true;
+            tbEditEmail.Enabled = true;
+            DDCountry.Enabled = true; 
         }
 
         public bool validate()
@@ -72,20 +49,6 @@ namespace Touristation
                 LblMsg.Text += "Email cannot be empty!";
                 complete = false;
             }
-
-           /* if (tbEditPass.Text.Length <= 6)
-            {
-                LblMsg.Text += "Password is too short !";
-                complete = false;
-            }
-
-            if (tbEditPass.Text != tbEditConfirm.Text)
-            {
-                LblMsg.Text += "Passwords do not match !";
-                complete = false;
-            }
-
-            */
 
             if (DDCountry.SelectedIndex == 0)
             {
@@ -121,6 +84,56 @@ namespace Touristation
             return CultureList;
         }
 
-    
+        protected void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            LblMsg.ForeColor = Color.Red;
+            LblMsg.Text = String.Empty;
+            User editUser;
+            if (validate() == true)
+            {
+                User user = new User();
+                editUser = user.GetUserByUsername(Session["Username"].ToString());
+                editUser.username = tbEditName.Text;
+                editUser.email = tbEditEmail.Text;
+                user.country = DDCountry.SelectedValue.ToString();
+                user.isAdmin = false;
+                user.UpdateProfile(editUser);
+                LblMsg.ForeColor = Color.Green;
+                LblMsg.Text = "Success";
+                Session["Username"] = tbEditName.Text;
+                Response.Redirect("Profile.aspx");
+            }
+        }
+
+        protected void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            passwordPanel.Visible = true;
+            profilePanel.Visible = false; 
+        }
+
+        protected void btnSavePassword_Click(object sender, EventArgs e)
+        {
+            if (tbEditPass.Text.Length <= 6)
+            {
+                LblMsg.Text += "Password is too short !";
+                
+            }
+
+            else if (tbEditPass.Text != tbEditConfirm.Text)
+            {
+                LblMsg.Text += "Passwords do not match !";
+                
+            }
+
+            else
+            {
+                User user = new User();
+                user = user.GetUserByUsername(Session["Username"].ToString());
+                string hash = Crypto.HashPassword(tbEditPass.Text);
+                user.password = hash;
+                user.UpdateProfile(user);
+                Response.Redirect("Login.aspx"); 
+            }
+        }
     }
 }
