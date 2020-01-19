@@ -55,7 +55,7 @@
                         <div class="container"> 
                             <ul>
                                 <li><a href="CreateCompetition.aspx"> Create Competitions </a></li>
-                                <li><a href="ViewEntries.aspx"> View All Entries</a></li>
+                                <li><a href="PickWinners.aspx"> Pick Winners</a></li>
                                 <li class="active col-xs-1"><asp:Label runat="server" ID="LblWel">Welcome </asp:Label>
                                 <li><a href="Logout.aspx"> Logout </a></li>
                             </ul>
