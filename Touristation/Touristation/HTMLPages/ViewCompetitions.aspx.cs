@@ -60,7 +60,7 @@ namespace Touristation.HTMLPages
 
         protected void btnViewEntries_Click(object sender, EventArgs e) {
             int userId = int.Parse(Session["Id"].ToString()); 
-            Response.Redirect("ViewEntries.aspx?User=" + userId);
+            Response.Redirect("ViewOwnEntries.aspx?User=" + userId);
         }
 
 

@@ -50,5 +50,11 @@ namespace Touristation.BLL
             return com.SelectById(Id);
         }
 
+        public void Delete(int id)
+        {
+            CompetitionDAO user = new CompetitionDAO();
+            user.Delete(id);
+        }
+
     }
 } 

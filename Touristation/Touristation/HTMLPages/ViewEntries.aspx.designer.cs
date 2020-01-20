@@ -40,24 +40,6 @@ namespace Touristation.HTMLPages {
         protected global::System.Web.UI.WebControls.GridView gvViewEntries;
         
         /// <summary>
-        /// userEntries control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel userEntries;
-        
-        /// <summary>
-        /// gvViewOwnEntries control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvViewOwnEntries;
-        
-        /// <summary>
         /// adminView control.
         /// </summary>
         /// <remarks>

@@ -11,33 +11,24 @@ namespace Touristation.HTMLPages
     public partial class ViewEntries : System.Web.UI.Page
     {
         List<Entry> eList;
+        int count;
+        int Id;
+        int ComId;
         protected void Page_Load(object sender, EventArgs e)
         {
             Competiton com = new Competiton();
-            int id; 
-            string Id = Request.QueryString["Competition"];
-            if (Id == null)
-            {
-                Id = Request.QueryString["User"];
-                id = int.Parse(Id); 
-            }
-
-            else
-            {
-                id = int.Parse(Id); 
-                com = com.GetCompetitionById(id);
-            }
-            
-           
+            int Id = int.Parse(Request.QueryString["Competition"]);
+            com = com.GetCompetitionById(Id);
+            ComId = Id; 
             User admin = status(); 
             if (admin.isAdmin == true)
             {
-                RefreshAdminView(id); 
+                RefreshAdminView(Id); 
             }
 
             else
             {
-                RefreshGridView(id);
+                RefreshGridView(Id);
             }
             
         }
@@ -48,15 +39,6 @@ namespace Touristation.HTMLPages
             int Id = int.Parse(Session["Id"].ToString());
             user = user.GetUserById(Id);
             return user; 
-        }
-
-        private void RefreshEntryView(int userId)
-        {
-            Entry current = new Entry();
-            eList = current.GetEntriesByUser(userId);
-            gvViewOwnEntries.Visible = true;
-            gvViewOwnEntries.DataSource = eList;
-            gvViewOwnEntries.DataBind(); 
         }
 
         private void RefreshAdminView(int comId)
@@ -83,10 +65,13 @@ namespace Touristation.HTMLPages
             string commandName = e.CommandName;
             if (commandName == "View")
             {
-                int Index = Convert.ToInt32(e.CommandArgument);
-                GridViewRow gvr = gvViewEntries.Rows[Index];
-                int entId = int.Parse(gvr.Cells[0].Text);
-                Response.Redirect("GradeEntry.aspx?Entry=" + entId);
+                count += 1;
+                Entry upEnt;
+                Entry voted = new Entry();
+                upEnt = voted.GetEntryById(Id);
+                upEnt.votes = count;
+                voted.CountVotes(upEnt);
+                Response.Redirect("ViewEntries.aspx?Competition=" + ComId);
             }
         }
     }
