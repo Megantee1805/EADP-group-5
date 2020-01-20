@@ -8,6 +8,7 @@
         <body>
     <form id="form1" runat="server">
         <div class="container">
+            <asp:LinkButton ID="btnViewEntries" runat="server" Text="View Own Entries" OnClick="btnViewEntries_Click"></asp:LinkButton>
             <asp:GridView
              ID="gvViewCompetitions" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False" OnRowCommand="gvViewCompetitions_RowCommand">
                 <Columns>
@@ -21,8 +22,9 @@
                     <asp:ButtonField CommandName="View" Text="View Entries" />
                   
                 </Columns>
-            </asp:GridView>
-       
+            </asp:GridView>1
+
+          
         </div>
     </form>
         </body>

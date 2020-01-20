@@ -9,7 +9,7 @@
     <form id="form1" runat="server">
         <div>
              <asp:GridView
-             ID="gvViewCompetitions" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False">
+             ID="gvViewCompetitions" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False" OnRowCommand="gvViewCompetitions_RowCommand">
                 <Columns>
                     <asp:BoundField DataField="Id" />
                     <asp:BoundField DataField="name" HeaderText="Title" />
