@@ -79,6 +79,16 @@ namespace Touristation.DAL
             }
         }
 
+        public void Delete(int id)
+        {
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                User user = new User();
+                db.Users.Remove(db.Users.Single(u => u.Id == id)); 
+                db.SaveChanges();
+            }
+        }
+
 
         /* public int Update(User emp)
         {

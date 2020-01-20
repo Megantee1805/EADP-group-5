@@ -17,6 +17,7 @@ namespace Touristation.HTMLPages
             int Id = int.Parse(Request.QueryString["Competition"]);
             com = com.GetCompetitionById(Id);
             RefreshGridView(Id);
+            
         }
 
         private void RefreshGridView(int comId)

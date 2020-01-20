@@ -135,5 +135,13 @@ namespace Touristation
                 Response.Redirect("Login.aspx"); 
             }
         }
+
+        protected void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            int userId = int.Parse(Session["Id"].ToString());
+            user.Delete(userId);
+            Response.Redirect("Login.aspx"); 
+        }
     }
 }

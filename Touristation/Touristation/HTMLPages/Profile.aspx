@@ -29,6 +29,8 @@
                 </asp:Button> 
             <asp:Button runat="server" CssClass="btn btn-primary" ID="btnSaveChanges" Text="Save" OnClick="btnSaveChanges_Click" />
                 <asp:Button runat="server" CssClass="btn btn-primary" ID="btnChangePassword" Text="Change Password" OnClick="btnChangePassword_Click" />
+                <br />
+                <asp:Button ID="btnDeleteUser" CssClass="btn btn-danger" runat="server" Text="Delete" OnClick="btnDeleteUser_Click" />
                 </asp:Panel>
                 <asp:Label runat="server" ID="LblMsg"></asp:Label>
             <asp:Panel ID="passwordPanel" Visible = "false" runat="server">

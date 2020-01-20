@@ -33,5 +33,11 @@ namespace Touristation.BLL
             UserDAO user = new UserDAO();
             user.Update(use); 
         }
+
+        public void Delete(int id)
+        {
+            UserDAO user = new UserDAO();
+            user.Delete(id); 
+        }
     }
 }
