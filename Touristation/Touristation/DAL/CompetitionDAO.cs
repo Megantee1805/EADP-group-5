@@ -76,7 +76,19 @@ namespace Touristation.DAL
                     db.SaveChanges(); 
                 }
             }
+
+
         }
-        
+
+        public void Delete(int id)
+        {
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                Competiton com = new Competiton();
+                db.Competitons.Remove(db.Competitons.Single(c => c.Id == id));
+                db.SaveChanges();
+            }
+        }
+
     }
     }

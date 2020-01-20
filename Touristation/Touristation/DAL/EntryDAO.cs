@@ -81,5 +81,15 @@ namespace Touristation.DAL
                 }
             }
         }
+
+        public void Delete(int id)
+        {
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                Entry entry = new Entry();
+                db.Entries.Remove(db.Entries.Single(e => e.Id == id));
+                db.SaveChanges();
+            }
+        }
     }
 }
