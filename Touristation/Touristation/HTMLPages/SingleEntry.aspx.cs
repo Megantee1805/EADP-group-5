@@ -22,7 +22,6 @@ namespace Touristation.HTMLPages
             tbEntryTitle.Text = entry.name;
             tbEntryDesc.Text = entry.description;
             imgEntry.ImageUrl = entry.fileLink;
-            
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -31,9 +30,10 @@ namespace Touristation.HTMLPages
             ent = entry;
             ent.name = tbEntryTitle.Text;
             ent.description = tbEntryDesc.Text;
-            String filename = Path.GetFileName(editFile.FileName);
-            if (filename != null)
+            
+            if (editFile.HasFile == true)
             {
+                String filename = Path.GetFileName(editFile.FileName);
                 string filePath = "~/Images" + filename;
                 editFile.SaveAs(Server.MapPath(filePath));
                 ent.fileLink = filePath;
@@ -55,10 +55,17 @@ namespace Touristation.HTMLPages
             tbEntryDesc.Enabled = true;
             btnEdit.Visible = false;
             btnSave.Visible = true;
+            btnCancel.Visible = true;
             Lblfile.Visible = true;
             editFile.Visible = true;
             imgEntry.Visible = false;
             
-            }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            int userId = int.Parse(Session["Id"].ToString());
+            Response.Redirect("ViewOwnEntries.aspx?User=" + userId);
+        }
     }
 }

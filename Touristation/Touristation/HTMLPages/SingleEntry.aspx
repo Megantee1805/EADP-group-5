@@ -20,6 +20,7 @@
             <asp:FileUpload ID="editFile" Visible="false" runat="server" />
             <asp:Button ID="btnEdit" runat="server" CssClass="btn btn-primary" Text="Edit" OnClick="btnEdit_Click" />
             <asp:Button ID="btnSave" runat="server" Visible="false" CssClass="btn btn-primary" Text="Save" OnClick="btnSave_Click" />
+            <asp:Button ID="btnCancel" runat="server" Visible="false" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancel_Click"/>
         </div>
     </form>
 </body>

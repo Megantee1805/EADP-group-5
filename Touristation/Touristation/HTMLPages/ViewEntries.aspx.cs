@@ -19,16 +19,17 @@ namespace Touristation.HTMLPages
             Competiton com = new Competiton();
             int Id = int.Parse(Request.QueryString["Competition"]);
             com = com.GetCompetitionById(Id);
-            ComId = Id; 
+            ComId = Id;
+            int userId = int.Parse(Session["Id"].ToString()); 
             User admin = status(); 
             if (admin.isAdmin == true)
             {
-                RefreshAdminView(Id); 
+                RefreshAdminView(Id, userId); 
             }
 
             else
             {
-                RefreshGridView(Id);
+                RefreshGridView(Id, userId);
             }
             
         }
@@ -41,19 +42,19 @@ namespace Touristation.HTMLPages
             return user; 
         }
 
-        private void RefreshAdminView(int comId)
+        private void RefreshAdminView(int comId, int userId)
         {
             Entry current = new Entry();
-            eList = current.GetEntriesByCompetition(comId);
+            eList = current.GetAllEntriesByOthers(comId, userId);
             gvAdminEntries.Visible = true;
             gvAdminEntries.DataSource = eList;
             gvAdminEntries.DataBind(); 
         }
 
-        private void RefreshGridView(int comId)
+        private void RefreshGridView(int comId, int userId)
         {
             Entry current = new Entry();
-            eList = current.GetEntriesByCompetition(comId);
+            eList = current.GetAllEntriesByOthers(comId, userId);
             gvViewEntries.Visible = true;
             gvViewEntries.DataSource = eList;
             gvViewEntries.DataBind();

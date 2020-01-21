@@ -53,6 +53,8 @@
                     </div>
             </ContentTemplate>
             </asp:UpdatePanel>
+                    <asp:Button CssClass="btn btn-primary" ID="btnEdit" runat="server" Text="Save" OnClick="btnEdit_Click" />
+                    <asp:Button CssClass="btn btn-danger" ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
                 </div>
             </div>
         </div>

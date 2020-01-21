@@ -22,7 +22,7 @@
                     <asp:ButtonField CommandName="View" Text="View Entries" />
                   
                 </Columns>
-            </asp:GridView>1
+            </asp:GridView>
 
           
         </div>
