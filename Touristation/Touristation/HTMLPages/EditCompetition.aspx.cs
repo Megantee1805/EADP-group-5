@@ -11,21 +11,29 @@ namespace Touristation.HTMLPages
     public partial class EditCompetition : System.Web.UI.Page
     {
         Competiton current;
+        int Id; 
 
         protected void Page_Load(object sender, EventArgs e)
         {
             Competiton com = new Competiton();
-            int Id = int.Parse(Request.QueryString["Competition"]);
+            Id = int.Parse(Request.QueryString["Com"]);
             current = com.GetCompetitionById(Id);
+
+            /*
             tbComName.Text = current.name;
             tbComDesc.Text = current.description;
-            ComStart.SelectedDate = current.startDate;
+            
+            
+             ComStart.SelectedDate = current.startDate;
             tbStart.Text = current.startDate.ToShortDateString(); 
             ComEnd.SelectedDate = current.endDate;
             tbEnd.Text = current.endDate.ToShortDateString();
+            */ 
         }
 
-        protected void ComStart_SelectionChanged(object sender, EventArgs e)
+        
+
+       protected void ComStart_SelectionChanged(object sender, EventArgs e)
         {
 
             tbStart_PopupControlExtender.Commit(ComStart.SelectedDate.ToShortDateString());
@@ -38,20 +46,36 @@ namespace Touristation.HTMLPages
             UpdateCalender.Update();
         }
 
-        protected void btnEdit_Click(object sender, EventArgs e)
+    
+
+        /* protected void btnEdit_Click(object sender, EventArgs e)
         {
-            Competiton com = new Competiton();
-            current.name = tbComName.Text;
-            current.description = tbComDesc.Text;
-            current.startDate = DateTime.Parse(tbStart.Text);
-            current.endDate = DateTime.Parse(tbEnd.Text);
-            com.Update(current);
-            Response.Redirect("PickWinners.aspx"); 
+            tbComName.Enabled = true;
+            tbComDesc.Enabled = true;
+            // tbStart.Enabled = true;
+            // tbEnd.Enabled = true;
+            btnCancel.Visible = true;
+            btnSave.Visible = true;
+            btnEdit.Visible = false; 
         }
+
+    */
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ViewCompetitions.aspx"); 
+            Response.Redirect("PickWinners.aspx"); 
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            Competiton updateComp = new Competiton();
+            updateComp.Id = Id;
+            updateComp.name = tbComName.Text;
+            updateComp.description = tbComDesc.Text;
+            updateComp.startDate = DateTime.Parse(tbStart.Text);
+            updateComp.endDate = DateTime.Parse(tbEnd.Text);
+            updateComp.Update(updateComp);
+            Response.Redirect("PickWinners.aspx");
         }
     }
 }

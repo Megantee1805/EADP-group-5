@@ -29,6 +29,7 @@ namespace Touristation.HTMLPages
             {
                 current.countEntries(c);
             }
+            
             gvViewCompetitions.Visible = true;
             gvViewCompetitions.DataSource = cList;
             gvViewCompetitions.DataBind();

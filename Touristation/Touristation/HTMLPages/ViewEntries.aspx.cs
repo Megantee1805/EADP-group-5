@@ -17,7 +17,7 @@ namespace Touristation.HTMLPages
         protected void Page_Load(object sender, EventArgs e)
         {
             Competiton com = new Competiton();
-            int Id = int.Parse(Request.QueryString["Competition"]);
+            Id = int.Parse(Request.QueryString["Competition"]);
             com = com.GetCompetitionById(Id);
             ComId = Id;
             int userId = int.Parse(Session["Id"].ToString()); 

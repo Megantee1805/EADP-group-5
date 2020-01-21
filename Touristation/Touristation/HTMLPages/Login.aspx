@@ -6,9 +6,6 @@
     ID="Content1"
     ContentPlaceHolderID="ContentPlaceHolder1"
     Runat="Server">
-
-<html>
-<body>
     <form id="form1" class="form-group" runat="server">
         
             <p class="control-label">Username </p> 
@@ -21,7 +18,6 @@
     </form>
 
     <asp:Label ID="errorMsg" runat="server"></asp:Label>
-</body>
-</html>
+</body
 
 </asp:Content>

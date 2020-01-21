@@ -112,13 +112,13 @@ namespace Touristation.HTMLPages {
         protected global::System.Web.UI.WebControls.Calendar ComEnd;
         
         /// <summary>
-        /// btnEdit control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit;
+        protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
         /// btnCancel control.

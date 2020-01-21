@@ -49,7 +49,7 @@ namespace Touristation.HTMLPages
                 int Index = Convert.ToInt32(e.CommandArgument);
                 GridViewRow gvr = gvViewCompetitions.Rows[Index];
                 int ComId = int.Parse(gvr.Cells[0].Text);
-                Response.Redirect("EditCompetition.aspx?Competition=" + ComId); 
+                Response.Redirect("EditCompetition.aspx?Com=" + ComId); 
             }
 
             else if (commandName == "Delete")
