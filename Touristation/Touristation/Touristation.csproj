@@ -115,6 +115,7 @@
     <Content Include="Content\StyleSheet.css" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="HTMLPages\CreateCompetition.aspx" />
+    <Content Include="HTMLPages\EditCompetition.aspx" />
     <Content Include="HTMLPages\Homepage.aspx" />
     <Content Include="HTMLPages\Login.aspx" />
     <Content Include="HTMLPages\Logout.aspx" />
@@ -142,6 +143,13 @@
     <Compile Include="BLL\User.cs" />
     <Compile Include="DAL\CompetitionDAO.cs" />
     <Compile Include="DAL\EntryDAO.cs" />
+    <Compile Include="HTMLPages\EditCompetition.aspx.cs">
+      <DependentUpon>EditCompetition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTMLPages\EditCompetition.aspx.designer.cs">
+      <DependentUpon>EditCompetition.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HTMLPages\Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

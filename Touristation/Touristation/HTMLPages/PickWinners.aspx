@@ -16,8 +16,8 @@
                     <asp:BoundField DataField="description" HeaderText="Description" />
                     <asp:BoundField DataField="endDate" HeaderText="Competition End" />
                     <asp:BoundField DataField="entriesNo" HeaderText="No of Entries" />
-                    <asp:ButtonField CommandName="View" Text="Pick Winners" />
-                  
+                    <asp:ButtonField CommandName="Edit" Text="Edit" />
+                    <asp:ButtonField CommandName="Delete" Text="Delete" />
                 </Columns>
                  </asp:GridView> 
         </div>

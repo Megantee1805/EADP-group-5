@@ -46,6 +46,12 @@ namespace Touristation.BLL
             entry.Update(ent); 
         }
 
+        public void Update(Entry ent)
+        {
+            EntryDAO entry = new EntryDAO();
+            entry.Update(ent); 
+        }
+
         public void Delete(int id)
         {
             EntryDAO entry = new EntryDAO();

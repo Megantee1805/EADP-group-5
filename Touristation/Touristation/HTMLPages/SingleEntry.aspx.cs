@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -26,7 +27,26 @@ namespace Touristation.HTMLPages
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            Entry ent = new Entry();
+            ent = entry;
+            ent.name = tbEntryTitle.Text;
+            ent.description = tbEntryDesc.Text;
+            String filename = Path.GetFileName(editFile.FileName);
+            if (filename != null)
+            {
+                string filePath = "~/Images" + filename;
+                editFile.SaveAs(Server.MapPath(filePath));
+                ent.fileLink = filePath;
+            }
+            else
+            {
+                ent.fileLink = imgEntry.ImageUrl; 
+
+            }
             
+            ent.Update(ent);
+            int userId = int.Parse(Session["Id"].ToString());
+            Response.Redirect("ViewOwnEntries.aspx?User=" + userId); 
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)

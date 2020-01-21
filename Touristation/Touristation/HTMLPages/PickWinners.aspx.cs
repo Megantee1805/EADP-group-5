@@ -32,7 +32,7 @@ namespace Touristation.HTMLPages
         protected void gvViewCompetitions_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             string commandName = e.CommandName;
-            if (commandName == "View")
+            /* if (commandName == "View")
             {
 
                 int Index = Convert.ToInt32(e.CommandArgument);
@@ -40,6 +40,21 @@ namespace Touristation.HTMLPages
                 int ComId = int.Parse(gvr.Cells[0].Text);
                 string Name = gvr.Cells[1].Text;
                 Response.Redirect("ViewEntries.aspx?Competition=" + ComId);
+            }
+
+    */
+
+            if (commandName == "Edit")
+            {
+                int Index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow gvr = gvViewCompetitions.Rows[Index];
+                int ComId = int.Parse(gvr.Cells[0].Text);
+                Response.Redirect("EditCompetition.aspx?Competition=" + ComId); 
+            }
+
+            else if (commandName == "Delete")
+            {
+
             }
         }
     }
