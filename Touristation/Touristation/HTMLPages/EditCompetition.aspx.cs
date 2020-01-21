@@ -16,14 +16,13 @@ namespace Touristation.HTMLPages
         {
             Competiton com = new Competiton();
             int Id = int.Parse(Request.QueryString["Competition"]);
-            com = com.GetCompetitionById(Id);
-            tbComName.Text = com.name;
-            tbComDesc.Text = com.description;
-            ComStart.SelectedDate = com.startDate;
-            tbStart.Text = com.startDate.ToShortDateString(); 
-            ComEnd.SelectedDate = com.endDate;
-            tbEnd.Text = com.endDate.ToShortDateString();
-            current = com; 
+            current = com.GetCompetitionById(Id);
+            tbComName.Text = current.name;
+            tbComDesc.Text = current.description;
+            ComStart.SelectedDate = current.startDate;
+            tbStart.Text = current.startDate.ToShortDateString(); 
+            ComEnd.SelectedDate = current.endDate;
+            tbEnd.Text = current.endDate.ToShortDateString();
         }
 
         protected void ComStart_SelectionChanged(object sender, EventArgs e)
@@ -45,7 +44,9 @@ namespace Touristation.HTMLPages
             current.name = tbComName.Text;
             current.description = tbComDesc.Text;
             current.startDate = DateTime.Parse(tbStart.Text);
-            current.endDate = DateTime.Parse(tbEnd.Text); 
+            current.endDate = DateTime.Parse(tbEnd.Text);
+            com.Update(current);
+            Response.Redirect("PickWinners.aspx"); 
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

@@ -50,6 +50,12 @@ namespace Touristation.BLL
             return com.SelectById(Id);
         }
 
+        public void Update(Competiton comie)
+        {
+            CompetitionDAO com = new CompetitionDAO();
+            com.Update(comie);
+        }
+
         public void Delete(int id)
         {
             CompetitionDAO user = new CompetitionDAO();

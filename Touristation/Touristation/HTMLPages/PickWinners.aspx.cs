@@ -54,6 +54,12 @@ namespace Touristation.HTMLPages
 
             else if (commandName == "Delete")
             {
+                int Index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow gvr = gvViewCompetitions.Rows[Index];
+                int ComId = int.Parse(gvr.Cells[0].Text);
+                Competiton com = new Competiton();
+                com.Delete(ComId);
+                Response.Redirect("PickWinners.aspx"); 
 
             }
         }
