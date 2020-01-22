@@ -19,9 +19,13 @@ namespace Touristation.HTMLPages
             Entry current = new Entry();
             Id = int.Parse(Request.QueryString["Entry"]);
             entry = current.GetEntryById(Id);
+            if (IsPostBack == false)
+            {
             tbEntryTitle.Text = entry.name;
             tbEntryDesc.Text = entry.description;
             imgEntry.ImageUrl = entry.fileLink;
+            }
+            
         }
 
         protected void btnSave_Click(object sender, EventArgs e)

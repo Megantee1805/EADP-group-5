@@ -19,19 +19,18 @@ namespace Touristation.HTMLPages
             Id = int.Parse(Request.QueryString["Com"]);
             current = com.GetCompetitionById(Id);
 
-            /*
+            if (IsPostBack == false)
+            {
             tbComName.Text = current.name;
             tbComDesc.Text = current.description;
-            
-            
-             ComStart.SelectedDate = current.startDate;
+            ComStart.SelectedDate = current.startDate;
             tbStart.Text = current.startDate.ToShortDateString(); 
             ComEnd.SelectedDate = current.endDate;
-            tbEnd.Text = current.endDate.ToShortDateString();
-            */ 
+                tbEnd.Text = current.endDate.ToShortDateString(); 
+            }
+            
+            
         }
-
-        
 
        protected void ComStart_SelectionChanged(object sender, EventArgs e)
         {

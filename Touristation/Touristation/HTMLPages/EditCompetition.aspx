@@ -10,11 +10,12 @@
         <div class="container">
             <div class="container">
                 <div class="container">
-                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                    
                     Name 
                     <asp:TextBox ID="tbComName" CssClass="form-control" Enabled="true" runat="server"></asp:TextBox>
                     Description 
                     <asp:TextBox ID="tbComDesc" CssClass="form-control" Enabled="true" runat="server"></asp:TextBox>
+                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                       <asp:UpdatePanel ID="UpdateCalender" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
            <div class="col-xs-12">

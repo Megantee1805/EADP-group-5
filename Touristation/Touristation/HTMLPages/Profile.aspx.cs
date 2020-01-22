@@ -21,10 +21,14 @@ namespace Touristation
             }
             User user = new User();
             user = user.GetUserByUsername(Session["Username"].ToString());
+            if (IsPostBack == false)
+            {
             tbEditName.Text = user.username;
             tbEditEmail.Text = user.email; 
             DDCountry.DataSource = CountryList();
             DDCountry.DataBind();
+            }
+            
            
         }
 
