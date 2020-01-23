@@ -141,7 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\Itenary.cs" />
-    <Compile Include="BLL\Competiton.cs" />
+    <Compile Include="BLL\Competition.cs" />
     <Compile Include="BLL\Entry.cs" />
     <Compile Include="BLL\TouristationEntityModel.cs" />
     <Compile Include="BLL\User.cs" />

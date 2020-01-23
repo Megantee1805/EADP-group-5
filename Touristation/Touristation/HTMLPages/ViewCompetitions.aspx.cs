@@ -11,9 +11,9 @@ namespace Touristation.HTMLPages
 {
     public partial class ViewCompetitions : System.Web.UI.Page
     {
-        public Competiton chosenCom;
+        public Competition chosenCom;
         
-        List<Competiton> cList = new List<Competiton>();
+        List<Competition> cList = new List<Competition>();
         protected void Page_Load(object sender, EventArgs e)
         {
             RefreshGridView();
@@ -23,9 +23,9 @@ namespace Touristation.HTMLPages
 
         private void RefreshGridView()
         {
-            Competiton current = new Competiton(); 
+            Competition current = new Competition(); 
             cList = current.SelectAvailableCompetitions();
-            foreach (Competiton c in cList)
+            foreach (Competition c in cList)
             {
                 current.countEntries(c);
             }

@@ -6,17 +6,17 @@ using Touristation.DAL;
 
 namespace Touristation.BLL
 {
-    public partial class Competiton
+    public partial class Competition
     {
         CompetitionDAO ComAdapter = new CompetitionDAO();
 
-        public void addCompetition(Competiton com)
+        public void addCompetition(Competition com)
         {
             CompetitionDAO competition = new CompetitionDAO();
             competition.Insert(com);
         }
 
-        public void countEntries(Competiton comie)
+        public void countEntries(Competition comie)
         {
             int count = 0; 
             List<Entry> all; 
@@ -32,25 +32,25 @@ namespace Touristation.BLL
             com.Update(comie); 
         }
 
-        public List<Competiton> SelectAvailableCompetitions()
+        public List<Competition> SelectAvailableCompetitions()
         {
             CompetitionDAO com = new CompetitionDAO();
             return com.SelectByDate(); 
         }
 
-        public Competiton GetCompetitionByName(string name)
+        public Competition GetCompetitionByName(string name)
         {
             CompetitionDAO com = new CompetitionDAO();
             return com.SelectByTitle(name);
         }
 
-        public Competiton GetCompetitionById(int Id)
+        public Competition GetCompetitionById(int Id)
         {
             CompetitionDAO com = new CompetitionDAO();
             return com.SelectById(Id);
         }
 
-        public void Update(Competiton comie)
+        public void Update(Competition comie)
         {
             CompetitionDAO com = new CompetitionDAO();
             com.Update(comie);
