@@ -18,6 +18,6 @@
     </form>
 
     <asp:Label ID="errorMsg" runat="server"></asp:Label>
-</body
+</body>
 
 </asp:Content>
