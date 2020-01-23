@@ -12,33 +12,33 @@ namespace Touristation.BLL
         {
         }
 
-        public virtual DbSet<Competiton> Competitons { get; set; }
+        public virtual DbSet<Competition> Competitions { get; set; }
         public virtual DbSet<Entry> Entries { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Competiton>()
+            modelBuilder.Entity<Competition>()
                 .Property(e => e.name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Competiton>()
+            modelBuilder.Entity<Competition>()
                 .Property(e => e.description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Competiton>()
+            modelBuilder.Entity<Competition>()
                 .Property(e => e.judges)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Competiton>()
+            modelBuilder.Entity<Competition>()
                 .Property(e => e.winners)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Competiton>()
+            modelBuilder.Entity<Competition>()
                 .HasMany(e => e.Entries)
-                .WithRequired(e => e.Competiton)
+                .WithRequired(e => e.Competition)
                 .HasForeignKey(e => e.ComId)
                 .WillCascadeOnDelete(false);
 
@@ -71,7 +71,7 @@ namespace Touristation.BLL
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .HasMany(e => e.Competitons)
+                .HasMany(e => e.Competitions)
                 .WithRequired(e => e.User)
                 .WillCascadeOnDelete(false);
 

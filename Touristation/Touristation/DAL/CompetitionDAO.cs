@@ -9,62 +9,62 @@ namespace Touristation.DAL
     public class CompetitionDAO
     {
 
-        public List<Competiton> SelectByDate()
+        public List<Competition> SelectByDate()
         {
-            List<Competiton> available;
+            List<Competition> available;
             DateTime today = DateTime.Now;
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                available = db.Competitons.Where(c => c.endDate >= today).Select(x => x).ToList();
+                available = db.Competitions.Where(c => c.endDate >= today).Select(x => x).ToList();
 
             }
 
             return available;
         }
 
-        public Competiton SelectById(int id)
+        public Competition SelectById(int id)
         {
-            Competiton current;
+            Competition current;
 
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                current = db.Competitons.Where(c => c.Id == id).FirstOrDefault();
+                current = db.Competitions.Where(c => c.Id == id).FirstOrDefault();
 
             }
             return current;
         }
 
-        public Competiton SelectByTitle(string title)
+        public Competition SelectByTitle(string title)
         {
-            Competiton available;
+            Competition available;
             
 
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                available = db.Competitons.Where(c => c.name == title).FirstOrDefault(); 
+                available = db.Competitions.Where(c => c.name == title).FirstOrDefault(); 
 
             }
 
             return available;
         }
 
-        public void Insert(Competiton com)
+        public void Insert(Competition com)
         {
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                Competiton newcom = new Competiton();
-                db.Competitons.Add(com);
+                Competition newcom = new Competition();
+                db.Competitions.Add(com);
                 db.SaveChanges(); 
             }
             
         }
 
-        public void Update(Competiton com)
+        public void Update(Competition com)
         {
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                Competiton updateCome = new Competiton(); 
-                Competiton check = db.Competitons.Where(c => c.Id == com.Id).FirstOrDefault();
+                Competition updateCome = new Competition(); 
+                Competition check = db.Competitions.Where(c => c.Id == com.Id).FirstOrDefault();
                 if (check != null)
                 {
                     check.name = com.name;
@@ -83,8 +83,8 @@ namespace Touristation.DAL
         {
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                Competiton com = new Competiton();
-                db.Competitons.Remove(db.Competitons.Single(c => c.Id == id));
+                Competition com = new Competition();
+                db.Competitions.Remove(db.Competitions.Single(c => c.Id == id));
                 db.SaveChanges();
             }
         }

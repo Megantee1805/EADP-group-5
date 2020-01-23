@@ -10,12 +10,12 @@ namespace Touristation.HTMLPages
 {
     public partial class EditCompetition : System.Web.UI.Page
     {
-        Competiton current;
+        Competition current;
         int Id; 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Competiton com = new Competiton();
+            Competition com = new Competition();
             Id = int.Parse(Request.QueryString["Com"]);
             current = com.GetCompetitionById(Id);
 
@@ -67,7 +67,7 @@ namespace Touristation.HTMLPages
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            Competiton updateComp = new Competiton();
+            Competition updateComp = new Competition();
             updateComp.Id = Id;
             updateComp.name = tbComName.Text;
             updateComp.description = tbComDesc.Text;

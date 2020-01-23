@@ -10,7 +10,7 @@ namespace Touristation.HTMLPages
 {
     public partial class PickWinners : System.Web.UI.Page
     {
-        List<Competiton> cList; 
+        List<Competition> cList; 
         protected void Page_Load(object sender, EventArgs e)
         {
             RefreshGridView(); 
@@ -18,9 +18,9 @@ namespace Touristation.HTMLPages
 
         private void RefreshGridView()
         {
-            Competiton current = new Competiton();
+            Competition current = new Competition();
             cList = current.SelectAvailableCompetitions();
-            foreach (Competiton c in cList)
+            foreach (Competition c in cList)
             {
                 current.countEntries(c);
             }
@@ -57,7 +57,7 @@ namespace Touristation.HTMLPages
                 int Index = Convert.ToInt32(e.CommandArgument);
                 GridViewRow gvr = gvViewCompetitions.Rows[Index];
                 int ComId = int.Parse(gvr.Cells[0].Text);
-                Competiton com = new Competiton();
+                Competition com = new Competition();
                 com.Delete(ComId);
                 Response.Redirect("PickWinners.aspx"); 
 

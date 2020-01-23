@@ -15,7 +15,7 @@ namespace Touristation.HTMLPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Competiton com = new Competiton();
+            Competition com = new Competition();
             int Id = int.Parse(Request.QueryString["Competition"]);
             com = com.GetCompetitionById(Id); 
             LblComName.Text = com.name; 
@@ -26,8 +26,8 @@ namespace Touristation.HTMLPages
             string filename = Path.GetFileName(entryFile.FileName);
             string filePath = "~/Images" + filename; 
             entryFile.SaveAs(Server.MapPath(filePath)); 
-            Competiton com; 
-            Competiton host = new Competiton();
+            Competition com; 
+            Competition host = new Competition();
             string title = LblComName.Text;
             com = host.GetCompetitionByName(title); 
             Entry submit = new Entry();
