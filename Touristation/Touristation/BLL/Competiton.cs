@@ -6,11 +6,11 @@ namespace Touristation.BLL
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Competition")]
-    public partial class Competition
+    [Table("Competiton")]
+    public partial class Competiton
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Competition()
+        public Competiton()
         {
             Entries = new HashSet<Entry>();
         }
@@ -32,8 +32,6 @@ namespace Touristation.BLL
         public DateTime startDate { get; set; }
 
         public DateTime endDate { get; set; }
-
-        public bool isDeleted { get; set; }
 
         public int entriesNo { get; set; }
 

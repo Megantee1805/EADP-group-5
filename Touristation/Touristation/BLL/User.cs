@@ -12,7 +12,7 @@ namespace Touristation.BLL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            Competitions = new HashSet<Competition>();
+            Competitons = new HashSet<Competiton>();
             Entries = new HashSet<Entry>();
         }
 
@@ -40,7 +40,7 @@ namespace Touristation.BLL
         public bool isBusiness { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Competition> Competitions { get; set; }
+        public virtual ICollection<Competiton> Competitons { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Entry> Entries { get; set; }

@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using Touristation.BLL;
 
 namespace Itenary.DAL
 {
@@ -123,9 +124,11 @@ namespace Itenary.DAL
         public int Update(ItenaryX itn)
         {
             int result = 0;
-            SqlCommand sqlCmd = new SqlCommand();
+            using (TouristationEntityModel sqlC = new TouristationEntityModel())
+            {
+            }
 
-            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+                string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
 
             // Step 2 - Instantiate SqlCommand instance to add record 

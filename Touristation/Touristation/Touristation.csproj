@@ -140,9 +140,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\Itenary.cs" />
-    <Compile Include="BLL\Competition.cs" />
+    <Compile Include="BLL\Competiton.cs" />
     <Compile Include="BLL\Entry.cs" />
+    <Compile Include="BLL\Itenary.cs" />
     <Compile Include="BLL\TouristationEntityModel.cs" />
     <Compile Include="BLL\User.cs" />
     <Compile Include="CreateItenary.aspx.cs">
@@ -206,6 +206,7 @@
     </Compile>
     <Compile Include="Model_Methods\CompetitionDAM.cs" />
     <Compile Include="Model_Methods\EntryDAM.cs" />
+    <Compile Include="Model_Methods\ItneraryDAM.cs" />
     <Compile Include="Model_Methods\UserDAM.cs" />
     <Compile Include="DAL\UserDAO.cs" />
     <Compile Include="HTMLPages\CreateCompetition.aspx.cs">

@@ -12,33 +12,34 @@ namespace Touristation.BLL
         {
         }
 
-        public virtual DbSet<Competition> Competitions { get; set; }
+        public virtual DbSet<Competiton> Competitons { get; set; }
         public virtual DbSet<Entry> Entries { get; set; }
+        public virtual DbSet<Itenary> Itenaries { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Competition>()
+            modelBuilder.Entity<Competiton>()
                 .Property(e => e.name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Competition>()
+            modelBuilder.Entity<Competiton>()
                 .Property(e => e.description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Competition>()
+            modelBuilder.Entity<Competiton>()
                 .Property(e => e.judges)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Competition>()
+            modelBuilder.Entity<Competiton>()
                 .Property(e => e.winners)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Competition>()
+            modelBuilder.Entity<Competiton>()
                 .HasMany(e => e.Entries)
-                .WithRequired(e => e.Competition)
+                .WithRequired(e => e.Competiton)
                 .HasForeignKey(e => e.ComId)
                 .WillCascadeOnDelete(false);
 
@@ -53,6 +54,22 @@ namespace Touristation.BLL
             modelBuilder.Entity<Entry>()
                 .Property(e => e.fileLink)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Itenary>()
+                .Property(e => e.Date)
+                .IsFixedLength();
+
+            modelBuilder.Entity<Itenary>()
+                .Property(e => e.Time)
+                .IsFixedLength();
+
+            modelBuilder.Entity<Itenary>()
+                .Property(e => e.NamePlace)
+                .IsFixedLength();
+
+            modelBuilder.Entity<Itenary>()
+                .Property(e => e.Location)
+                .IsFixedLength();
 
             modelBuilder.Entity<User>()
                 .Property(e => e.username)
@@ -71,7 +88,7 @@ namespace Touristation.BLL
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .HasMany(e => e.Competitions)
+                .HasMany(e => e.Competitons)
                 .WithRequired(e => e.User)
                 .WillCascadeOnDelete(false);
 
