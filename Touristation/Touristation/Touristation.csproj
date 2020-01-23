@@ -113,6 +113,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\StyleSheet.css" />
+    <Content Include="CreateItenary.aspx" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="HTMLPages\CreateCompetition.aspx" />
     <Content Include="HTMLPages\EditCompetition.aspx" />
@@ -134,15 +135,26 @@
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="UpdateItenary.aspx" />
+    <Content Include="ViewItenary.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Itenary.cs" />
     <Compile Include="BLL\Competiton.cs" />
     <Compile Include="BLL\Entry.cs" />
     <Compile Include="BLL\TouristationEntityModel.cs" />
     <Compile Include="BLL\User.cs" />
+    <Compile Include="CreateItenary.aspx.cs">
+      <DependentUpon>CreateItenary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateItenary.aspx.designer.cs">
+      <DependentUpon>CreateItenary.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\CompetitionDAO.cs" />
     <Compile Include="DAL\EntryDAO.cs" />
+    <Compile Include="DAL\ItenaryDAO.cs" />
     <Compile Include="HTMLPages\EditCompetition.aspx.cs">
       <DependentUpon>EditCompetition.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,6 +257,20 @@
     </Compile>
     <Compile Include="HTMLPages\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateItenary.aspx.cs">
+      <DependentUpon>UpdateItenary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateItenary.aspx.designer.cs">
+      <DependentUpon>UpdateItenary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewItenary.aspx.cs">
+      <DependentUpon>ViewItenary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewItenary.aspx.designer.cs">
+      <DependentUpon>ViewItenary.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
