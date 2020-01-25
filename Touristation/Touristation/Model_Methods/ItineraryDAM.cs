@@ -12,7 +12,7 @@ namespace Touristation.Model_Methods
 
         public List<Itinerary> GetAllItems()
         {
-            ItneraryDAO dal = new ItineraryDAO();
+            ItineraryDAO dal = new ItineraryDAO();
             return dal.SelectAll();
         }
         public Itinerary GetEmployeeById(string time)

@@ -8,6 +8,7 @@ using System.Data.SqlTypes;
 using System.Linq;
 using System.Web;
 using Touristation.BLL;
+using Touristation.Model_Methods;
 
 namespace Touristation.DAL
 {
@@ -45,6 +46,12 @@ namespace Touristation.DAL
 
             return itnList;
         }
+
+        internal int Insert(Model_Methods.Itinerary itn)
+        {
+            throw new NotImplementedException();
+        }
+
         public int Insert(Itinerary itn)
         {
 
