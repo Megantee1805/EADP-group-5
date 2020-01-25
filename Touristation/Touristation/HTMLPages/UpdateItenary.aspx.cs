@@ -1,4 +1,4 @@
-﻿using Itenary.BLL;
+﻿using Itinerary.BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +6,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Itenary
+namespace Itinerary
 {
-    public partial class UpdateItenary : System.Web.UI.Page
+    public partial class UpdateItinerary : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +27,7 @@ namespace Itenary
 
         protected void BtnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ViewItenary.aspx");
+            Response.Redirect("ViewItinerary.aspx");
         }
 
         protected void BtnUpdate_Click(object sender, EventArgs e)
@@ -37,8 +37,8 @@ namespace Itenary
                 DateTime doe = Convert.ToDateTime(TbDate.Text);
 
 
-                ItenaryX itn = new ItenaryX(NOPTB.Text, TbTime.Text, doe, TBLocation.Text);
-                int result = itn.UpdateItenary();
+                Itinerary itn = new Itinerary(NOPTB.Text, TbTime.Text, doe, TBLocation.Text);
+                int result = itn.UpdateItinerary();
                 if (result == 1)
                 {
                     LblMsg.Text = "Record updated successfully!";

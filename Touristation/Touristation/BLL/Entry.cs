@@ -27,8 +27,6 @@ namespace Touristation.BLL
 
         public int UserId { get; set; }
 
-        public virtual Competiton Competiton { get; set; }
-
         public virtual User User { get; set; }
     }
 }

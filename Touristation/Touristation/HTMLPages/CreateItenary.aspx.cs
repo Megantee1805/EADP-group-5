@@ -1,4 +1,4 @@
-﻿using Itenary.BLL;
+﻿using Itinerary.BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +7,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 
-namespace Itenary
+namespace Itinerary
 {
-    public partial class AddItenary : System.Web.UI.Page
+    public partial class AddItinerary : System.Web.UI.Page
     {
 
         private bool ValidateInput()
@@ -48,7 +48,7 @@ namespace Itenary
 
         protected void BtnAdd_Click(object sender, EventArgs e)
         {
-            ItenaryX itn = new ItenaryX();
+            Itinerary itn = new Itinerary();
             if (itn.GetEmployeeById(TimeTB.Text) != null)
             {
                 LblMsg.Text = "Record already exists!";
@@ -59,8 +59,8 @@ namespace Itenary
             {
                 DateTime doe = Convert.ToDateTime(DateTB.Text);
 
-                itn = new ItenaryX(NOPTB.Text, TimeTB.Text, doe, LocationTB.Text);
-                int result = itn.AddItenary();
+                itn = new Itinerary(NOPTB.Text, TimeTB.Text, doe, LocationTB.Text);
+                int result = itn.AddItinerary();
                 if (result == 1)
                 {
                     LblMsg.Text = "your event has been added successfully!";
@@ -77,7 +77,7 @@ namespace Itenary
         protected void BtnRfrsh_Click(object sender, EventArgs e)
         {
 
-            Response.Redirect("ViewItenary.aspx");
+            Response.Redirect("ViewItinerary.aspx");
 
         }
     }

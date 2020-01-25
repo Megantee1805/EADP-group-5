@@ -1,5 +1,5 @@
-﻿using Itenary.BLL;
-using Itenary.DAL;
+﻿using Touristation.BLL;
+using Touristation.DAL; 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +10,9 @@ namespace Touristation.Model_Methods
     public partial class Itnerary
     {
 
-        public List<ItenaryX> GetAllItems()
+        public List<Itnerary> GetAllItems()
         {
-            ItenaryDAO dal = new ItenaryDAO();
+            ItneraryDAO dal = new ItenaryDAO();
             return dal.SelectAll();
         }
         public ItenaryX GetEmployeeById(string time)

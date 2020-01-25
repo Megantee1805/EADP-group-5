@@ -6,15 +6,9 @@ namespace Touristation.BLL
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Competiton")]
-    public partial class Competiton
+    [Table("Competition")]
+    public partial class Competition
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Competiton()
-        {
-            Entries = new HashSet<Entry>();
-        }
-
         public int Id { get; set; }
 
         [Required]
@@ -38,8 +32,5 @@ namespace Touristation.BLL
         public int UserId { get; set; }
 
         public virtual User User { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Entry> Entries { get; set; }
     }
 }

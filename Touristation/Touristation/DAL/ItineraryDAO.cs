@@ -1,19 +1,19 @@
-﻿using Itenary.BLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Web;
 using Touristation.BLL;
 
-namespace Itenary.DAL
+namespace Touristation.DAL
 {
     public class ItenaryDAO
     {
-        public List<ItenaryX> SelectAll()
+        public List<Itenary> SelectAll()
         {
 
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
@@ -124,7 +124,7 @@ namespace Itenary.DAL
         public int Update(ItenaryX itn)
         {
             int result = 0;
-            using (TouristationEntityModel sqlC = new TouristationEntityModel())
+            using (TouristationEntityModel sqlCmd = new TouristationEntityModel())
             {
             }
 
@@ -136,7 +136,7 @@ namespace Itenary.DAL
             string sqlStmt = "UPDATE Itenary SET name = @paradate = Date, @paratime = Time, @paraplace = NamePlace, @paralocation = Location " +
                 " where id = @paraid ";
 
-            sqlCmd = new SqlCommand(sqlStmt, myConn);
+            SqCml = new SqlCommand(sqlStmt, myConn);
 
             // Step 3 : Add each parameterised variable with value
             sqlCmd.Parameters.AddWithValue("@paradate", itn.EventDate);

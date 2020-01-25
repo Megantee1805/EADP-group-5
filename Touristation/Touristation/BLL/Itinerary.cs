@@ -6,8 +6,8 @@ namespace Touristation.BLL
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Itenary")]
-    public partial class Itenary
+    [Table("Itinerary")]
+    public partial class Itinerary
     {
         public int Id { get; set; }
 

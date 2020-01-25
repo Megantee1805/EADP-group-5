@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateItenary.aspx.cs" Inherits="Itenary.UpdateItenary" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateItinerary.aspx.cs" Inherits="Itinerary.UpdateItinerary" %>
 
 <!DOCTYPE html>
 

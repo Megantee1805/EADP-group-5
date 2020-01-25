@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Itenary {
+namespace Itinerary {
     
     
-    public partial class UpdateItenary {
+    public partial class UpdateItinerary {
         
         /// <summary>
         /// form1 control.

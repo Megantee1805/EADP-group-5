@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewItenary.aspx.cs" Inherits="Itenary.ViewItenary" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewItinerary.aspx.cs" Inherits="Itinerary.ViewItinerary" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div>
         </div>
-          <asp:GridView ID="GVItenary" runat="server" AutoGenerateColumns="False" Width="878px">
+          <asp:GridView ID="GVItinerary" runat="server" AutoGenerateColumns="False" Width="878px">
             <Columns>
                 <asp:BoundField DataField="Date" HeaderText="Date" ReadOnly="True" />
                 <asp:BoundField DataField="Time" HeaderText="Time" ReadOnly="True" />
