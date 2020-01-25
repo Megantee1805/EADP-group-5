@@ -45,7 +45,7 @@ namespace Touristation.HTMLPages
                 LblMsg.Text += "Successfully Created";
                 LblMsg.ForeColor = Color.Green;
                 Competition com = new Competition();
-                com.name = tbTitle.Text;
+                com. = tbTitle.Text;
                 com.description = tbComDesc.Text;
                 com.startDate = DateTime.Parse(tbStart.Text);
                 com.endDate = DateTime.Parse(tbEnd.Text);

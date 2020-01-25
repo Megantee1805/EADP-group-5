@@ -1,16 +1,16 @@
-﻿using Itinerary.BLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Touristation.BLL;
 
 namespace Itinerary
 {
     public partial class ViewItinerary : System.Web.UI.Page
     {
-        List<Itinerary> eList;
+        List<Itin> eList;
 
         protected void Page_Load(object sender, EventArgs e)
         {

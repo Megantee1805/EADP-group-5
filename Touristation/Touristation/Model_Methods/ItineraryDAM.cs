@@ -7,29 +7,29 @@ using System.Web;
 
 namespace Touristation.Model_Methods
 {
-    public partial class Itnerary
+    public partial class Itinerary
     {
 
-        public List<Itnerary> GetAllItems()
+        public List<Itinerary> GetAllItems()
         {
-            ItneraryDAO dal = new ItenaryDAO();
+            ItneraryDAO dal = new ItineraryDAO();
             return dal.SelectAll();
         }
-        public ItenaryX GetEmployeeById(string time)
+        public Itinerary GetEmployeeById(string time)
         {
-            ItenaryDAO dal = new ItenaryDAO();
+            ItineraryDAO dal = new ItineraryDAO();
             return dal.SelectById(time);
         }
 
-        public int AddItenary(ItenaryX itn)
+        public int AddItinerary(Itinerary itn)
         {
-            ItenaryDAO dal = new ItenaryDAO();
+            ItineraryDAO dal = new ItineraryDAO();
             int result = dal.Insert(itn);
             return result;
         } 
-        public int UpdateItenary(ItenaryX itn)
+        public int UpdateItinerary(Itinerary itn)
         {
-            ItenaryDAO dal = new ItenaryDAO();
+            ItineraryDAO dal = new ItineraryDAO();
             int result = dal.Update(itn);
             return result;
 

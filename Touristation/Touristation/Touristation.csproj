@@ -142,9 +142,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\Competiton.cs" />
+    <Compile Include="BLL\Competition.cs" />
     <Compile Include="BLL\Entry.cs" />
-    <Compile Include="BLL\Itenary.cs" />
+    <Compile Include="BLL\Itinerary.cs" />
     <Compile Include="BLL\TouristationEntityModel.cs" />
     <Compile Include="BLL\User.cs" />
     <Compile Include="HTMLPages\CreateItenary.aspx.cs">
@@ -156,7 +156,7 @@
     </Compile>
     <Compile Include="DAL\CompetitionDAO.cs" />
     <Compile Include="DAL\EntryDAO.cs" />
-    <Compile Include="DAL\ItenaryDAO.cs" />
+    <Compile Include="DAL\ItineraryDAO.cs" />
     <Compile Include="HTMLPages\EditCompetition.aspx.cs">
       <DependentUpon>EditCompetition.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -208,7 +208,7 @@
     </Compile>
     <Compile Include="Model_Methods\CompetitionDAM.cs" />
     <Compile Include="Model_Methods\EntryDAM.cs" />
-    <Compile Include="Model_Methods\ItneraryDAM.cs" />
+    <Compile Include="Model_Methods\ItineraryDAM.cs" />
     <Compile Include="Model_Methods\UserDAM.cs" />
     <Compile Include="DAL\UserDAO.cs" />
     <Compile Include="HTMLPages\CreateCompetition.aspx.cs">

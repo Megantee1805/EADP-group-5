@@ -11,16 +11,16 @@ using Touristation.BLL;
 
 namespace Touristation.DAL
 {
-    public class ItenaryDAO
+    public class ItineraryDAO
     {
-        public List<Itenary> SelectAll()
+        public List<It> SelectAll()
         {
 
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
 
 
-            string sqlStmt = "Select * from Itenary";
+            string sqlStmt = "Select * from Itinerary";
             SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
 
 
@@ -30,7 +30,7 @@ namespace Touristation.DAL
             da.Fill(ds);
 
 
-            List<ItenaryX> itnList = new List<ItenaryX>();
+            List<Itinerary> itnList = new List<Itinerary>();
             int rec_cnt = ds.Tables[0].Rows.Count;
             for (int i = 0; i < rec_cnt; i++)
             {
@@ -39,13 +39,13 @@ namespace Touristation.DAL
                 string time = row["Time"].ToString();
                 string name = row["NamePlace"].ToString();
                 string location = row["Location"].ToString();
-                ItenaryX obj = new ItenaryX(doe, time, name, location);
+                Itinerary obj = new Itinerary(doe, time, name, location);
                 itnList.Add(obj);
             }
 
             return itnList;
         }
-        public int Insert(ItenaryX itn)
+        public int Insert(Itinerary itn)
         {
 
             int result = 0;
@@ -56,7 +56,7 @@ namespace Touristation.DAL
             SqlConnection myConn = new SqlConnection(DBConnect);
 
 
-            string sqlStmt = "INSERT INTO Itenary ( Date, Time, NamePlace, Location) " +
+            string sqlStmt = "INSERT INTO Itinerary ( Date, Time, NamePlace, Location) " +
                 "VALUES (@paradate, @paratime, @paraplace, @paralocation)";
             sqlCmd = new SqlCommand(sqlStmt, myConn);
 
@@ -83,14 +83,14 @@ namespace Touristation.DAL
 
             return result;
         }
-        public ItenaryX SelectById(string id)
+        public Itinerary SelectById(string id)
         {
 
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
 
 
-            string sqlStmt = "Select * from Itenary where id = @paraid";
+            string sqlStmt = "Select * from Itinerary where id = @paraid";
             SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
 
             da.SelectCommand.Parameters.AddWithValue("@paraid", id);
@@ -102,7 +102,7 @@ namespace Touristation.DAL
             da.Fill(ds);
 
 
-            ItenaryX itn = null;
+            Itinerary itn = null;
             int rec_cnt = ds.Tables[0].Rows.Count;
             if (rec_cnt == 1)
             {
@@ -112,7 +112,7 @@ namespace Touristation.DAL
                 string name = row["NamePlace"].ToString();
                 string location = row["Location"].ToString();
 
-                itn = new ItenaryX(doe, time, name, location);
+                itn = new Itinerary(doe, time, name, location);
             }
             else
             {
@@ -121,7 +121,7 @@ namespace Touristation.DAL
 
             return itn;
         }
-        public int Update(ItenaryX itn)
+        public int Update(Itinerary itn)
         {
             int result = 0;
             using (TouristationEntityModel sqlCmd = new TouristationEntityModel())
@@ -133,7 +133,7 @@ namespace Touristation.DAL
 
             // Step 2 - Instantiate SqlCommand instance to add record 
             //          with INSERT statement
-            string sqlStmt = "UPDATE Itenary SET name = @paradate = Date, @paratime = Time, @paraplace = NamePlace, @paralocation = Location " +
+            string sqlStmt = "UPDATE Itinerary SET name = @paradate = Date, @paratime = Time, @paraplace = NamePlace, @paralocation = Location " +
                 " where id = @paraid ";
 
             SqCml = new SqlCommand(sqlStmt, myConn);
