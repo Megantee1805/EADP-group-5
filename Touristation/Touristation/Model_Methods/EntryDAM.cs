@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Touristation.DAL; 
+using Touristation.DAL;
 
 namespace Touristation.BLL
 {
@@ -13,13 +13,13 @@ namespace Touristation.BLL
         public void AddEntry(Entry ent)
         {
             EntryDAO insert = new EntryDAO();
-            insert.Insert(ent); 
+            insert.Insert(ent);
         }
 
         public List<Entry> GetAll()
         {
             EntryDAO all = new EntryDAO();
-            return all.SelectAll(); 
+            return all.SelectAll();
         }
 
         public Entry GetEntryById(int Id)
@@ -43,14 +43,34 @@ namespace Touristation.BLL
         public List<Entry> GetEntriesByUser(int userId)
         {
             EntryDAO all = new EntryDAO();
-            return all.SelectByUser(userId); 
+            return all.SelectByUser(userId);
         }
 
         public void CountVotes(Entry ent)
         {
             EntryDAO entry = new EntryDAO();
-            entry.Update(ent); 
+            entry.Update(ent);
         }
+
+        public void tallyVotes(int Id)
+        {
+            List<Entry> total;
+            EntryDAO entry = new EntryDAO();
+            total = entry.SelectByCompetition(Id);
+            total = total.OrderByDescending(e => e.votes).ToList(); 
+            int ranking = 1;
+            
+            foreach (Entry e in total)
+            {
+                e.rank = ranking;
+                ranking += 1;
+                entry.Update(e); 
+            }
+
+            
+            
+        }
+    
 
         public void Update(Entry ent)
         {
