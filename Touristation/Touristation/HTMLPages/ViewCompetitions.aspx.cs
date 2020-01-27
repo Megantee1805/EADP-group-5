@@ -87,7 +87,7 @@ namespace Touristation.HTMLPages
                 GridViewRow gvr = gvEndedCompetitions.Rows[Index];
                 int ComId = int.Parse(gvr.Cells[0].Text);
                 string Name = gvr.Cells[1].Text;
-                Response.Redirect("ViewEntries.aspx?Competition=" + ComId);
+                Response.Redirect("EndedEntry.aspx?Competition=" + ComId);
             }
         }
 
