@@ -27,7 +27,7 @@
 			        <li class="nav-tabs col-xs-1"><a href="">Events</a></li>
 			        <li class="col-xs-1"><a href="">Deals </a></li>
 			        <li class="active col-xs-1"><a href="ViewCompetitions.aspx">Competitions</a></li>
-                    <li class="active col-xs-1"><a href="">Itinerary</a></li>
+                    <li class="active col-xs-1"><a href="CreateItenary.aspx">Itinerary</a></li>
                     <li class="active col-xs-1"><a href="Profile.aspx"> <asp:Label runat="server" ID="Message">Welcome </asp:Label>
                         <li class="col-xs-1"><a href="Logout.aspx">Logout</a></li>
                         </a> 

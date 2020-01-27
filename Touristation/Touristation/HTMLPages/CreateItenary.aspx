@@ -1,6 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Touristation.Master" CodeBehind="CreateItinerary.aspx.cs" Inherits="Itinerary.AddItinerary" %>
-
-<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Touristation.Master" CodeBehind="CreateItenary.aspx.cs" Inherits="Touristation.HTMLPages.CreateItenary" %>
 
 
 <asp:Content ID="Content1"

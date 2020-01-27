@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 
 
-namespace Touristation.BLL; 
+namespace Touristation.BLL
 {
     public partial class Itinerary
     {
@@ -16,25 +16,29 @@ namespace Touristation.BLL;
             ItineraryDAO dal = new ItineraryDAO();
             return dal.SelectAll();
         }
-        public Itinerary GetEmployeeById(string time)
+        public Itinerary GetEmployeeById(int time)
         {
             ItineraryDAO dal = new ItineraryDAO();
             return dal.SelectById(time);
         }
 
-        public int AddItinerary(Itinerary itn)
+        public void AddItinerary(Itinerary itn)
         {
             ItineraryDAO dal = new ItineraryDAO();
-            int result = dal.Insert(itn);
-            return result;
+            dal.Insert(itn);
         } 
-        public int UpdateItinerary(Itinerary itn)
+        public void UpdateItinerary(Itinerary itn)
         {
             ItineraryDAO dal = new ItineraryDAO();
-            int result = dal.Update(itn);
-            return result;
-
+            dal.Update(itn);
         }
+
+        public void RemoveItinerary(int id)
+        {
+            ItineraryDAO dal = new ItineraryDAO();
+            dal.Delete(id);
+        }
+
     }
 }
 

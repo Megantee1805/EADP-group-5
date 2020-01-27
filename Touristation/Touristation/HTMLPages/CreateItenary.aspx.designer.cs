@@ -10,7 +10,7 @@
 namespace Touristation.HTMLPages {
     
     
-    public partial class AddItinerary {
+    public partial class CreateItenary {
         
         /// <summary>
         /// form1 control.

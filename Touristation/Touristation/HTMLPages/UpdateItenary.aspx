@@ -1,18 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateItenary.aspx.cs" Inherits="Touristation.UpdateItenary" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" 
+    MasterPageFile="~/Touristation.Master"
+    CodeBehind="UpdateItenary.aspx.cs" MasterPageFile="~/Touristation.Master" Inherits="Touristation.UpdateItenary" %>
 
+
+<asp:Content ID="Content1"
+    ContentPlaceHolderID="ContentPlaceHolder1"
+    Runat="Server">
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 98px;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -85,3 +82,4 @@
     </form>
 </body>
 </html>
+</asp:Content>

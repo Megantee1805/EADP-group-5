@@ -24,3 +24,11 @@ nav {
         nav a:hover, nav li:hover {
             background-color: white;
         }
+
+.auto-style1 {
+    width: 100%;
+}
+
+.auto-style2 {
+    width: 98px;
+}

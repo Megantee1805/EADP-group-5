@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Touristation.BLL; 
 
-/* 
 
 namespace Touristation.HTMLPages
 {
@@ -17,7 +17,7 @@ namespace Touristation.HTMLPages
             if (!IsPostBack)
             {
                 NOPTB.Text = (string)Session["SSName"];
-                TBTime.Text = (string)Session["SSTime"];
+                TbTime.Text = (string)Session["SSTime"];
                 TbDate.Text = (string)Session["SSDate"];
                 TBLocation.Text = (string)Session["SSLocation"];
 
@@ -38,9 +38,13 @@ namespace Touristation.HTMLPages
                 DateTime doe = Convert.ToDateTime(TbDate.Text);
 
 
-                Itinerary itn = new Itinerary(NOPTB.Text, TbTime.Text, doe, TBLocation.Text);
-                int result = itn.UpdateItinerary();
-                if (result == 1)
+                Itinerary itn = new Itinerary();
+                itn.NamePlace = NOPTB.Text;
+                itn.Time = TbTime.Text;
+                itn.Date = doe.ToShortDateString();
+                itn.Location = TBLocation.Text; 
+                itn.UpdateItinerary(itn);
+                /* if (result == 1)
                 {
                     LblMsg.Text = "Record updated successfully!";
 
@@ -50,6 +54,8 @@ namespace Touristation.HTMLPages
                     LblMsg.Text = "Error in adding record! Inform System Administrator!";
 
                 }
+
+    */ 
             }
         }
         private bool ValidateInput()
@@ -88,4 +94,3 @@ namespace Touristation.HTMLPages
         }
     }
 }
-*/

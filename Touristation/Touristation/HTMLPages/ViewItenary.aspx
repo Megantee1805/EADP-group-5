@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewItinerary.aspx.cs" Inherits="Itinerary.ViewItinerary" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewItinerary.aspx.cs" Inherits="Touristation.ViewItinerary" %>
 
 <!DOCTYPE html>
 
+<asp:Content ID="Content1"
+    ContentPlaceHolderID="ContentPlaceHolder1"
+    Runat="Server">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
 <body>
     <form id="form1" runat="server">
         <div>
@@ -22,3 +22,4 @@
     </form>
 </body>
 </html>
+</asp:Content>
