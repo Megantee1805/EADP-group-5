@@ -10,6 +10,13 @@ namespace Touristation.BLL
     {
         UserDAO userAdapter = new UserDAO();
 
+        public List<User> GetAll(int id)
+        {
+            UserDAO user = new UserDAO();
+            return user.SelectAll(id); 
+        }
+
+
         public User GetUserByUsername (string name)
         {
             UserDAO user = new UserDAO();

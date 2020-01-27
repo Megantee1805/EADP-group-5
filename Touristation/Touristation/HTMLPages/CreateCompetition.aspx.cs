@@ -13,6 +13,7 @@ namespace Touristation.HTMLPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            getPossibleJudges();
             if (HttpContext.Current.Session["Username"] == null)
             {
                 Response.Redirect("Login.aspx");
@@ -20,7 +21,7 @@ namespace Touristation.HTMLPages
 
             if (IsPostBack)
             {
-
+                 
             }
         }
 
@@ -45,13 +46,32 @@ namespace Touristation.HTMLPages
                 LblMsg.Text += "Successfully Created";
                 LblMsg.ForeColor = Color.Green;
                 Competition com = new Competition();
-                com. = tbTitle.Text;
+                com.name = tbTitle.Text;
                 com.description = tbComDesc.Text;
                 com.startDate = DateTime.Parse(tbStart.Text);
+                com.judges = ddJudges.SelectedValue; 
                 com.endDate = DateTime.Parse(tbEnd.Text);
                 com.UserId = int.Parse(Session["Id"].ToString());
                 com.addCompetition(com); 
             }
+        }
+        
+        private void getPossibleJudges()
+        {
+            List<User> possibleJudges;
+            User use = new User();
+            int userId = int.Parse(Session["Id"].ToString()); 
+            possibleJudges = use.GetAll(userId);
+            
+            foreach (User judge in possibleJudges)
+            {
+                ddJudges.DataSource = possibleJudges; 
+                ddJudges.DataTextField = "username";
+                ddJudges.DataValueField = "Id";
+                ddJudges.DataBind();  
+            }
+             
+            
         }
 
         private bool validate()

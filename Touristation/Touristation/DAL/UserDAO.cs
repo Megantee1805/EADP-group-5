@@ -25,6 +25,17 @@ namespace Touristation.DAL
             return user; 
         }
 
+        public List<User> SelectAll(int id)
+        {
+            List<User> all;
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                all = db.Users.Where(x => x.Id != id).Select(x => x).ToList();
+
+            }
+            return all;
+        }
+
         public User SelectById(int id)
         {
             User user;

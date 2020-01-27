@@ -13,7 +13,8 @@ namespace Touristation.HTMLPages
         List<Competition> cList; 
         protected void Page_Load(object sender, EventArgs e)
         {
-            RefreshGridView(); 
+            RefreshGridView();
+            showEndedCompetitions(); 
         }
 
         private void RefreshGridView()
@@ -27,6 +28,19 @@ namespace Touristation.HTMLPages
             gvViewCompetitions.Visible = true;
             gvViewCompetitions.DataSource = cList;
             gvViewCompetitions.DataBind();
+        }
+
+        private void showEndedCompetitions()
+        {
+            Competition current = new Competition();
+            cList = current.SelectEndedCompetitions();
+            foreach (Competition c in cList)
+            {
+                current.countEntries(c);
+            }
+            gvEndedCompetitions.Visible = true;
+            gvEndedCompetitions.DataSource = cList;
+            gvEndedCompetitions.DataBind(); 
         }
 
         protected void gvViewCompetitions_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -60,6 +74,15 @@ namespace Touristation.HTMLPages
                 Competition com = new Competition();
                 com.Delete(ComId);
                 Response.Redirect("PickWinners.aspx"); 
+
+            }
+        }
+
+        protected void gvEndedCompetitions_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            string commandName = e.CommandName;
+            if (commandName == "Finish")
+            {
 
             }
         }

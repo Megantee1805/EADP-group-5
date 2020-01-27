@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Itinerary {
+namespace Touristation {
     
     
-    public partial class UpdateItinerary {
+    public partial class UpdateItenary {
         
         /// <summary>
         /// form1 control.

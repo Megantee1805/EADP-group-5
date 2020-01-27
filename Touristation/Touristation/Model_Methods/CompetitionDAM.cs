@@ -38,6 +38,12 @@ namespace Touristation.BLL
             return com.SelectByDate(); 
         }
 
+        public List<Competition> SelectEndedCompetitions()
+        {
+            CompetitionDAO com = new CompetitionDAO();
+            return com.SelectFinishedCom();
+        }
+
         public Competition GetCompetitionByName(string name)
         {
             CompetitionDAO com = new CompetitionDAO();

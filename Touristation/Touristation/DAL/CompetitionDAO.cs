@@ -22,6 +22,19 @@ namespace Touristation.DAL
             return available;
         }
 
+        public List<Competition> SelectFinishedCom()
+        {
+            List<Competition> available;
+            DateTime today = DateTime.Now;
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                available = db.Competitions.Where(c => c.endDate <= today).Select(x => x).ToList();
+
+            }
+
+            return available;
+        }
+
         public Competition SelectById(int id)
         {
             Competition current;

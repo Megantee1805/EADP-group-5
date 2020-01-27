@@ -9,20 +9,24 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="container">
-
+        <div class="container">
+            <div class="container">
             Title 
             <asp:TextBox ID="tbTitle" CssClass="form-control" runat="server"></asp:TextBox>;
         
             Description
             <asp:TextBox ID="tbComDesc" CssClass="form-control" runat="server"></asp:TextBox>
-            
-       
+            Choose A Judge 
+            <asp:DropDownList ID="ddJudges" CssClass="dropdown form-control" runat="server"></asp:DropDownList>
+            <br /> 
+           
             Start Date
             
                 <asp:UpdatePanel ID="UpdateCalender" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
            <div class="col-xs-12">
             <asp:TextBox ID="tbStart" CssClass="form-control col-xs-6" runat="server" AutoPostBack="True"></asp:TextBox>
+              
             <ajaxToolkit:PopupControlExtender ID="tbStart_PopupControlExtender" runat="server" BehaviorID="tbStart_PopupControlExtender" DynamicServicePath="" ExtenderControlID="" TargetControlID="tbStart" PopupControlID="ComStart" Position="Bottom">
             </ajaxToolkit:PopupControlExtender>
             
@@ -56,13 +60,15 @@
             </ContentTemplate>
             </asp:UpdatePanel>
            
-               
             <div class="col-xs-8"> 
-            <asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn btn-primary col-xs-6" OnClick="btnComCreate_Click" /></td>
-       </div>
+            <asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn btn-primary col-xs-6" OnClick="btnComCreate_Click" />
 
+            </div> 
+       </div>
+        </div>
+            </div> 
     <asp:Label runat="server" ID="LblMsg"></asp:Label>
-    </div>
+   
     </form>
 
     </body>
