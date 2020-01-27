@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Itinerary
+/* 
+
+namespace Touristation.HTMLPages
 {
-    public partial class UpdateItinerary : System.Web.UI.Page
+    public partial class UpdateItenary : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -15,7 +17,7 @@ namespace Itinerary
             if (!IsPostBack)
             {
                 NOPTB.Text = (string)Session["SSName"];
-                TbTime.Text = (string)Session["SSTime"];
+                TBTime.Text = (string)Session["SSTime"];
                 TbDate.Text = (string)Session["SSDate"];
                 TBLocation.Text = (string)Session["SSLocation"];
 
@@ -86,3 +88,4 @@ namespace Itinerary
         }
     }
 }
+*/

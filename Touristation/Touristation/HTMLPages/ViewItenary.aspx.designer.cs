@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Itinerary {
+namespace Touristation.HTMLPages {
     
     
     public partial class ViewItinerary {

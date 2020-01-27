@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Touristation.Model_Methods
+
+namespace Touristation.BLL; 
 {
     public partial class Itinerary
     {
@@ -36,3 +37,4 @@ namespace Touristation.Model_Methods
         }
     }
 }
+

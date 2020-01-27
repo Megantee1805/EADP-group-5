@@ -6,11 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 
-namespace Itinerary
+namespace Touristation.HTMLPages
 {
     public partial class AddItinerary : System.Web.UI.Page
     {
 
+        
         private bool ValidateInput()
         {
             bool result;
@@ -79,7 +80,9 @@ namespace Itinerary
             Response.Redirect("ViewItinerary.aspx");
 
         }
+
     }
 
 }
 
+    

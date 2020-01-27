@@ -8,13 +8,12 @@ using System.Data.SqlTypes;
 using System.Linq;
 using System.Web;
 using Touristation.BLL;
-using Touristation.Model_Methods;
 
 namespace Touristation.DAL
 {
     public class ItineraryDAO
     {
-        public List<It> SelectAll()
+        public List<Itinerary> SelectAll()
         {
 
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
@@ -159,6 +158,10 @@ namespace Touristation.DAL
             myConn.Close();
 
             return result;
+
+    
         }
     }
 }
+
+     

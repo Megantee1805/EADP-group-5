@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Touristation {
+namespace Touristation.HTMLPages {
     
     
     public partial class UpdateItenary {

@@ -6,11 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Touristation.BLL;
 
-namespace Itinerary
+
+namespace Touristation.HTMLPages
 {
     public partial class ViewItinerary : System.Web.UI.Page
     {
-        List<Itin> eList;
+        List<Itinerary> eList;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -41,3 +42,5 @@ namespace Itinerary
     }
 
 }
+
+    
