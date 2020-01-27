@@ -8,7 +8,10 @@
         <body>
     <form id="form1" runat="server">
         <div class="container">
-            <asp:LinkButton ID="btnViewEntries" runat="server" Text="View Own Entries" OnClick="btnViewEntries_Click"></asp:LinkButton>
+            <div class="container">
+                <div class="container">
+            <asp:LinkButton ID="btnViewEntries" CssClass="h3" runat="server" Text="View Own Entries" OnClick="btnViewEntries_Click"></asp:LinkButton>
+            <h3> Existing Competitions </h3>
             <asp:GridView
              ID="gvViewCompetitions" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False" OnRowCommand="gvViewCompetitions_RowCommand">
                 <Columns>
@@ -23,8 +26,22 @@
                   
                 </Columns>
             </asp:GridView>
+            <h3> Ended Competitions</h3>
+            <asp:GridView
+             ID="gvEndedCompetitions" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False" OnRowCommand="gvEndedCompetitions_RowCommand">
+                <Columns>
+                    <asp:BoundField DataField="Id" />
+                    <asp:BoundField DataField="name" HeaderText="Title" />
+                    <asp:BoundField DataField="description" HeaderText="Description" />
+                    <asp:BoundField DataField="endDate" HeaderText="Competition End" />
+                    <asp:BoundField DataField="entriesNo" HeaderText="No of Entries" />
+                    <asp:ButtonField CommandName="View" Text="View Entries" />
+                  
+                </Columns>
+            </asp:GridView>
 
-          
+          </div>
+            </div>
         </div>
     </form>
         </body>

@@ -17,8 +17,21 @@ namespace Touristation.HTMLPages
         protected void Page_Load(object sender, EventArgs e)
         {
             RefreshGridView();
+            showEndedCompetitions(); 
 
+        }
 
+        private void showEndedCompetitions()
+        {
+            Competition current = new Competition();
+            cList = current.SelectEndedCompetitions();
+            foreach (Competition c in cList)
+            {
+                current.countEntries(c);
+            }
+            gvEndedCompetitions.Visible = true;
+            gvEndedCompetitions.DataSource = cList;
+            gvEndedCompetitions.DataBind();
         }
 
         private void RefreshGridView()
@@ -62,6 +75,20 @@ namespace Touristation.HTMLPages
         protected void btnViewEntries_Click(object sender, EventArgs e) {
             int userId = int.Parse(Session["Id"].ToString()); 
             Response.Redirect("ViewOwnEntries.aspx?User=" + userId);
+        }
+
+        protected void gvEndedCompetitions_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            string commandName = e.CommandName; 
+            if (commandName == "View")
+            {
+
+                int Index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow gvr = gvEndedCompetitions.Rows[Index];
+                int ComId = int.Parse(gvr.Cells[0].Text);
+                string Name = gvr.Cells[1].Text;
+                Response.Redirect("ViewEntries.aspx?Competition=" + ComId);
+            }
         }
 
 

@@ -36,7 +36,7 @@
 <ControlStyle CssClass="img-thumbnail"></ControlStyle>
                      </asp:ImageField>
                      <asp:BoundField DataField="votes" />
-                     <asp:ButtonField CommandName="View" Text="Pick Winner" />
+                     <asp:ButtonField CommandName="Pick" Text="Pick Winner" />
                  </Columns>
                 </asp:GridView>
             </asp:Panel>

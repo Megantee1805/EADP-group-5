@@ -117,6 +117,7 @@
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="HTMLPages\CreateCompetition.aspx" />
     <Content Include="HTMLPages\EditCompetition.aspx" />
+    <Content Include="HTMLPages\EndedEntry.aspx" />
     <Content Include="HTMLPages\Homepage.aspx" />
     <Content Include="HTMLPages\Login.aspx" />
     <Content Include="HTMLPages\Logout.aspx" />
@@ -163,6 +164,13 @@
     </Compile>
     <Compile Include="HTMLPages\EditCompetition.aspx.designer.cs">
       <DependentUpon>EditCompetition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HTMLPages\EndedEntry.aspx.cs">
+      <DependentUpon>EndedEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTMLPages\EndedEntry.aspx.designer.cs">
+      <DependentUpon>EndedEntry.aspx</DependentUpon>
     </Compile>
     <Compile Include="HTMLPages\Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>

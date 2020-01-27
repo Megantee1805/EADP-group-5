@@ -83,7 +83,10 @@ namespace Touristation.HTMLPages
             string commandName = e.CommandName;
             if (commandName == "Finish")
             {
-
+                int Index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow gvr = gvEndedCompetitions.Rows[Index];
+                int ComId = int.Parse(gvr.Cells[0].Text);
+                Response.Redirect("ViewEntries.aspx?Competition=" + ComId); 
             }
         }
     }

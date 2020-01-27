@@ -14,6 +14,7 @@ namespace Touristation.HTMLPages
         int count;
         int Id;
         int ComId;
+        int entryId; 
         protected void Page_Load(object sender, EventArgs e)
         {
             Competition com = new Competition();
@@ -66,13 +67,28 @@ namespace Touristation.HTMLPages
             string commandName = e.CommandName;
             if (commandName == "View")
             {
+                int Index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow gvr = gvViewEntries.Rows[Index];
+                int entId = int.Parse(gvr.Cells[0].Text);
                 count += 1;
                 Entry upEnt;
                 Entry voted = new Entry();
-                upEnt = voted.GetEntryById(Id);
+                upEnt = voted.GetEntryById(entId);
                 upEnt.votes = count;
                 voted.CountVotes(upEnt);
                 Response.Redirect("ViewEntries.aspx?Competition=" + ComId);
+            }
+
+            else if (commandName == "Pick")
+            {
+                int Index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow gvr = gvAdminEntries.Rows[Index];
+                int entId = int.Parse(gvr.Cells[0].Text);
+                Entry winner;
+                Entry ent = new Entry();
+                winner = ent.GetEntryById(entId);
+                winner.rank = 1;
+                ent.Update(winner); 
             }
         }
     }
