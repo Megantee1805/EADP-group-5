@@ -91,6 +91,11 @@ namespace Touristation.HTMLPages
             }
         }
 
+        protected void btnJudgeEntries_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("JudgeEntry.aspx"); 
+        }
+
 
 
 

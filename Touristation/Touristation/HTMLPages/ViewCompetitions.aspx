@@ -10,6 +10,8 @@
         <div class="container">
             <div class="container">
                 <div class="container">
+                    <asp:LinkButton ID="btnJudgeEntries" CssClass="h3" runat="server" Text="Judge Entries" OnClick="btnJudgeEntries_Click"></asp:LinkButton>
+                    <br /> 
             <asp:LinkButton ID="btnViewEntries" CssClass="h3" runat="server" Text="View Own Entries" OnClick="btnViewEntries_Click"></asp:LinkButton>
             <h3> Existing Competitions </h3>
             <asp:GridView
