@@ -18,17 +18,17 @@ namespace Touristation.HTMLPages
 
         }
 
-        public List<Entry> GetEntries(int userId)
+        public List<Entry> GetEntries(int comId)
         { 
             Entry entry = new Entry();
             List<Entry> eList;
-            eList = entry.GetAll();
+            eList = entry.GetEntriesByCompetition(comId);
             return eList; 
         }
 
-        public void BindDataList(int userId)
+        public void BindDataList(int comId)
         {
-            dataScore.DataSource = GetEntries(userId);
+            dataScore.DataSource = GetEntries(comId);
             dataScore.DataBind(); 
         }
     }

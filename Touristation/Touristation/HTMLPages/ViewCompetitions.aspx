@@ -14,7 +14,7 @@
                     <br /> 
             <asp:LinkButton ID="btnViewEntries" CssClass="h3" runat="server" Text="View Own Entries" OnClick="btnViewEntries_Click"></asp:LinkButton>
 
-<h3> Competition WHere You're A Judge </h3>
+<h3> Competition Where You're A Judge </h3>
             <asp:GridView
              ID="gvJudge" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False" OnRowCommand="gvJudge_RowCommand">
                 <Columns>

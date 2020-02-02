@@ -107,8 +107,17 @@ namespace Touristation.HTMLPages
 
         protected void gvJudge_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            int userId = int.Parse(Session["Id"].ToString());
-            Response.Redirect("JudgeEntry.aspx?Judge=" + userId);
+
+            string commandName = e.CommandName;
+            if (commandName == "View")
+            {
+
+                int Index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow gvr = gvJudge.Rows[Index];
+                int ComId = int.Parse(gvr.Cells[0].Text);
+                Response.Redirect("JudgeEntry.aspx?Judge=" + ComId);
+            }
+            
         }
 
 

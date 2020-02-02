@@ -13,6 +13,7 @@
             <asp:DataList ID="dataScore" runat="server">
                 <ItemTemplate>
                     <asp:TextBox runat="server" CssClass="col-xs-3 form-control" ID="tbName" Text='<%#Bind("name") %>' />
+                    <asp:Image ID="entryImg" CssClass="img-thumbnail" ImageUrl='<%#Bind("fileLink") %>' runat="server" />                    
                     <asp:TextBox runat="server" CssClass="col-xs-3 form-control"  ID="tbScore" Enabled="false"></asp:TextBox>
                     <asp:Button runat="server" CommandName="Give Score" Text="Judge" />
                 </ItemTemplate>
