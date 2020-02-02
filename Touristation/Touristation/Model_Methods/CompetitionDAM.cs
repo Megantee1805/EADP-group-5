@@ -32,10 +32,16 @@ namespace Touristation.BLL
             com.Update(comie); 
         }
 
-        public List<Competition> SelectAvailableCompetitions()
+        public List<Competition> SelectAvailableCompetitions(string userId)
         {
             CompetitionDAO com = new CompetitionDAO();
-            return com.SelectByDate(); 
+            return com.SelectByDate(userId); 
+        }
+
+        public List<Competition> SelectJudgingCompetitions(string userId)
+        {
+            CompetitionDAO com = new CompetitionDAO();
+            return com.SelectByJudge(userId);
         }
 
         public List<Competition> SelectEndedCompetitions()

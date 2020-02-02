@@ -11,12 +11,16 @@ namespace Touristation.HTMLPages
 {
     public partial class ViewCompetitions : System.Web.UI.Page
     {
+        String Id;
+
         public Competition chosenCom;
         
         List<Competition> cList = new List<Competition>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            RefreshGridView();
+            Id = Session["Id"].ToString(); 
+            RefreshGridView(Id);
+            RefreshJudge(Id); 
             showEndedCompetitions(); 
 
         }
@@ -34,18 +38,27 @@ namespace Touristation.HTMLPages
             gvEndedCompetitions.DataBind();
         }
 
-        private void RefreshGridView()
+        private void RefreshGridView(string userId)
         {
-            Competition current = new Competition(); 
-            cList = current.SelectAvailableCompetitions();
+            Competition current = new Competition();
+            cList = current.SelectAvailableCompetitions(userId);
             foreach (Competition c in cList)
             {
                 current.countEntries(c);
             }
-            
+
             gvViewCompetitions.Visible = true;
             gvViewCompetitions.DataSource = cList;
             gvViewCompetitions.DataBind();
+        }
+
+        private void RefreshJudge(string userId)
+        {
+            Competition current = new Competition(); 
+            cList = current.SelectJudgingCompetitions(userId);            
+            gvJudge.Visible = true;
+            gvJudge.DataSource = cList;
+            gvJudge.DataBind();
         }
 
         protected void gvViewCompetitions_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -90,10 +103,12 @@ namespace Touristation.HTMLPages
                 Response.Redirect("EndedEntry.aspx?Competition=" + ComId);
             }
         }
+           
 
-        protected void btnJudgeEntries_Click(object sender, EventArgs e)
+        protected void gvJudge_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            Response.Redirect("JudgeEntry.aspx"); 
+            int userId = int.Parse(Session["Id"].ToString());
+            Response.Redirect("JudgeEntry.aspx?Judge=" + userId);
         }
 
 

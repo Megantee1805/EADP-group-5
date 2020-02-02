@@ -10,12 +10,15 @@ namespace Touristation.HTMLPages
 {
     public partial class JudgeEntry : System.Web.UI.Page
     {
+        int Id; 
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindDataList(); 
+            Id = int.Parse(Request.QueryString["Judge"]); 
+            BindDataList(Id); 
+
         }
 
-        public List<Entry> GetEntries()
+        public List<Entry> GetEntries(int userId)
         { 
             Entry entry = new Entry();
             List<Entry> eList;
@@ -23,9 +26,9 @@ namespace Touristation.HTMLPages
             return eList; 
         }
 
-        public void BindDataList()
+        public void BindDataList(int userId)
         {
-            dataScore.DataSource = GetEntries();
+            dataScore.DataSource = GetEntries(userId);
             dataScore.DataBind(); 
         }
     }

@@ -9,13 +9,25 @@ namespace Touristation.DAL
     public class CompetitionDAO
     {
 
-        public List<Competition> SelectByDate()
+        public List<Competition> SelectByDate(string userId)
         {
             List<Competition> available;
             DateTime today = DateTime.Now;
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                available = db.Competitions.Where(c => c.endDate >= today).Select(x => x).ToList();
+                available = db.Competitions.Where(c => c.endDate >= today && c.judges != userId).Select(x => x).ToList();
+
+            }
+
+            return available;
+        }
+
+        public List<Competition> SelectByJudge(string userId)
+        {
+            List<Competition> available;
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                available = db.Competitions.Where(c => c.judges == userId).Select(x => x).ToList();
 
             }
 

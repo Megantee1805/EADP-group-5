@@ -10,9 +10,23 @@
         <div class="container">
             <div class="container">
                 <div class="container">
-                    <asp:LinkButton ID="btnJudgeEntries" CssClass="h3" runat="server" Text="Judge Entries" OnClick="btnJudgeEntries_Click"></asp:LinkButton>
+       
                     <br /> 
             <asp:LinkButton ID="btnViewEntries" CssClass="h3" runat="server" Text="View Own Entries" OnClick="btnViewEntries_Click"></asp:LinkButton>
+
+<h3> Competition WHere You're A Judge </h3>
+            <asp:GridView
+             ID="gvJudge" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False" OnRowCommand="gvJudge_RowCommand">
+                <Columns>
+                    <asp:BoundField DataField="Id" />
+                    <asp:BoundField DataField="name" HeaderText="Title" />
+                    <asp:BoundField DataField="description" HeaderText="Description" />
+                    <asp:BoundField DataField="endDate" HeaderText="Competition End" />
+                    <asp:BoundField DataField="entriesNo" HeaderText="No of Entries" />
+                    <asp:ButtonField CommandName="View" Text="Judge" />
+                  
+                </Columns>
+            </asp:GridView>
             <h3> Existing Competitions </h3>
             <asp:GridView
              ID="gvViewCompetitions" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False" OnRowCommand="gvViewCompetitions_RowCommand">
