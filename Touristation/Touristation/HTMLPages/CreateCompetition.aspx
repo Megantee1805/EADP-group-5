@@ -17,19 +17,14 @@
             Description
             <asp:TextBox ID="tbComDesc" CssClass="form-control" runat="server"></asp:TextBox>
             Choose A Judge 
-            <asp:DropDownList ID="ddJudges" Visible="false" CssClass="dropdown form-control" runat="server"></asp:DropDownList>
-            Judging Method 
-                <asp:RadioButtonList AutoPostBack="true" ID="rgroupJudgingMethod" runat="server" CssClass="radio" OnSelectedIndexChanged="rgroupJudgingMethod_SelectedIndexChanged"> 
-                    <asp:ListItem Value="1"> Judging </asp:ListItem>
-                    <asp:ListItem Value="2"> Votes </asp:ListItem>
-                </asp:RadioButtonList>
+            <asp:DropDownList ID="ddJudges" CssClass="dropdown form-control" runat="server"></asp:DropDownList>
             <br /> 
            
             Start Date
             
                 <asp:UpdatePanel ID="UpdateCalender" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
-           <div class="col-xs-5">
+           <div class="col-xs-12">
             <asp:TextBox ID="tbStart" CssClass="form-control col-xs-6" runat="server" AutoPostBack="True"></asp:TextBox>
               
             <ajaxToolkit:PopupControlExtender ID="tbStart_PopupControlExtender" runat="server" BehaviorID="tbStart_PopupControlExtender" DynamicServicePath="" ExtenderControlID="" TargetControlID="tbStart" PopupControlID="ComStart" Position="Bottom">
@@ -45,9 +40,6 @@
                 <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
                 <WeekendDayStyle BackColor="#CCCCFF" />
             </asp:Calendar>
-            </div> 
-
-                    <div class="col-xs-5">
 
                 End Date 
              <asp:TextBox ID="tbEnd" class="col-xs-6 form-control " runat="server" AutoPostBack="True"></asp:TextBox>

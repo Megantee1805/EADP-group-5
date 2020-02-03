@@ -37,10 +37,6 @@ namespace Touristation.BLL
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Competition>()
-                .Property(e => e.JudgingCriteria)
-                .IsUnicode(false);
-
             modelBuilder.Entity<Entry>()
                 .Property(e => e.name)
                 .IsUnicode(false);

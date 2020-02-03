@@ -97,7 +97,6 @@ namespace Touristation.DAL
                     check.entriesNo = com.entriesNo;
                     check.endDate = com.endDate;
                     check.startDate = com.startDate;
-                    check.JudgingCriteria = com.JudgingCriteria; 
                     db.SaveChanges(); 
                 }
             }
