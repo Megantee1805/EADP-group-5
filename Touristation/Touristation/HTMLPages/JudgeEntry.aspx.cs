@@ -13,8 +13,12 @@ namespace Touristation.HTMLPages
         int Id; 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Id = int.Parse(Request.QueryString["Judge"]); 
+            Id = int.Parse(Request.QueryString["Judge"]);
+            if (!IsPostBack) {
+            
             BindDataList(Id); 
+            }
+            
 
         }
 
@@ -31,20 +35,25 @@ namespace Touristation.HTMLPages
             dataScore.DataSource = GetEntries(comId);
             dataScore.DataBind(); 
         }
+       
 
         protected void dataScore_ItemCommand(object source, DataListCommandEventArgs e)
         {
             string commandName = e.CommandName;
             if (commandName == "Judge")
             {
-                DataListItem item = dataScore.SelectedItem; 
-                LblEntry.Text = ((TextBox) item.FindControl("tbName")).Text; 
+                dataScore.SelectedIndex = e.Item.ItemIndex;
+                DataListItem item = e.Item;
+                Entry score; 
+                Entry entry = new Entry();
+                HiddenField identity = (HiddenField)item.FindControl("entryNo");
+                score = entry.GetEntryById(int.Parse(identity.Value));
+                TextBox marks = (TextBox)item.FindControl("tbScore");
+                score.score = int.Parse(marks.Text);
+                entry.Update(score);
+                // Response.Redirect("JudgeEntry.aspx?Judge=" + Id);
             }
         }
-
-        protected void btnSubmit_Click(object sender, EventArgs e)
-        {
-            int score = int.Parse(tbScore.Text); 
-        }
+        
     }
 }
