@@ -32,3 +32,14 @@ nav {
 .auto-style2 {
     width: 98px;
 }
+
+.auto-style3 {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    width: 701px;
+    left: 0px;
+    top: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+}

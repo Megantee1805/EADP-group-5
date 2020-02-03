@@ -31,5 +31,20 @@ namespace Touristation.HTMLPages
             dataScore.DataSource = GetEntries(comId);
             dataScore.DataBind(); 
         }
+
+        protected void dataScore_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            string commandName = e.CommandName;
+            if (commandName == "Judge")
+            {
+                DataListItem item = dataScore.SelectedItem; 
+                LblEntry.Text = ((TextBox) item.FindControl("tbName")).Text; 
+            }
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            int score = int.Parse(tbScore.Text); 
+        }
     }
 }
