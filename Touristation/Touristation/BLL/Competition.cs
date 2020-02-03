@@ -29,6 +29,12 @@ namespace Touristation.BLL
 
         public int entriesNo { get; set; }
 
+        public string JudgingCriteria { get; set; }
+
+        public bool isDeleted { get; set; }
+
+        public bool isCompleted { get; set; }
+
         public int UserId { get; set; }
 
         public virtual User User { get; set; }
