@@ -49,7 +49,16 @@ namespace Touristation.HTMLPages
                 com.name = tbTitle.Text;
                 com.description = tbComDesc.Text;
                 com.startDate = DateTime.Parse(tbStart.Text);
-                com.judges = ddJudges.SelectedValue; 
+                if (rgroupJudgingMethod.SelectedValue == "1")
+                {
+                    com.JudgingCriteria = "Judges";
+                    com.judges = ddJudges.SelectedValue;
+                }
+
+                else
+                {
+                    com.JudgingCriteria = "Votes";
+                }
                 com.endDate = DateTime.Parse(tbEnd.Text);
                 com.UserId = int.Parse(Session["Id"].ToString());
                 com.addCompetition(com); 
@@ -92,9 +101,17 @@ namespace Touristation.HTMLPages
 
             }
 
-            if (DateTime.Parse(tbStart.Text.ToString()) < DateTime.Now)
+            /* if (DateTime.Parse(tbStart.Text.ToString()) < DateTime.Now)
             {
                 LblMsg.Text += "start date cannot be in the past";
+                LblMsg.ForeColor = Color.Red;
+            }
+
+            */
+
+            if (rgroupJudgingMethod.SelectedIndex == -1)
+            {
+                LblMsg.Text += "judging method must be selected";
                 LblMsg.ForeColor = Color.Red;
             }
 
@@ -106,5 +123,19 @@ namespace Touristation.HTMLPages
 
             return result; 
         }
-    }
+
+        protected void rgroupJudgingMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int value = int.Parse(rgroupJudgingMethod.SelectedValue);
+            if (value == 1)
+            {
+                ddJudges.Visible = true;
+            }
+
+            else
+            {
+                ddJudges.Visible = false; 
+            }
+        }
+    } 
 }
