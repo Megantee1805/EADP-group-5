@@ -51,7 +51,7 @@ namespace Touristation.HTMLPages
                 TextBox marks = (TextBox)item.FindControl("tbScore");
                 score.score = int.Parse(marks.Text);
                 entry.Update(score);
-                // Response.Redirect("JudgeEntry.aspx?Judge=" + Id);
+                Response.Redirect("JudgeEntry.aspx?Judge=" + Id);
             }
         }
         
