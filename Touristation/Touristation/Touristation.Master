@@ -16,19 +16,22 @@
 <body>
         <div>
             <header>
-	        <p class="banner" >Touristation</p>
+	        
 	        <!-- Navigation menu-->
                 <asp:Panel ID="userPanel" visible="false" runat="server">
-	        <nav class="navbar navbar-light navbar-expand-sm bg-white">
+	        <nav class="nav navbar-nav">
 		        
-                    <div class="container">
+                    <div class="container-fluid">
+                        <div class="navbar-banner">
+                            Touristation
+                        </div>
                         <ul>
-                    <li class="active nav-tabs col-xs-1"><a href="">Home</a></li>
-			        <li class="nav-tabs col-xs-1"><a href="">Events</a></li>
+                    <li class="active"><a href="">Home</a></li>
+			        <li class="col-xs-1"><a href="">Events</a></li>
 			        <li class="col-xs-1"><a href="">Deals </a></li>
-			        <li class="active col-xs-1"><a href="ViewCompetitions.aspx">Competitions</a></li>
-                    <li class="active col-xs-1"><a href="CreateItenary.aspx">Itinerary</a></li>
-                    <li class="active col-xs-1"><a href="Profile.aspx"> <asp:Label runat="server" ID="Message">Welcome </asp:Label>
+			        <li class="col-xs-1"><a href="ViewCompetitions.aspx">Competitions</a></li>
+                    <li class="col-xs-1"><a href="CreateItenary.aspx">Itinerary</a></li>
+                    <li class="col-xs-1"><a href="Profile.aspx"> <asp:Label runat="server" ID="Message">Welcome </asp:Label>
                         <li class="col-xs-1"><a href="Logout.aspx">Logout</a></li>
                         </a> 
                         </ul> 
@@ -38,8 +41,8 @@
                     </nav> 
                     </asp:Panel>
                     <asp:Panel ID="guestPanel" visible="false" runat="server">
-                    <nav class="navbar navbar-light navbar-expand-sm bg-white">
-                         <div class="container">
+                    <nav class="nav navbar-nav">
+                         <div class="container-fluid">
                         <ul> 
                             <li class="col-xs-2"><a href="">Events</a></li>
 			                <li class="col-xs-2"><a href="">Deals </a></li>
@@ -51,8 +54,8 @@
                     </asp:Panel>
                     
                 <asp:Panel Visible="false" Id="adminPanel" runat="server"> 
-                    <nav class="navbar">
-                        <div class="container"> 
+                    <nav class="nav navbar-nav">
+                        <div class="container-fluid"> 
                             <ul>
                                 <li><a href="CreateCompetition.aspx"> Create Competitions </a></li>
                                 <li class="active col-xs-1"><asp:Label runat="server" ID="LblWel">Welcome </asp:Label>
