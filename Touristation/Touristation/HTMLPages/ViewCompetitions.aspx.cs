@@ -18,8 +18,7 @@ namespace Touristation.HTMLPages
         List<Competition> cList = new List<Competition>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Id = Session["Id"].ToString(); 
-            RefreshGridView(Id);
+            RefreshGridView();
             RefreshJudge(Id); 
             showEndedCompetitions(); 
 
@@ -38,10 +37,10 @@ namespace Touristation.HTMLPages
             gvEndedCompetitions.DataBind();
         }
 
-        private void RefreshGridView(string userId)
+        private void RefreshGridView()
         {
             Competition current = new Competition();
-            cList = current.SelectAvailableCompetitions(userId);
+            cList = current.SelectAll();
             foreach (Competition c in cList)
             {
                 current.countEntries(c);

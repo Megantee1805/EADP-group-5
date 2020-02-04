@@ -11,6 +11,17 @@
         <div class="container">
         <div class="container">
             <div class="container">
+                  <asp:GridView
+             ID="gvViewCompetitions" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="Id" />
+                    <asp:BoundField DataField="name" HeaderText="Title" />
+                    <asp:BoundField DataField="description" HeaderText="Description" />
+                    <asp:BoundField DataField="endDate" HeaderText="Competition End" />
+                    <asp:BoundField DataField="entriesNo" HeaderText="No of Entries" />
+                 
+                </Columns>
+            </asp:GridView>
             Title 
             <asp:TextBox ID="tbTitle" CssClass="form-control" runat="server"></asp:TextBox>;
         
@@ -25,10 +36,12 @@
                 </asp:RadioButtonList>
             <br /> 
            
-            Start Date
+            <p class="text-left"> Start Date </p> 
+            <p class="text-right"> End Date</p>   
             
                 <asp:UpdatePanel ID="UpdateCalender" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
+                    <div class="row">
            <div class="col-xs-5">
             <asp:TextBox ID="tbStart" CssClass="form-control col-xs-6" runat="server" AutoPostBack="True"></asp:TextBox>
               
@@ -45,12 +58,12 @@
                 <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
                 <WeekendDayStyle BackColor="#CCCCFF" />
             </asp:Calendar>
-            </div> 
+            </div>
 
-                    <div class="col-xs-5">
+             <div class="col-xs-5">
 
-                End Date 
-             <asp:TextBox ID="tbEnd" class="col-xs-6 form-control " runat="server" AutoPostBack="True"></asp:TextBox>
+               
+             <asp:TextBox ID="tbEnd" class="form-control" runat="server" AutoPostBack="True"></asp:TextBox>
              <ajaxToolkit:PopupControlExtender ID="tbEnd_PopupControlExtender" runat="server" BehaviorID="tbEnd_PopupControlExtender" DynamicServicePath="" ExtenderControlID="" TargetControlID="tbEnd" PopupControlID="ComEnd" Position="Bottom">
             </ajaxToolkit:PopupControlExtender>
             <asp:Calendar ID="ComEnd" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" OnSelectionChanged="ComEnd_SelectionChanged">
@@ -67,14 +80,14 @@
                     </div>
             </ContentTemplate>
             </asp:UpdatePanel>
-           
+                
             <div class="col-xs-8"> 
             <asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn btn-primary col-xs-6" OnClick="btnComCreate_Click" />
 
             </div> 
        </div>
-        </div>
             </div> 
+        </div> 
     <asp:Label runat="server" ID="LblMsg"></asp:Label>
    
     </form>

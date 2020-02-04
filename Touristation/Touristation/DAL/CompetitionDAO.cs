@@ -34,6 +34,18 @@ namespace Touristation.DAL
             return available;
         }
 
+        public List<Competition> SelectAll()
+        {
+            List<Competition> available;
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                available = db.Competitions.Select(x => x).ToList();
+
+            }
+
+            return available;
+        }
+
         public List<Competition> SelectFinishedCom()
         {
             List<Competition> available;

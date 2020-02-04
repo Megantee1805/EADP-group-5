@@ -11,9 +11,11 @@ namespace Touristation.HTMLPages
 {
     public partial class CreateCompetition : System.Web.UI.Page
     {
+        List<Competition> cList; 
         protected void Page_Load(object sender, EventArgs e)
         {
             getPossibleJudges();
+            RefreshGridView(); 
             if (HttpContext.Current.Session["Username"] == null)
             {
                 Response.Redirect("Login.aspx");
@@ -23,6 +25,20 @@ namespace Touristation.HTMLPages
             {
                  
             }
+        }
+
+        private void RefreshGridView()
+        {
+            Competition current = new Competition();
+            cList = current.SelectAll();
+            foreach (Competition c in cList)
+            {
+                current.countEntries(c);
+            }
+
+            gvViewCompetitions.Visible = true;
+            gvViewCompetitions.DataSource = cList;
+            gvViewCompetitions.DataBind();
         }
 
         protected void ComStart_SelectionChanged(object sender, EventArgs e)
