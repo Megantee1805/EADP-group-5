@@ -55,7 +55,11 @@ namespace Touristation.HTMLPages
         private void RefreshJudge(string userId)
         {
             Competition current = new Competition(); 
-            cList = current.SelectJudgingCompetitions(userId);            
+            cList = current.SelectJudgingCompetitions(userId);
+            foreach (Competition c in cList)
+            {
+                current.countEntries(c);
+            }
             gvJudge.Visible = true;
             gvJudge.DataSource = cList;
             gvJudge.DataBind();

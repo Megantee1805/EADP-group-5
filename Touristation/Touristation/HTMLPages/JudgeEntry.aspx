@@ -17,13 +17,13 @@
             <asp:DataList ID="dataScore" runat="server" CssClass="auto-style3" OnItemCommand="dataScore_ItemCommand">
                 <ItemTemplate>
                     <div class="row"> 
-                        <div class="col-xs-4">
+                        <div class="col-xs-3">
                     <asp:TextBox runat="server" Enabled="false" CssClass="form-control" ID="tbName" Text='<%#Bind("name") %>' />
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col-xs-3">
                     <asp:Image ID="entryImg" CssClass="img-responsive" ImageUrl='<%#Bind("fileLink") %>' runat="server" />     
                             </div> 
-                        <div class="col-xs-4">
+                        <div class="col-xs-3">
                     <asp:TextBox runat="server" CssClass="form-control" ID="tbScore" Text='<%#Bind("score") %>' TextMode="Number" />
                         </div>
                    <asp:HiddenField runat="server" ID="entryNo" Value='<%#Bind("Id") %>' />
