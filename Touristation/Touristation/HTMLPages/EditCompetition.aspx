@@ -16,10 +16,15 @@
                     Description 
                     <asp:TextBox ID="tbComDesc" CssClass="form-control" Enabled="true" runat="server"></asp:TextBox>
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                      <asp:UpdatePanel ID="UpdateCalender" runat="server" UpdateMode="Conditional">
+                       <p class="text-left"> Start Date </p> 
+            <p class="text-right"> End Date</p>   
+            
+                <asp:UpdatePanel ID="UpdateCalender" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
-           <div class="col-xs-12">
+                    <div class="row">
+           <div class="col-xs-5">
             <asp:TextBox ID="tbStart" CssClass="form-control col-xs-6" runat="server" AutoPostBack="True"></asp:TextBox>
+              
             <ajaxToolkit:PopupControlExtender ID="tbStart_PopupControlExtender" runat="server" BehaviorID="tbStart_PopupControlExtender" DynamicServicePath="" ExtenderControlID="" TargetControlID="tbStart" PopupControlID="ComStart" Position="Bottom">
             </ajaxToolkit:PopupControlExtender>
             
@@ -33,9 +38,12 @@
                 <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
                 <WeekendDayStyle BackColor="#CCCCFF" />
             </asp:Calendar>
+            </div>
 
-                End Date 
-             <asp:TextBox ID="tbEnd" class="col-xs-6 form-control " runat="server" AutoPostBack="True"></asp:TextBox>
+             <div class="col-xs-5">
+
+               
+             <asp:TextBox ID="tbEnd" class="form-control" runat="server" AutoPostBack="True"></asp:TextBox>
              <ajaxToolkit:PopupControlExtender ID="tbEnd_PopupControlExtender" runat="server" BehaviorID="tbEnd_PopupControlExtender" DynamicServicePath="" ExtenderControlID="" TargetControlID="tbEnd" PopupControlID="ComEnd" Position="Bottom">
             </ajaxToolkit:PopupControlExtender>
             <asp:Calendar ID="ComEnd" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" OnSelectionChanged="ComEnd_SelectionChanged">
@@ -53,10 +61,12 @@
             </ContentTemplate>
             </asp:UpdatePanel>
            
-               
-                    <asp:Button CssClass="btn btn-primary" ID="btnSave" Visible="true" runat="server" Text="Save" OnClick="btnSave_Click" />
+               <div></div>
+                    <br />
                     
-                    <asp:Button CssClass="btn btn-danger" ID="btnCancel" runat="server" Visible="false" Text="Cancel" OnClick="btnCancel_Click" />
+                    <asp:Button CssClass="btn btn-primary col-xs-5" ID="btnSave" Visible="true" runat="server" Text="Save" OnClick="btnSave_Click" />
+                    
+                    <asp:Button CssClass="btn btn-danger col-xs-5" ID="btnCancel" runat="server" Visible="false" Text="Cancel" OnClick="btnCancel_Click" />
                 </div>
             </div>
         </div>

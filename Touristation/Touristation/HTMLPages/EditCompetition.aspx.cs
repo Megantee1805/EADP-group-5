@@ -16,7 +16,7 @@ namespace Touristation.HTMLPages
         protected void Page_Load(object sender, EventArgs e)
         {
             Competition com = new Competition();
-            Id = int.Parse(Request.QueryString["Com"]);
+            Id = int.Parse(Request.QueryString["Competition"]);
             current = com.GetCompetitionById(Id);
 
             if (IsPostBack == false)

@@ -113,6 +113,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\StyleSheet.css" />
+    <Content Include="HTMLPages\ManageCompetitions.aspx" />
     <Content Include="HTMLPages\CreateItenary.aspx" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="HTMLPages\CreateCompetition.aspx" />
@@ -148,6 +149,13 @@
     <Compile Include="BLL\Itinerary.cs" />
     <Compile Include="BLL\TouristationEntityModel.cs" />
     <Compile Include="BLL\User.cs" />
+    <Compile Include="HTMLPages\ManageCompetitions.aspx.cs">
+      <DependentUpon>ManageCompetitions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTMLPages\ManageCompetitions.aspx.designer.cs">
+      <DependentUpon>ManageCompetitions.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HTMLPages\CreateItenary.aspx.cs">
       <DependentUpon>CreateItenary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

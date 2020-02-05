@@ -46,7 +46,7 @@ namespace Touristation
                 {
                     adminPanel.Visible = true;
                     userPanel.Visible = false; 
-                    LblWel.Text = "Welcome, " + user;
+                    
                 }
 
    
