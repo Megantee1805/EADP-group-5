@@ -74,7 +74,7 @@ namespace Touristation.HTMLPages
             updateComp.startDate = DateTime.Parse(tbStart.Text);
             updateComp.endDate = DateTime.Parse(tbEnd.Text);
             updateComp.Update(updateComp);
-            Response.Redirect("ManageCompetitions");
+            Response.Redirect("ManageCompetitions.aspx");
         }
     }
 }

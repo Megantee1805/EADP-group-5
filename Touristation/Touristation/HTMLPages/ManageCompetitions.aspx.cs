@@ -49,7 +49,8 @@ namespace Touristation.HTMLPages
                 GridViewRow gvr = gvViewCompetitions.Rows[Index];
                 int ComId = int.Parse(gvr.Cells[0].Text);
                 Competition com = new Competition();
-                com.Delete(ComId); 
+                com.Delete(ComId);
+                Response.Redirect("ManageCompetitions.aspx"); 
             }
         }
     }

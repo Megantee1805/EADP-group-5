@@ -15,7 +15,7 @@ namespace Touristation.DAL
             DateTime today = DateTime.Now;
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                available = db.Competitions.Where(c => c.endDate >= today && c.judges != userId).Select(x => x).ToList();
+                available = db.Competitions.Where(c => c.endDate >= today && c.judges != userId && c.isDeleted == false).Select(x => x).ToList();
 
             }
 
@@ -27,7 +27,7 @@ namespace Touristation.DAL
             List<Competition> available;
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                available = db.Competitions.Where(c => c.judges == userId).Select(x => x).ToList();
+                available = db.Competitions.Where(c => c.judges == userId && c.isDeleted == false).Select(x => x).ToList();
 
             }
 
@@ -52,7 +52,7 @@ namespace Touristation.DAL
             DateTime today = DateTime.Now;
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                available = db.Competitions.Where(c => c.endDate <= today).Select(x => x).ToList();
+                available = db.Competitions.Where(c => c.endDate <= today && c.isDeleted == false).Select(x => x).ToList();
 
             }
 
@@ -121,9 +121,13 @@ namespace Touristation.DAL
         {
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                Competition com = new Competition();
-                db.Competitions.Remove(db.Competitions.Single(c => c.Id == id));
-                db.SaveChanges();
+                Competition check = db.Competitions.Where(c => c.Id == id).FirstOrDefault();
+                if (check != null)
+                {
+                    check.isDeleted = true; 
+                    db.SaveChanges();
+                }
+                
             }
         }
 
