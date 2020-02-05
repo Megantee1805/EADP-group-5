@@ -56,18 +56,17 @@
                 <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
                 <WeekendDayStyle BackColor="#CCCCFF" />
             </asp:Calendar>
-
+                  
+                    <asp:Button CssClass="btn btn-primary col-xs-5" ID="btnSave" Visible="true" runat="server" Text="Save" OnClick="btnSave_Click" />
+                    
+                 
                     </div>
             </ContentTemplate>
             </asp:UpdatePanel>
            
                <div></div>
                     <br />
-                    
-                    <asp:Button CssClass="btn btn-primary col-xs-5" ID="btnSave" Visible="true" runat="server" Text="Save" OnClick="btnSave_Click" />
-                    
-                    <asp:Button CssClass="btn btn-danger col-xs-5" ID="btnCancel" runat="server" Visible="false" Text="Cancel" OnClick="btnCancel_Click" />
-                </div>
+                      </div>
             </div>
         </div>
     </form>

@@ -78,16 +78,22 @@
             </asp:Calendar>
 
                     </div>
-            </ContentTemplate>
-            </asp:UpdatePanel>
-                
-            <div class="col-xs-8"> 
-            <asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn btn-primary col-xs-6" OnClick="btnComCreate_Click" />
 
+                         <asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn btn-primary col-xs-6" OnClick="btnComCreate_Click" />
+            </ContentTemplate>
+
+                    
+       
+           
+
+                        </asp:UpdatePanel>
+                
+            
             </div> 
        </div>
             </div> 
         </div> 
+
     <asp:Label runat="server" ID="LblMsg"></asp:Label>
    
     </form>
