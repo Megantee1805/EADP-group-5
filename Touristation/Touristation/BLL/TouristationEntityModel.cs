@@ -16,6 +16,7 @@ namespace Touristation.BLL
         public virtual DbSet<Entry> Entries { get; set; }
         public virtual DbSet<Itinerary> Itineraries { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Vote> Votes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -52,6 +53,11 @@ namespace Touristation.BLL
             modelBuilder.Entity<Entry>()
                 .Property(e => e.fileLink)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Entry>()
+                .HasMany(e => e.Votes)
+                .WithRequired(e => e.Entry)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Itinerary>()
                 .Property(e => e.Date)
@@ -92,6 +98,11 @@ namespace Touristation.BLL
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.Entries)
+                .WithRequired(e => e.User)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Votes)
                 .WithRequired(e => e.User)
                 .WillCascadeOnDelete(false);
         }

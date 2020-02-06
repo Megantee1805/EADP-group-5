@@ -149,6 +149,7 @@
     <Compile Include="BLL\Itinerary.cs" />
     <Compile Include="BLL\TouristationEntityModel.cs" />
     <Compile Include="BLL\User.cs" />
+    <Compile Include="BLL\Vote.cs" />
     <Compile Include="HTMLPages\ManageCompetitions.aspx.cs">
       <DependentUpon>ManageCompetitions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

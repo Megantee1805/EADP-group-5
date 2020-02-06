@@ -14,6 +14,7 @@ namespace Touristation.BLL
         {
             Competitions = new HashSet<Competition>();
             Entries = new HashSet<Entry>();
+            Votes = new HashSet<Vote>();
         }
 
         public int Id { get; set; }
@@ -44,5 +45,8 @@ namespace Touristation.BLL
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Entry> Entries { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Vote> Votes { get; set; }
     }
 }
