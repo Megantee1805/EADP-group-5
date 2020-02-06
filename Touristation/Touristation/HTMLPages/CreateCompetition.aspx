@@ -11,17 +11,6 @@
         <div class="container">
         <div class="container">
             <div class="container">
-                  <asp:GridView
-             ID="gvViewCompetitions" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False">
-                <Columns>
-                    <asp:BoundField DataField="Id" />
-                    <asp:BoundField DataField="name" HeaderText="Title" />
-                    <asp:BoundField DataField="description" HeaderText="Description" />
-                    <asp:BoundField DataField="endDate" HeaderText="Competition End" />
-                    <asp:BoundField DataField="entriesNo" HeaderText="No of Entries" />
-                 
-                </Columns>
-            </asp:GridView>
             Title 
             <asp:TextBox ID="tbTitle" CssClass="form-control" runat="server"></asp:TextBox>;
         
@@ -80,12 +69,10 @@
                     </div>
 
                          <asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn btn-primary col-xs-6" OnClick="btnComCreate_Click" />
+                        <br />
+
+    <asp:Label runat="server" CssClass="h5" ID="LblMsg"></asp:Label>
             </ContentTemplate>
-
-                    
-       
-           
-
                         </asp:UpdatePanel>
                 
             
@@ -93,8 +80,6 @@
        </div>
             </div> 
         </div> 
-
-    <asp:Label runat="server" ID="LblMsg"></asp:Label>
    
     </form>
 

@@ -15,7 +15,6 @@ namespace Touristation.HTMLPages
         protected void Page_Load(object sender, EventArgs e)
         {
             getPossibleJudges();
-            RefreshGridView(); 
             if (HttpContext.Current.Session["Username"] == null)
             {
                 Response.Redirect("Login.aspx");
@@ -27,19 +26,7 @@ namespace Touristation.HTMLPages
             }
         }
 
-        private void RefreshGridView()
-        {
-            Competition current = new Competition();
-            cList = current.SelectAll();
-            foreach (Competition c in cList)
-            {
-                current.countEntries(c);
-            }
-
-            gvViewCompetitions.Visible = true;
-            gvViewCompetitions.DataSource = cList;
-            gvViewCompetitions.DataBind();
-        }
+       
 
         protected void ComStart_SelectionChanged(object sender, EventArgs e)
         {
@@ -106,34 +93,46 @@ namespace Touristation.HTMLPages
 
             if (tbTitle.Text.Length == 0)
             {
+                result = true; 
                 LblMsg.Text += "Title cannot be empty";
                 LblMsg.ForeColor = Color.Red; 
             }
 
             if (tbComDesc.Text == null)
             {
+                result = true; 
                 LblMsg.Text += "Description cannot be empty";
                 LblMsg.ForeColor = Color.Red; 
 
             }
 
-            /* if (DateTime.Parse(tbStart.Text.ToString()) < DateTime.Now)
+            if (DateTime.Parse(tbStart.Text.ToString()) <= DateTime.Now)
             {
+                result = true; 
                 LblMsg.Text += "start date cannot be in the past";
                 LblMsg.ForeColor = Color.Red;
             }
 
-            */
+            
 
             if (rgroupJudgingMethod.SelectedIndex == -1)
             {
+                result = true;
                 LblMsg.Text += "judging method must be selected";
                 LblMsg.ForeColor = Color.Red;
             }
 
             if (DateTime.Parse(tbEnd.Text.ToString()) < DateTime.Now)
             {
+                result = true;
                 LblMsg.Text += "end date cannot be in the past";
+                LblMsg.ForeColor = Color.Red;
+            }
+
+            if (DateTime.Parse(tbStart.Text.ToString()) > DateTime.Parse(tbEnd.Text.ToString()))
+            {
+                result = true;
+                LblMsg.Text += "start date cannot be later than end date";
                 LblMsg.ForeColor = Color.Red;
             }
 
