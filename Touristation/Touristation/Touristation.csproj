@@ -150,6 +150,7 @@
     <Compile Include="BLL\TouristationEntityModel.cs" />
     <Compile Include="BLL\User.cs" />
     <Compile Include="BLL\Vote.cs" />
+    <Compile Include="DAL\VoteDAO.cs" />
     <Compile Include="HTMLPages\ManageCompetitions.aspx.cs">
       <DependentUpon>ManageCompetitions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -263,6 +264,7 @@
     <Compile Include="HTMLPages\SubmitEntry.aspx.designer.cs">
       <DependentUpon>SubmitEntry.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model_Methods\VoteDAM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Touristation.Master.cs">
       <DependentUpon>Touristation.Master</DependentUpon>
