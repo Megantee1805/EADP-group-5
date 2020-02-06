@@ -51,6 +51,7 @@
                     <asp:BoundField DataField="description" HeaderText="Description" />
                     <asp:BoundField DataField="endDate" HeaderText="Competition End" />
                     <asp:BoundField DataField="entriesNo" HeaderText="No of Entries" />
+                    <asp:BoundField DataField="winners" HeaderText="Winners" />
                     <asp:ButtonField CommandName="View" Text="View Entries" />
                   
                 </Columns>

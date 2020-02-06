@@ -106,6 +106,7 @@ namespace Touristation.DAL
                 {
                     check.name = com.name;
                     check.description = com.description;
+                    check.winners = com.winners; 
                     check.entriesNo = com.entriesNo;
                     check.endDate = com.endDate;
                     check.startDate = com.startDate;

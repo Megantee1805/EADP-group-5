@@ -32,6 +32,7 @@ namespace Touristation.HTMLPages
             foreach (Competition c in cList)
             {
                 current.countEntries(c);
+                current.SelectWinner(c.Id); 
             }
             gvEndedCompetitions.Visible = true;
             gvEndedCompetitions.DataSource = cList;
