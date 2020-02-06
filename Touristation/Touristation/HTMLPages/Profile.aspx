@@ -23,7 +23,7 @@
                 </asp:TextBox>
                 <br />
                 Country 
-                <asp:DropDownList ID="DDCountry" CssClass="form-control" runat="server" Width="100" Enabled="False"></asp:DropDownList>
+                <asp:DropDownList ID="DDCountry" CssClass="col-xs-12 form-control" runat="server" Enabled="False"></asp:DropDownList>
                 <br /> 
                 <asp:Button runat="server" CssClass="btn btn-primary" ID="btnEditProfile" Text="Edit" OnClick="btnEditProfile_Click">
                 </asp:Button> 

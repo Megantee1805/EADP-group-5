@@ -70,10 +70,11 @@ namespace Touristation.HTMLPages
                 int Index = Convert.ToInt32(e.CommandArgument);
                 GridViewRow gvr = gvViewEntries.Rows[Index];
                 int entId = int.Parse(gvr.Cells[0].Text);
-                count += 1;
                 Entry upEnt;
                 Entry voted = new Entry();
                 upEnt = voted.GetEntryById(entId);
+                count = upEnt.votes;
+                count += 1; 
                 upEnt.votes = count;
                 voted.CountVotes(upEnt);
                 Response.Redirect("ViewEntries.aspx?Competition=" + ComId);

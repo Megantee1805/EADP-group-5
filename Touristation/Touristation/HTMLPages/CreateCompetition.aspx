@@ -70,7 +70,7 @@
 
                          <asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn btn-primary col-xs-6" OnClick="btnComCreate_Click" />
                         <br />
-
+                        <br /> 
     <asp:Label runat="server" CssClass="h5" ID="LblMsg"></asp:Label>
             </ContentTemplate>
                         </asp:UpdatePanel>
