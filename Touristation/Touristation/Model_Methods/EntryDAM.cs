@@ -70,7 +70,24 @@ namespace Touristation.BLL
             
             
         }
-    
+
+        public void rankScore(int id)
+        {
+            List<Entry> total;
+            EntryDAO entry = new EntryDAO();
+            total = entry.SelectByCompetition(id);
+            total = total.OrderByDescending(e => e.score).ToList();
+            int ranking = 1;
+
+            foreach (Entry e in total)
+            {
+                e.rank = ranking;
+                ranking += 1;
+                entry.Update(e);
+            }
+
+        }
+
 
         public void Update(Entry ent)
         {

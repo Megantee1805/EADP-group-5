@@ -68,6 +68,19 @@ namespace Touristation.BLL
             return com.SelectById(Id);
         }
 
+        public void SelectWinner(int Id)
+        {
+            CompetitionDAO com = new CompetitionDAO(); 
+            List<Entry> total;
+            Competition ended; 
+            EntryDAO entry = new EntryDAO();
+            total = entry.SelectByCompetition(Id);
+            total = total.OrderBy(e => e.rank).ToList();
+            ended = com.SelectById(Id);
+            ended.winners = total[0].Id.ToString();
+            com.Update(ended); 
+        }
+
         public void Update(Competition comie)
         {
             CompetitionDAO com = new CompetitionDAO();

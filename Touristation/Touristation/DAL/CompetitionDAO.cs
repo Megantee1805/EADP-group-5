@@ -100,7 +100,7 @@ namespace Touristation.DAL
         {
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                Competition updateCome = new Competition(); 
+                Competition updateCome = new Competition();
                 Competition check = db.Competitions.Where(c => c.Id == com.Id).FirstOrDefault();
                 if (check != null)
                 {
@@ -109,13 +109,14 @@ namespace Touristation.DAL
                     check.entriesNo = com.entriesNo;
                     check.endDate = com.endDate;
                     check.startDate = com.startDate;
-                    check.JudgingCriteria = com.JudgingCriteria; 
-                    db.SaveChanges(); 
+                    check.JudgingCriteria = com.JudgingCriteria;
+                    db.SaveChanges();
                 }
             }
 
 
         }
+
 
         public void Delete(int id)
         {
