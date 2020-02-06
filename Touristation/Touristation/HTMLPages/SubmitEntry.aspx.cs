@@ -13,12 +13,13 @@ namespace Touristation.HTMLPages
 {
     public partial class SubmitEntry : System.Web.UI.Page
     {
+        Competition main; 
         protected void Page_Load(object sender, EventArgs e)
         {
             Competition com = new Competition();
             int Id = int.Parse(Request.QueryString["Competition"]);
-            com = com.GetCompetitionById(Id); 
-            LblComName.Text = com.name; 
+            main = com.GetCompetitionById(Id); 
+            LblComName.Text = main.name; 
         }
 
         protected void btnEntrySubmit_Click(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace Touristation.HTMLPages
             Competition com; 
             Competition host = new Competition();
             string title = LblComName.Text;
-            com = host.GetCompetitionByName(title); 
+            com = host.GetCompetitionById(main.Id); 
             Entry submit = new Entry();
             submit.name = tbEntryName.Text;
             submit.description = tbEntryDescription.Text;

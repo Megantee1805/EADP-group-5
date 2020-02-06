@@ -18,6 +18,16 @@ namespace Touristation.DAL
             }
         }
 
+        public Vote SelectByUserandEntry(int userId, int entryId)
+        {
+            Vote single; 
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                single = db.Votes.Where(v => v.UserId == userId && v.EntryId == entryId).FirstOrDefault(); 
+            }
+            return single; 
+        }
+
 
         public void Delete(int id)
         {

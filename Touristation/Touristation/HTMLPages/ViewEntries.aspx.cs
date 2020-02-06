@@ -73,10 +73,11 @@ namespace Touristation.HTMLPages
                 Entry upEnt;
                 Entry voted = new Entry();
                 upEnt = voted.GetEntryById(entId);
-                count = upEnt.votes;
-                count += 1; 
-                upEnt.votes = count;
-                voted.CountVotes(upEnt);
+                Vote cast = new Vote();
+                cast.UserId = int.Parse(Session["Id"].ToString());
+                cast.EntryId = upEnt.Id;
+                cast.CastVotes(cast); 
+                // voted.CountVotes(upEnt);
                 Response.Redirect("ViewEntries.aspx?Competition=" + ComId);
             }
 

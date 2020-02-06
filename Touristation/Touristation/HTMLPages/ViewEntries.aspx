@@ -18,7 +18,7 @@
                      <asp:ImageField DataImageUrlField="fileLink" ControlStyle-CssClass="img-thumbnail">
 <ControlStyle CssClass="img-thumbnail"></ControlStyle>
                      </asp:ImageField>
-                     <asp:BoundField DataField="votes" />
+                     
                      <asp:ButtonField CommandName="View" Text="Vote" />
                  </Columns>
                 </asp:GridView>

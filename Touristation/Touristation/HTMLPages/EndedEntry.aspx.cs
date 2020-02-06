@@ -23,7 +23,7 @@ namespace Touristation.HTMLPages
         private void RefreshGridView(int comId)
         {
             Entry current = new Entry();
-            current.tallyVotes(Id); 
+            // current.tallyVotes(Id); 
             eList = current.GetEntriesByCompetition(Id);
             gvViewEntries.Visible = true;
             gvViewEntries.DataSource = eList;
