@@ -45,6 +45,20 @@
                 <br />
                 <asp:Button runat="server" CssClass="btn btn-primary" ID="btnSavePassword" Text="Save Password" OnClick="btnSavePassword_Click" />
             </asp:Panel>
+
+            <asp:GridView
+             ID="gvViewOwnEntries" CssClass="col-xs-12" runat="server" AutoGenerateColumns="False">
+                 <Columns>
+                     <asp:BoundField DataField="Id" />
+                     <asp:BoundField DataField="name" HeaderText="Name" />
+                     <asp:BoundField DataField="description" HeaderText="Description" />
+                     <asp:ImageField DataImageUrlField="fileLink" ControlStyle-CssClass="img-thumbnail">
+<ControlStyle CssClass="img-thumbnail"></ControlStyle>
+                     </asp:ImageField>
+                     <asp:BoundField DataField="votes" />
+                     
+                 </Columns>
+                </asp:GridView>
         </div>
     </form>
 </body>

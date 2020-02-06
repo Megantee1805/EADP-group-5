@@ -13,6 +13,7 @@ namespace Touristation
 {
     public partial class Profile : System.Web.UI.Page
     {
+        List<Entry> eList; 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (HttpContext.Current.Session["Username"] == null)
@@ -27,6 +28,8 @@ namespace Touristation
             tbEditEmail.Text = user.email; 
             DDCountry.DataSource = CountryList();
             DDCountry.DataBind();
+            int Id = int.Parse(Session["Id"].ToString());
+            RefreshGridView(Id);
             }
             
            
@@ -146,6 +149,16 @@ namespace Touristation
             int userId = int.Parse(Session["Id"].ToString());
             user.Delete(userId);
             Response.Redirect("Login.aspx"); 
+        }
+
+        private void RefreshGridView(int userId)
+        {
+            Entry current = new Entry();
+            eList = current.GetWinningEntries(userId);
+            gvViewOwnEntries.Visible = true;
+            gvViewOwnEntries.DataSource = eList;
+            gvViewOwnEntries.DataBind();
+
         }
     }
 }

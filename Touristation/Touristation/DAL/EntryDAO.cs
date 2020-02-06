@@ -64,6 +64,18 @@ namespace Touristation.DAL
             return entries;
         }
 
+        public List<Entry> SelectByRank(int id)
+        {
+            List<Entry> entries;
+
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                entries = db.Entries.Where(e => e.UserId == id && e.rank == 1).Select(x => x).ToList();
+
+            }
+            return entries;
+        }
+
         public void Insert(Entry ent)
         {
             using (TouristationEntityModel db = new TouristationEntityModel())

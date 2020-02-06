@@ -46,6 +46,12 @@ namespace Touristation.BLL
             return all.SelectByUser(userId);
         }
 
+        public List<Entry> GetWinningEntries(int userId)
+        {
+            EntryDAO all = new EntryDAO();
+            return all.SelectByRank(userId);
+        }
+
         public void CountVotes(Entry ent)
         {
             EntryDAO entry = new EntryDAO();
