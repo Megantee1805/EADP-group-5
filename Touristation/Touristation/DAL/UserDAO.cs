@@ -59,6 +59,28 @@ namespace Touristation.DAL
             return user;
         }
 
+        public User SelectByJudge(int userId)
+        {
+            User judge = new User();
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                var available = (from com in db.Competitions
+                                 join user in db.Users on com.judges equals user.Id
+                                 where com.judges == userId
+                                 select new
+                                 {
+                                     user.username,
+                                     com.judges
+                                 }).FirstOrDefault();
+                judge.username = available.username; 
+
+            }
+
+            return judge;
+
+
+        }
+
         public void Insert(User use)
         {
             

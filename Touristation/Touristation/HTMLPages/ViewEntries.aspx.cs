@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -88,7 +89,8 @@ namespace Touristation.HTMLPages
                 Vote previous = cast.checkPreviousVotes(userId, upEnt.Id);  
                 if (previous != null)
                 {
-                    LblMsg.Text = "You can only vote once"; 
+                    LblMsg.Text = "You can only vote once";
+                    LblMsg.ForeColor = Color.Red; 
                 }
                 else
                 {

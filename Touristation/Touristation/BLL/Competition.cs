@@ -17,11 +17,9 @@ namespace Touristation.BLL
         [Required]
         public string description { get; set; }
 
-        [StringLength(50)]
-        public string judges { get; set; }
+        public int? judges { get; set; }
 
-        [StringLength(50)]
-        public string winners { get; set; }
+        public int? winners { get; set; }
 
         public DateTime startDate { get; set; }
 
