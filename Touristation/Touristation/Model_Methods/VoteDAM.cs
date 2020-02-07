@@ -14,6 +14,15 @@ namespace Touristation.BLL
             voting.Insert(count); 
         }
 
+        public Vote checkPreviousVotes(int userId, int entryId)
+        {
+            Vote previous; 
+            VoteDAO vote = new VoteDAO();
+            previous = vote.SelectByUserandEntry(userId, entryId);
+            return previous; 
+
+        }
+
         public void RemoveVotes(int id)
         {
             VoteDAO voting = new VoteDAO();

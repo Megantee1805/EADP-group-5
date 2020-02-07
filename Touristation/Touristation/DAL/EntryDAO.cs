@@ -99,7 +99,7 @@ namespace Touristation.DAL
                     check.fileLink = ent.fileLink;
                     check.rank = ent.rank;
                     check.score = ent.score;
-                    // check.votes = ent.votes; 
+                    check.votes = ent.votes; 
                     db.SaveChanges();
                 }
             }

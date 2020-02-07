@@ -28,6 +28,26 @@ namespace Touristation.DAL
             return single; 
         }
 
+        public List<Vote> SelectByEntry(int entryId)
+        {
+            List<Vote> single;
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                single = db.Votes.Where(v => v.EntryId == entryId).Select(x => x).ToList();
+            }
+            return single;
+        }
+
+        public List<Vote> SelectByUSer(int userId)
+        {
+            List<Vote> single;
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                single = db.Votes.Where(v => v.UserId == userId).Select(x => x).ToList();
+            }
+            return single;
+        }
+
 
         public void Delete(int id)
         {

@@ -52,12 +52,6 @@ namespace Touristation.BLL
             return all.SelectByRank(userId);
         }
 
-        public void CountVotes(Entry ent)
-        {
-            EntryDAO entry = new EntryDAO();
-            entry.Update(ent);
-        }
-
         public void tallyVotes(int Id)
         {
             List<Entry> total;
@@ -81,8 +75,17 @@ namespace Touristation.BLL
         {
             Entry cast;
             EntryDAO entry = new EntryDAO();
-            cast = entry.SelectById(Id); 
-
+            cast = entry.SelectById(Id);
+            List<Vote> votingList;
+            VoteDAO vote = new VoteDAO();
+            votingList = vote.SelectByEntry(Id);
+            int count = 0; 
+            foreach (Vote v in votingList)
+            {
+                count += 1; 
+            }
+            cast.votes = count;
+            cast.Update(cast); 
         }
 
 

@@ -5,7 +5,6 @@
 <asp:Content ID="Content1"
     ContentPlaceHolderID="ContentPlaceHolder1"
     Runat="Server">
-    <body>
     <form id="form1" runat="server">
         <div>
             <asp:Panel ID="userView" runat="server">
@@ -18,10 +17,12 @@
                      <asp:ImageField DataImageUrlField="fileLink" ControlStyle-CssClass="img-thumbnail">
 <ControlStyle CssClass="img-thumbnail"></ControlStyle>
                      </asp:ImageField>
-                     
+                     <asp:BoundField DataField="votes" HeaderText="Votes" />
                      <asp:ButtonField CommandName="View" Text="Vote" />
                  </Columns>
                 </asp:GridView>
+
+                <asp:Label ID="LblMsg" CssClass="h5" runat="server"></asp:Label>
 
             </asp:Panel>
 
