@@ -55,7 +55,7 @@ namespace Touristation.BLL
                 .IsUnicode(false);
 
             modelBuilder.Entity<Entry>()
-                .HasMany(e => e.Votes)
+                .HasMany(e => e.Votes1)
                 .WithRequired(e => e.Entry)
                 .WillCascadeOnDelete(false);
 

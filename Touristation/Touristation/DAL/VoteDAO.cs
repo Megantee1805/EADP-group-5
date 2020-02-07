@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Touristation.BLL;
+using Touristation.BLL; 
 
 namespace Touristation.DAL
 {
@@ -13,7 +13,7 @@ namespace Touristation.DAL
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
                 Vote vote = new Vote();
-                db.Votes.Add(count);
+                db.Votes.Add(count );
                 db.SaveChanges(); 
             }
         }

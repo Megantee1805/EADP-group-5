@@ -58,26 +58,33 @@ namespace Touristation.BLL
             entry.Update(ent);
         }
 
-        /* public void tallyVotes(int Id)
+        public void tallyVotes(int Id)
         {
             List<Entry> total;
             EntryDAO entry = new EntryDAO();
             total = entry.SelectByCompetition(Id);
-            // total = total.OrderByDescending(e => e.votes).ToList(); 
+            total = total.OrderByDescending(e => e.votes).ToList(); 
             int ranking = 1;
-            
+
             foreach (Entry e in total)
             {
                 e.rank = ranking;
                 ranking += 1;
-                entry.Update(e); 
+                entry.Update(e);
             }
 
-            
-            
+
+
         }
 
-    */
+        public void countVotes(int Id)
+        {
+            Entry cast;
+            EntryDAO entry = new EntryDAO();
+            cast = entry.SelectById(Id); 
+
+        }
+
 
         public void rankScore(int id)
         {

@@ -10,8 +10,6 @@ namespace Touristation.BLL
     {
         public int Id { get; set; }
 
-        public int? Votes { get; set; }
-
         public int UserId { get; set; }
 
         public int EntryId { get; set; }

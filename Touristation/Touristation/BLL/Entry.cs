@@ -12,7 +12,7 @@ namespace Touristation.BLL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Entry()
         {
-            Votes = new HashSet<Vote>();
+            Votes1 = new HashSet<Vote>();
         }
 
         public int Id { get; set; }
@@ -25,6 +25,8 @@ namespace Touristation.BLL
 
         public double score { get; set; }
 
+        public int votes { get; set; }
+
         public int rank { get; set; }
 
         public int ComId { get; set; }
@@ -34,6 +36,6 @@ namespace Touristation.BLL
         public virtual User User { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vote> Votes { get; set; }
+        public virtual ICollection<Vote> Votes1 { get; set; }
     }
 }
