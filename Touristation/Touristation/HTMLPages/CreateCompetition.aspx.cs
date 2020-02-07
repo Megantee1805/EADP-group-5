@@ -55,7 +55,7 @@ namespace Touristation.HTMLPages
                 if (rgroupJudgingMethod.SelectedValue == "1")
                 {
                     com.JudgingCriteria = "Judges";
-                    com.judges = ddJudges.SelectedValue;
+                    com.judges = int.Parse(ddJudges.SelectedValue);
                 }
 
                 else

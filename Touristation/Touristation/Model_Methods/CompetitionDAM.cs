@@ -38,13 +38,13 @@ namespace Touristation.BLL
             return com.SelectAll();
         }
 
-        public List<Competition> SelectAvailableCompetitions(string userId)
+        public List<Competition> SelectAvailableCompetitions(int userId)
         {
             CompetitionDAO com = new CompetitionDAO();
             return com.SelectByDate(userId); 
         }
 
-        public List<Competition> SelectJudgingCompetitions(string userId)
+        public List<Competition> SelectJudgingCompetitions(int userId)
         {
             CompetitionDAO com = new CompetitionDAO();
             return com.SelectByJudge(userId);
@@ -77,7 +77,7 @@ namespace Touristation.BLL
             total = entry.SelectByCompetition(Id);
             total = total.OrderBy(e => e.rank).ToList();
             ended = com.SelectById(Id);
-            ended.winners = total[0].Id.ToString();
+            ended.winners = total[0].Id;
             com.Update(ended); 
         }
 

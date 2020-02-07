@@ -9,7 +9,7 @@ namespace Touristation.DAL
     public class CompetitionDAO
     {
 
-        public List<Competition> SelectByDate(string userId)
+        public List<Competition> SelectByDate(int userId)
         {
             List<Competition> available;
             DateTime today = DateTime.Now;
@@ -22,7 +22,7 @@ namespace Touristation.DAL
             return available;
         }
 
-        public List<Competition> SelectByJudge(string userId)
+        public List<Competition> SelectByJudge(int userId)
         {
             List<Competition> available;
             using (TouristationEntityModel db = new TouristationEntityModel())
