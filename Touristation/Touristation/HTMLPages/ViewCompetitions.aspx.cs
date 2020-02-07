@@ -11,14 +11,14 @@ namespace Touristation.HTMLPages
 {
     public partial class ViewCompetitions : System.Web.UI.Page
     {
-        String Id;
+        int Id;
 
         public Competition chosenCom;
         
         List<Competition> cList = new List<Competition>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Id = Session["Id"].ToString(); 
+            Id = int.Parse(Session["Id"].ToString()); 
             RefreshGridView(Id);
             RefreshJudge(Id); 
             showEndedCompetitions(); 
@@ -32,14 +32,14 @@ namespace Touristation.HTMLPages
             foreach (Competition c in cList)
             {
                 current.countEntries(c);
-                // current.SelectWinner(c.Id); 
+                current.SelectWinner(c.Id); 
             }
             gvEndedCompetitions.Visible = true;
             gvEndedCompetitions.DataSource = cList;
             gvEndedCompetitions.DataBind();
         }
 
-        private void RefreshGridView(string user)
+        private void RefreshGridView(int user)
         {
             Competition current = new Competition();
             cList = current.SelectAvailableCompetitions(user);
@@ -53,7 +53,7 @@ namespace Touristation.HTMLPages
             gvViewCompetitions.DataBind();
         }
 
-        private void RefreshJudge(string userId)
+        private void RefreshJudge(int userId)
         {
             Competition current = new Competition(); 
             cList = current.SelectJudgingCompetitions(userId);

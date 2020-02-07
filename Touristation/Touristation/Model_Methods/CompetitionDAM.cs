@@ -77,7 +77,13 @@ namespace Touristation.BLL
             total = entry.SelectByCompetition(Id);
             total = total.OrderBy(e => e.rank).ToList();
             ended = com.SelectById(Id);
-            ended.winners = total[0].Id;
+            // string method = ended.JudgingCriteria;
+            
+            if (total.Count > 0)
+            {
+                ended.winners = total[0].Id;
+            }
+            
             com.Update(ended); 
         }
 
