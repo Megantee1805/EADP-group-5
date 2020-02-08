@@ -58,6 +58,15 @@ namespace Touristation.HTMLPages {
         protected global::System.Web.UI.WebControls.Label LblEnd;
         
         /// <summary>
+        /// LblJudge control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblJudge;
+        
+        /// <summary>
         /// ddJudges control.
         /// </summary>
         /// <remarks>
@@ -65,5 +74,14 @@ namespace Touristation.HTMLPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddJudges;
+        
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

@@ -124,6 +124,11 @@ namespace Touristation.HTMLPages
                 btnChooseNext.Visible = true;
             }
 
+            else
+            {
+                btnComCreate.Visible = true;
+                btnChooseNext.Visible = false;
+            }
             
         }
 

@@ -6,12 +6,20 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="LblTitle" runat="server" Text="Label"></asp:Label>
-            <asp:Label ID="LblDesc" runat="server" Text="Label"></asp:Label>
-            <asp:Label ID="LblStart" runat="server" Text="Label"></asp:Label>
-            <asp:Label ID="LblEnd" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="LblTitle" runat="server"></asp:Label>
+            <br /> 
+            <asp:Label ID="LblDesc" runat="server"></asp:Label>
+            <br />
+            <asp:Label ID="LblStart" runat="server"></asp:Label>
+            <br /> 
+            <asp:Label ID="LblEnd" runat="server"></asp:Label>
+            <br />
+            <asp:Label ID="LblJudge" runat="server"></asp:Label>
+            <br />
              Choose A Judge 
-            <asp:DropDownList ID="ddJudges" Visible="false" CssClass="dropdown form-control" runat="server"></asp:DropDownList>
+            <asp:DropDownList ID="ddJudges" CssClass="dropdown form-control" runat="server" AutoPostBack="false" OnSelectedIndexChanged="ddJudges_SelectedIndexChanged"></asp:DropDownList>
+
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit" class="btn btn-primary col-xs-5" OnClick="btnComCreate_Click" />
         </div>
     </form>
 </body>
