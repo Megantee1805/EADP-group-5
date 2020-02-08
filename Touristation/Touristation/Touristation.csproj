@@ -113,6 +113,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\StyleSheet.css" />
+    <Content Include="HTMLPages\ChooseJudge.aspx" />
     <Content Include="HTMLPages\ManageCompetitions.aspx" />
     <Content Include="HTMLPages\CreateItenary.aspx" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
@@ -151,6 +152,13 @@
     <Compile Include="BLL\User.cs" />
     <Compile Include="BLL\Vote.cs" />
     <Compile Include="DAL\VoteDAO.cs" />
+    <Compile Include="HTMLPages\ChooseJudge.aspx.cs">
+      <DependentUpon>ChooseJudge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTMLPages\ChooseJudge.aspx.designer.cs">
+      <DependentUpon>ChooseJudge.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HTMLPages\ManageCompetitions.aspx.cs">
       <DependentUpon>ManageCompetitions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

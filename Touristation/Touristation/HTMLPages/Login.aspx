@@ -9,7 +9,7 @@
     <form id="form1" class="form-group" runat="server">
         <div class="container">
             <div class="row">
-            <div class="col-xs-5"> 
+            <div class="col-xs-6"> 
                 <asp:Image ID="imgBackground" ImageUrl="~/logo.png" runat="server" />
             </div> 
             <div class="col-xs-6">

@@ -16,8 +16,7 @@
         
             Description
             <asp:TextBox ID="tbComDesc" CssClass="form-control" runat="server"></asp:TextBox>
-            Choose A Judge 
-            <asp:DropDownList ID="ddJudges" Visible="false" CssClass="dropdown form-control" runat="server"></asp:DropDownList>
+           
             Judging Method 
                 <asp:RadioButtonList AutoPostBack="true" ID="rgroupJudgingMethod" runat="server" CssClass="radio" OnSelectedIndexChanged="rgroupJudgingMethod_SelectedIndexChanged"> 
                     <asp:ListItem Value="1"> Judging </asp:ListItem>
@@ -68,7 +67,8 @@
 
                     </div>
 
-                         <asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn btn-primary col-xs-6" OnClick="btnComCreate_Click" />
+                         <asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn btn-primary col-xs-5" OnClick="btnComCreate_Click" />
+                        <asp:Button ID="btnChooseNext" runat="server" Text="Pick Judge" Visible="false" class="btn btn-primary col-xs-5" OnClick="btnChooseNext_Click" />
                         <br />
                         <br /> 
     <asp:Label runat="server" CssClass="h5" ID="LblMsg"></asp:Label>

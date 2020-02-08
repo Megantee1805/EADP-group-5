@@ -11,10 +11,11 @@ namespace Touristation.HTMLPages
 {
     public partial class CreateCompetition : System.Web.UI.Page
     {
-        List<Competition> cList; 
+        List<Competition> cList;
+        string value; 
         protected void Page_Load(object sender, EventArgs e)
         {
-            getPossibleJudges();
+            
             if (HttpContext.Current.Session["Username"] == null)
             {
                 Response.Redirect("Login.aspx");
@@ -52,39 +53,14 @@ namespace Touristation.HTMLPages
                 com.name = tbTitle.Text;
                 com.description = tbComDesc.Text;
                 com.startDate = DateTime.Parse(tbStart.Text);
-                if (rgroupJudgingMethod.SelectedValue == "1")
-                {
-                    com.JudgingCriteria = "Judges";
-                    com.judges = int.Parse(ddJudges.SelectedValue);
-                }
-
-                else
-                {
-                    com.JudgingCriteria = "Votes";
-                }
+                com.JudgingCriteria = "Votes";
                 com.endDate = DateTime.Parse(tbEnd.Text);
                 com.UserId = int.Parse(Session["Id"].ToString());
                 com.addCompetition(com); 
             }
         }
         
-        private void getPossibleJudges()
-        {
-            List<User> possibleJudges;
-            User use = new User();
-            int userId = int.Parse(Session["Id"].ToString()); 
-            possibleJudges = use.GetAll(userId);
-            
-            foreach (User judge in possibleJudges)
-            {
-                ddJudges.DataSource = possibleJudges; 
-                ddJudges.DataTextField = "username";
-                ddJudges.DataValueField = "Id";
-                ddJudges.DataBind();  
-            }
-             
-            
-        }
+       
 
         private bool validate()
         {
@@ -144,12 +120,24 @@ namespace Touristation.HTMLPages
             int value = int.Parse(rgroupJudgingMethod.SelectedValue);
             if (value == 1)
             {
-                ddJudges.Visible = true;
+                btnComCreate.Visible = false;
+                btnChooseNext.Visible = true;
             }
 
-            else
+            
+        }
+
+        protected void btnChooseNext_Click(object sender, EventArgs e)
+        {
+            bool result = validate();
+            if (result == false)
             {
-                ddJudges.Visible = false; 
+                Session["ComTitle"] = tbTitle.Text;
+                Session["ComDesc"] = tbComDesc.Text;
+                Session["start"] = tbStart.Text;
+                Session["end"] = tbEnd.Text;
+                Response.Redirect("ChooseJudge.aspx"); 
+
             }
         }
     } 
