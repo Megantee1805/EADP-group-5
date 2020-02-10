@@ -77,7 +77,6 @@ namespace Touristation.BLL
             total = entry.SelectByCompetition(Id);
             total = total.OrderBy(e => e.rank).ToList();
             ended = com.SelectById(Id);
-            // string method = ended.JudgingCriteria;
             
             if (total.Count > 0)
             {
@@ -85,6 +84,21 @@ namespace Touristation.BLL
             }
             
             com.Update(ended); 
+        }
+
+        public void UpdateRank(Competition com)
+        {
+            if (com.JudgingCriteria == "Judges")
+            {
+                Entry entry = new Entry();
+                entry.tallyScore(com.Id); 
+            }
+
+            else if (com.JudgingCriteria == "Votes")
+            {
+                Entry entry = new Entry();
+                entry.tallyVotes(com.Id);
+            }
         }
 
         public void Update(Competition comie)

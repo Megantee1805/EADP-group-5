@@ -66,9 +66,6 @@ namespace Touristation.BLL
                 ranking += 1;
                 entry.Update(e);
             }
-
-
-
         }
 
         public void countVotes(int Id)
@@ -89,7 +86,7 @@ namespace Touristation.BLL
         }
 
 
-        public void rankScore(int id)
+        public void tallyScore(int id)
         {
             List<Entry> total;
             EntryDAO entry = new EntryDAO();

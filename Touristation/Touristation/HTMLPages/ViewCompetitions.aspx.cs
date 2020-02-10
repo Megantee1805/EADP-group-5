@@ -33,6 +33,8 @@ namespace Touristation.HTMLPages
             {
                 current.countEntries(c);
                 current.SelectWinner(c.Id); 
+               
+                
             }
             gvEndedCompetitions.Visible = true;
             gvEndedCompetitions.DataSource = cList;
