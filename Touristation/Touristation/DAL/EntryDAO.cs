@@ -19,6 +19,17 @@ namespace Touristation.DAL
             return entry;
         }
 
+        public Entry CheckForDuplicates(int comId, int userId)
+        {
+            Entry entry;
+            using (TouristationEntityModel db = new TouristationEntityModel())
+            {
+                entry = db.Entries.Where(e => e.ComId == comId && e.UserId == userId).FirstOrDefault();
+
+            }
+            return entry;
+        }
+
         public List<Entry> SelectByComandUser(int comId, int userId)
         {
             List<Entry> entry;

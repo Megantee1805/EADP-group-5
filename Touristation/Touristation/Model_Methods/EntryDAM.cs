@@ -40,6 +40,13 @@ namespace Touristation.BLL
             return all.SelectByComandUser(ComId, userId);
         }
 
+        public Entry CheckForDuplicates(int ComId, int userId)
+        {
+            EntryDAO all = new EntryDAO();
+            return all.CheckForDuplicates(ComId, userId);
+        }
+
+
         public List<Entry> GetEntriesByUser(int userId)
         {
             EntryDAO all = new EntryDAO();

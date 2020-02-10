@@ -23,24 +23,35 @@ namespace Touristation.HTMLPages
         }
 
         protected void btnEntrySubmit_Click(object sender, EventArgs e)
-        {
-            string filename = Path.GetFileName(entryFile.FileName);
-            string filePath = "~/Images" + filename; 
-            entryFile.SaveAs(Server.MapPath(filePath)); 
+        { 
             Competition com; 
             Competition host = new Competition();
             string title = LblComName.Text;
             com = host.GetCompetitionById(main.Id); 
             Entry submit = new Entry();
-            submit.name = tbEntryName.Text;
-            submit.description = tbEntryDescription.Text;
-            submit.fileLink = filePath; 
-            string userId = Session["Id"].ToString(); 
-            submit.UserId = int.Parse(userId);
-            submit.ComId = com.Id;
-            submit.AddEntry(submit);
-            LblMsg.Text = "Success";
-            LblMsg.ForeColor = Color.Green; 
+            string userId = Session["Id"].ToString();
+            submit.CheckForDuplicates(int.Parse(userId), com.Id); 
+            if (submit == null)
+            {
+                string filename = Path.GetFileName(entryFile.FileName);
+                string filePath = "~/Images" + filename;
+                entryFile.SaveAs(Server.MapPath(filePath));
+                submit.name = tbEntryName.Text;
+                submit.description = tbEntryDescription.Text;
+                submit.fileLink = filePath; 
+                submit.UserId = int.Parse(userId);
+                submit.ComId = com.Id;
+                submit.AddEntry(submit);
+                LblMsg.Text = "Success";
+                LblMsg.ForeColor = Color.Green;
+            }
+
+            else
+            {
+                LblMsg.Text = "You have already submitted";
+                LblMsg.ForeColor = Color.Red;
+            }
+             
         }
     }
 }
