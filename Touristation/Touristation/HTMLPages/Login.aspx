@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row">
             <div class="col-xs-6"> 
-                <asp:Image ID="imgBackground" ImageUrl="~/logo.png" runat="server" />
+                <asp:Image ID="imgBackground" CssClass="img-responsive" ImageUrl="~/logo.png" runat="server" />
             </div> 
             <div class="col-xs-6">
             <p class="control-label">Username </p> 

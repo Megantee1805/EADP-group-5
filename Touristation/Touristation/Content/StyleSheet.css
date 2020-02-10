@@ -1,7 +1,7 @@
 ﻿body {
 }
 
-nav {
+/*nav {
     margin-top: 0px;
     background-color: #191970;
 }
@@ -11,20 +11,22 @@ nav {
     }
 
         nav ul li {
-            display: inline-block; /*inline-Block display the url link in block style */
+            display: inline-block; inline-Block display the url link in block style 
             padding: 10px;
             margin: 10px;
             border: 2px solid #191970;
             color: white; 
         }
 
-    nav a {
+    */
+
+   /* nav a {
         text-decoration: none;
     }
 
         nav a:hover, nav li:hover {
             background-color: white;
-        }
+        } */
 
 .auto-style1 {
     width: 100%;

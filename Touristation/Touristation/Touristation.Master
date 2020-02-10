@@ -5,11 +5,9 @@
 <html>
 <head runat="server">
     <title></title>
-    <link href="Content/bootstrap.css" type="text/css" rel="stylesheet" />
-    <link href="Content/bootstrap.min.css" type="text/css"rel="stylesheet" />
-    <script src="Scripts/jquery-2.2.4.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-    <link href="Content/StyleSheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -19,14 +17,14 @@
 	        
 	        <!-- Navigation menu-->
                 <asp:Panel ID="userPanel" visible="false" runat="server">
-	        <nav>
+	        <nav class="navbar navbar-default">
                     <div class="container col-lg-12">
                         <div class="row">
                         <div class="navbar-banner col-lg-1">
                             <asp:Image CssClass="icon-bar" ImageUrl="~/navbar-icon.png" runat="server" />
                         </div>
                             <div class="col-lg-11">
-                        <ul>
+                        <ul class="nav navbar-nav">
                     <li class="active"><a href="">Home</a></li>
 			        <li class="active"><a href="">Events</a></li>
 			        <li class="active"><a href="">Deals </a></li>
@@ -45,14 +43,14 @@
                     <br /> 
                     </asp:Panel>
                     <asp:Panel ID="guestPanel" visible="false" runat="server">
-                    <nav>
-                         <div class="container col-lg-12">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
                             <div class="row">
-                        <div class="navbar-banner col-lg-1">
+                        <div class="navbar-header col-lg-1">
                             <asp:Image CssClass="icon-bar" ImageUrl="~/navbar-icon.png" runat="server" />
                         </div>
                             <div class="col-lg-11">
-                        <ul> 
+                        <ul class="nav navbar-nav"> 
                             <li class=""><a href="">Events</a></li>
 			                <li class=""><a href="">Deals </a></li>
                             <li class=""><a href="Login.aspx">Login</a></li>
@@ -66,14 +64,14 @@
                     </asp:Panel>
                     
                 <asp:Panel Visible="false" Id="adminPanel" runat="server"> 
-                    <nav>
+                    <nav class="navbar navbar-default">
                         <div class="container col-lg-12"> 
                              <div class="row">
                         <div class="navbar-banner col-lg-1">
                             <asp:Image CssClass="icon-bar" ImageUrl="~/navbar-icon.png" runat="server" />
                         </div>
                             <div class="col-lg-11">
-                            <ul>
+                            <ul class="nav navbar-nav">
                                 <li><a href="CreateCompetition.aspx"> Create Competitions </a></li>
                                 <li><a href="ManageCompetitions.aspx"> Manage Competitions </a></li>
                                 
