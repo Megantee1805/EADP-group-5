@@ -49,16 +49,12 @@ namespace Touristation.HTMLPages
             bool result = validate(); 
             if (result == false)
             {
-                LblMsg.Text += "Successfully Created";
-                LblMsg.ForeColor = Color.Green;
-                Competition com = new Competition();
-                com.name = tbTitle.Text;
-                com.description = tbComDesc.Text;
-                com.startDate = DateTime.Parse(tbStart.Text);
-                com.JudgingCriteria = "Votes";
-                com.endDate = DateTime.Parse(tbEnd.Text);
-                com.UserId = int.Parse(Session["Id"].ToString());
-                com.addCompetition(com); 
+                Session["ComTitle"] = tbTitle.Text;
+                Session["ComDesc"] = tbComDesc.Text;
+                Session["start"] = tbStart.Text;
+                Session["end"] = tbEnd.Text;
+                Session["method"] = "Votes"; 
+                Response.Redirect("ChooseJudge.aspx");
             }
         }
         

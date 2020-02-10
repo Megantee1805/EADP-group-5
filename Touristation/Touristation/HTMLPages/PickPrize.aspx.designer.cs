@@ -58,6 +58,15 @@ namespace Touristation.HTMLPages {
         protected global::System.Web.UI.WebControls.Label LblEnd;
         
         /// <summary>
+        /// LblMethod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblMethod;
+        
+        /// <summary>
         /// prizeLink control.
         /// </summary>
         /// <remarks>

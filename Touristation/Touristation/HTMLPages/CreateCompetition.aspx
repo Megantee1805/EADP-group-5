@@ -28,9 +28,6 @@
             <p class="text-right"> End Date</p>   
             
                 <asp:UpdatePanel ID="UpdateCalender" runat="server" UpdateMode="Conditional">
-                    <Triggers> 
-                        <asp:PostBackTrigger ControlID="prizeLink" /> 
-                    </Triggers>
                 <ContentTemplate>
                     <div class="row">
            <div class="col-xs-5">

@@ -13,12 +13,15 @@ namespace Touristation.HTMLPages
     {
         DateTime start;
         DateTime end;
+        string method; 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string title = Session["ComTitle"].ToString() + imageLink;
+            string title = Session["ComTitle"].ToString();
             LblTitle.Text = title;
             string desc = Session["ComDesc"].ToString();
             LblDesc.Text = desc;
+            method = Session["method"].ToString();
+            LblMethod.Text = method; 
             start = DateTime.Parse(Session["start"].ToString());
             LblStart.Text = start.ToString("MM/dd/yyyy");
             end = DateTime.Parse(Session["end"].ToString());
@@ -34,8 +37,8 @@ namespace Touristation.HTMLPages
             com.name = LblTitle.Text;
             com.description = LblDesc.Text;
             com.startDate = start;
-            com.JudgingCriteria = "Votes";
-            com.endDate = DateTime.Parse(tbEnd.Text);
+            com.JudgingCriteria = method;
+            com.endDate = end;
             com.UserId = int.Parse(Session["Id"].ToString());
             com.addCompetition(com);
         }

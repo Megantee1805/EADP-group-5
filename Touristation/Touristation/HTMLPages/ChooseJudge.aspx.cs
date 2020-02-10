@@ -16,7 +16,7 @@ namespace Touristation.HTMLPages
         DateTime end;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string title = Session["ComTitle"].ToString() + imageLink;
+            string title = Session["ComTitle"].ToString();
             LblTitle.Text = title;
             string desc = Session["ComDesc"].ToString();
             LblDesc.Text = desc;
