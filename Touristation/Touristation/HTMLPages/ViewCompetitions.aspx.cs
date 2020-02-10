@@ -47,6 +47,7 @@ namespace Touristation.HTMLPages
             foreach (Competition c in cList)
             {
                 current.countEntries(c);
+                current.UpdateRank(c);
             }
 
             gvViewCompetitions.Visible = true;
