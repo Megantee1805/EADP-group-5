@@ -16,7 +16,7 @@
             <p class="control-label">Username </p> 
             <asp:TextBox class="form-control" ID="TbUsername" runat="server"></asp:TextBox>
             <br />
-            
+             <asp:Label ID="errorMsg" runat="server"></asp:Label>
             Password <asp:TextBox class="form-control" ID="TbPassword" TextMode="Password" runat="server"></asp:TextBox><br />
             <asp:Button ID="btnLogin" class="btn btn-default btn-primary col-xs-12" runat="server" Text="Login" OnClick="btnLogin_Click" />
             </div>
@@ -24,6 +24,6 @@
              </div>
     </form>
 
-    <asp:Label ID="errorMsg" runat="server"></asp:Label>
+   
 
 </asp:Content>

@@ -42,6 +42,7 @@ namespace Touristation.HTMLPages
             com.endDate = end;
             com.UserId = int.Parse(Session["Id"].ToString());
             com.addCompetition(com);
+            LblMsg.Text = "Successfully created";
         }
     }
 }

@@ -26,6 +26,7 @@
             Prize Picture <br />
             <asp:FileUpload ID="prizeLink" CssClass="form-control col-xs-12" runat="server" />
             <asp:Button ID="btnUpload" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="btnUpload_Click" />
+            <asp:Label ID="LblMsg" runat="server"></asp:Label>
         </div>
     </form>
 </body>

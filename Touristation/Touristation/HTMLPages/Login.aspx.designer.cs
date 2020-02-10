@@ -40,6 +40,15 @@ namespace Touristation {
         protected global::System.Web.UI.WebControls.TextBox TbUsername;
         
         /// <summary>
+        /// errorMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label errorMsg;
+        
+        /// <summary>
         /// TbPassword control.
         /// </summary>
         /// <remarks>
@@ -56,14 +65,5 @@ namespace Touristation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogin;
-        
-        /// <summary>
-        /// errorMsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorMsg;
     }
 }
