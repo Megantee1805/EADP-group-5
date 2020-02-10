@@ -19,11 +19,13 @@
             <br /> 
             End Date: 
             <asp:Label ID="LblEnd" CssClass="text-center" runat="server"></asp:Label>
+            <br /> 
             Method of Judging: 
             <asp:Label ID="LblMethod" CssClass="text-center" runat="server"></asp:Label>
+            <br />
             Prize Picture <br />
             <asp:FileUpload ID="prizeLink" CssClass="form-control col-xs-12" runat="server" />
-            <asp:Button ID="btnUpload" CssClass="btn btn-default" runat="server" Text="SUbmit" OnClick="btnUpload_Click" />
+            <asp:Button ID="btnUpload" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="btnUpload_Click" />
         </div>
     </form>
 </body>

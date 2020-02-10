@@ -54,7 +54,7 @@ namespace Touristation.HTMLPages
                 Session["start"] = tbStart.Text;
                 Session["end"] = tbEnd.Text;
                 Session["method"] = "Votes"; 
-                Response.Redirect("ChooseJudge.aspx");
+                Response.Redirect("PickPrize.aspx");
             }
         }
         

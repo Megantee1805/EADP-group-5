@@ -38,6 +38,7 @@ namespace Touristation.HTMLPages
             com.description = LblDesc.Text;
             com.startDate = start;
             com.JudgingCriteria = method;
+            com.prize = filePath; 
             com.endDate = end;
             com.UserId = int.Parse(Session["Id"].ToString());
             com.addCompetition(com);

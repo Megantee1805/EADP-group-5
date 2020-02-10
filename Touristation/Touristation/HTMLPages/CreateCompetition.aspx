@@ -67,7 +67,7 @@
 
                     </div>
 
-                         <asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn btn-primary col-xs-5" OnClick="btnComCreate_Click" />
+                         <asp:Button ID="btnComCreate" runat="server" Text="Next" class="btn btn-primary col-xs-5" OnClick="btnComCreate_Click" />
                         <asp:Button ID="btnChooseNext" runat="server" Text="Pick Judge" Visible="false" class="btn btn-primary col-xs-5" OnClick="btnChooseNext_Click" />
                         <br />
                         <br /> 

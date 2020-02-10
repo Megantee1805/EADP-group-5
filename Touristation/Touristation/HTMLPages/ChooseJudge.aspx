@@ -23,7 +23,6 @@
             <asp:DropDownList ID="ddJudges" CssClass="dropdown form-control" runat="server" AutoPostBack="false"></asp:DropDownList>
             Prize Picture <br />
             <asp:FileUpload ID="prizeLink" CssClass="form-control col-xs-12" runat="server" />
-            <asp:Button ID="btnUpload" CssClass="btn btn-default" runat="server" Text="SUbmit" />
             <asp:Button ID="btnSubmit" runat="server" Text="Submit" class="btn btn-primary col-xs-5" OnClick="btnComCreate_Click" />
             <asp:Label ID="LblMsg" runat="server"></asp:Label>
         </div>
