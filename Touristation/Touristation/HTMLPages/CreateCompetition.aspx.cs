@@ -82,14 +82,56 @@ namespace Touristation.HTMLPages
 
             }
 
-            if (DateTime.Parse(tbStart.Text.ToString()) <= DateTime.Now)
+            if (tbStart.Text.Length == 0)
             {
-                result = true; 
-                LblMsg.Text += "start date cannot be in the past";
+                result = true;
+                LblMsg.Text += "start date cannot be empty";
                 LblMsg.ForeColor = Color.Red;
             }
 
-            
+            else
+            {
+                if (DateTime.Parse(tbStart.Text.ToString()) <= DateTime.Now)
+                {
+                    result = true;
+                    LblMsg.Text += "start date cannot be in the past";
+                    LblMsg.ForeColor = Color.Red;
+                }
+
+                if (DateTime.Parse(tbStart.Text.ToString()) > DateTime.Parse(tbEnd.Text.ToString()))
+                {
+                    result = true;
+                    LblMsg.Text += "start date cannot be later than end date";
+                    LblMsg.ForeColor = Color.Red;
+                }
+
+            }
+
+            if (tbEnd.Text.Length == 0)
+            {
+                result = true;
+                LblMsg.Text += "end date cannot be empty";
+                LblMsg.ForeColor = Color.Red;
+            }
+
+            else
+            {
+                if (DateTime.Parse(tbEnd.Text.ToString()) < DateTime.Now)
+                {
+                    result = true;
+                    LblMsg.Text += "end date cannot be in the past";
+                    LblMsg.ForeColor = Color.Red;
+                }
+
+                if (DateTime.Parse(tbStart.Text.ToString()) > DateTime.Parse(tbEnd.Text.ToString()))
+                {
+                    result = true;
+                    LblMsg.Text += "start date cannot be later than end date";
+                    LblMsg.ForeColor = Color.Red;
+                }
+
+            }
+
 
             if (rgroupJudgingMethod.SelectedIndex == -1)
             {
@@ -98,20 +140,7 @@ namespace Touristation.HTMLPages
                 LblMsg.ForeColor = Color.Red;
             }
 
-            if (DateTime.Parse(tbEnd.Text.ToString()) < DateTime.Now)
-            {
-                result = true;
-                LblMsg.Text += "end date cannot be in the past";
-                LblMsg.ForeColor = Color.Red;
-            }
-
-            if (DateTime.Parse(tbStart.Text.ToString()) > DateTime.Parse(tbEnd.Text.ToString()))
-            {
-                result = true;
-                LblMsg.Text += "start date cannot be later than end date";
-                LblMsg.ForeColor = Color.Red;
-            }
-
+            
             return result; 
         }
 

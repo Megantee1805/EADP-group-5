@@ -6,15 +6,19 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="LblTitle" runat="server"></asp:Label>
+            Title: 
+            <asp:Label ID="LblTitle" CssClass="text-center" runat="server"></asp:Label>
             <br /> 
-            <asp:Label ID="LblDesc" runat="server"></asp:Label>
+            Description: 
+            <asp:Label ID="LblDesc" CssClass="text-center" runat="server"></asp:Label>
             <br />
-            <asp:Label ID="LblStart" runat="server"></asp:Label>
+            Start Date: 
+            <asp:Label ID="LblStart" CssClass="text-center" runat="server"></asp:Label>
             <br /> 
-            <asp:Label ID="LblEnd" runat="server"></asp:Label>
+            End Date: 
+            <asp:Label ID="LblEnd" CssClass="text-center" runat="server"></asp:Label>
             <br />
-            <asp:Label ID="LblJudge" runat="server"></asp:Label>
+            <asp:Label ID="LblJudge" CssClass="text-center" runat="server"></asp:Label>
             <br />
              Choose A Judge 
             <asp:DropDownList ID="ddJudges" CssClass="dropdown form-control" runat="server" AutoPostBack="false" OnSelectedIndexChanged="ddJudges_SelectedIndexChanged"></asp:DropDownList>
