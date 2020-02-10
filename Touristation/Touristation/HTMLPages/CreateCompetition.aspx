@@ -12,10 +12,12 @@
         <div class="container">
             <div class="container">
             Title 
-            <asp:TextBox ID="tbTitle" CssClass="form-control" runat="server"></asp:TextBox>;
+            <asp:TextBox ID="tbTitle" CssClass="form-control" runat="server"></asp:TextBox>
         
             Description
             <asp:TextBox ID="tbComDesc" CssClass="form-control" runat="server"></asp:TextBox>
+
+                <asp:FileUpload ID="prizeLink" runat="server" />
            
             Judging Method 
                 <asp:RadioButtonList AutoPostBack="true" ID="rgroupJudgingMethod" runat="server" CssClass="radio" OnSelectedIndexChanged="rgroupJudgingMethod_SelectedIndexChanged"> 
@@ -70,6 +72,7 @@
                          <asp:Button ID="btnComCreate" runat="server" Text="Submit" class="btn btn-primary col-xs-5" OnClick="btnComCreate_Click" />
                         <asp:Button ID="btnChooseNext" runat="server" Text="Pick Judge" Visible="false" class="btn btn-primary col-xs-5" OnClick="btnChooseNext_Click" />
                         <br />
+                        <br /> 
                         <br /> 
     <asp:Label runat="server" CssClass="h5" ID="LblMsg"></asp:Label>
             </ContentTemplate>

@@ -111,6 +111,7 @@ namespace Touristation.DAL
                     check.endDate = com.endDate;
                     check.startDate = com.startDate;
                     check.JudgingCriteria = com.JudgingCriteria;
+                    check.prize = com.prize; 
                     db.SaveChanges();
                 }
             }
