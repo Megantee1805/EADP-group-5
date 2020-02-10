@@ -46,7 +46,7 @@ namespace Touristation.DAL
             List<Entry> entry;
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                entry = db.Entries.Where(e => e.UserId == userId).Select(x => x).ToList();
+                entry = db.Entries.Where(e => e.UserId == userId && e.isDeleted == false).Select(x => x).ToList();
 
             }
             return entry;
@@ -121,8 +121,12 @@ namespace Touristation.DAL
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
                 Entry entry = new Entry();
-                db.Entries.Remove(db.Entries.Single(e => e.Id == id));
-                db.SaveChanges();
+                Entry check = db.Entries.Where(e => e.Id == id).FirstOrDefault();
+                if (check != null)
+                {
+                    check.isDeleted = true;
+                    db.SaveChanges();
+                }
             }
         }
     }

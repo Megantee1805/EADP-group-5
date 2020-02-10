@@ -29,6 +29,8 @@ namespace Touristation.BLL
 
         public int rank { get; set; }
 
+        public bool isDeleted { get; set; }
+
         public int ComId { get; set; }
 
         public int UserId { get; set; }

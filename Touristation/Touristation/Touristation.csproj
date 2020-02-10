@@ -150,6 +150,7 @@
     <Compile Include="BLL\Entry.cs" />
     <Compile Include="BLL\Event.cs" />
     <Compile Include="BLL\Itinerary.cs" />
+    <Compile Include="BLL\Table.cs" />
     <Compile Include="BLL\TouristationEntityModel.cs" />
     <Compile Include="BLL\User.cs" />
     <Compile Include="BLL\Vote.cs" />

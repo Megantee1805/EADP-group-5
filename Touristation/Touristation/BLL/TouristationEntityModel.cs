@@ -16,6 +16,7 @@ namespace Touristation.BLL
         public virtual DbSet<Entry> Entries { get; set; }
         public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<Itinerary> Itineraries { get; set; }
+        public virtual DbSet<Table> Tables { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Vote> Votes { get; set; }
 
