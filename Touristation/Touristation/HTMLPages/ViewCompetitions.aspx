@@ -23,6 +23,8 @@
                     <asp:BoundField DataField="description" HeaderText="Description" />
                     <asp:BoundField DataField="endDate" HeaderText="Competition End" />
                     <asp:BoundField DataField="entriesNo" HeaderText="No of Entries" />
+                    <asp:ImageField DataImageUrlField="prize" ItemStyle-CssClass="img-responsive img-thumbnail" HeaderText="Prizes">
+                    </asp:ImageField>
                     <asp:ButtonField CommandName="View" Text="Judge" />
                   
                 </Columns>
@@ -34,9 +36,12 @@
                     <asp:BoundField DataField="Id" />
                     <asp:BoundField DataField="name" HeaderText="Title" />
                     <asp:BoundField DataField="description" HeaderText="Description" />
+                    <asp:BoundField DataField="startDate" HeaderText="Competition End" />
                     <asp:BoundField DataField="endDate" HeaderText="Competition End" />
                     <asp:BoundField DataField="entriesNo" HeaderText="No of Entries" />
                     <asp:BoundField DataField="judgingCriteria" HeaderText="Method" />
+                    <asp:ImageField DataImageUrlField="prize" ItemStyle-CssClass="img-responsive img-thumbnail" HeaderText="Prizes">
+                    </asp:ImageField>
                     <asp:ButtonField CommandName="Submit" Text="Submit An Entry" />
                     <asp:ButtonField CommandName="View" Text="View Entries" />
                   
@@ -52,6 +57,8 @@
                     <asp:BoundField DataField="endDate" HeaderText="Competition End" />
                     <asp:BoundField DataField="entriesNo" HeaderText="No of Entries" />
                     <asp:BoundField DataField="winners" HeaderText="Winners" />
+                    <asp:ImageField DataImageUrlField="prize" ItemStyle-CssClass="img-responsive img-thumbnail" HeaderText="Prizes">
+                    </asp:ImageField>
                     <asp:ButtonField CommandName="View" Text="View Entries" />
                   
                 </Columns>

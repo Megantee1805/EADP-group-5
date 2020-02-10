@@ -20,7 +20,7 @@
                      </asp:ImageField>
                      <asp:BoundField DataField="votes" />
                      <asp:ButtonField CommandName="View" Text="Edit" />
-                     <asp:ButtonField CommandName="Delete" Text="Delete" />
+                     <asp:ButtonField CommandName="Delete" Text="Withdraw" />
                  </Columns>
                 </asp:GridView> 
     </form>

@@ -19,7 +19,7 @@
                     <asp:BoundField DataField="name" HeaderText="Title" />
                     <asp:BoundField DataField="description" HeaderText="Description" />
                     <asp:BoundField DataField="endDate" HeaderText="Competition End" />
-                    <asp:ImageField DataImageUrlField="prize" HeaderText="Prizes">
+                    <asp:ImageField DataImageUrlField="prize" ItemStyle-CssClass="img-responsive img-thumbnail" HeaderText="Prizes">
                     </asp:ImageField>
                     <asp:BoundField DataField="entriesNo" HeaderText="No of Entries" />
                     <asp:BoundField DataField="isDeleted" HeaderText="" />

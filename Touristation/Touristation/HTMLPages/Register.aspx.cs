@@ -75,9 +75,8 @@ namespace Touristation
                     emp.isBusiness = false;
                     emp.isAdmin = false;
                     emp.profilePic = null; 
-                    emp.AddUser(emp); 
-                    errorMsg.Text = "Registration is successful";
-                    errorMsg.ForeColor = Color.Green;
+                    emp.AddUser(emp);
+                    Response.Redirect("Login.aspx"); 
                     /* if (result == 1)
                     {
                         errorMsg.Text = "Registration is successful";

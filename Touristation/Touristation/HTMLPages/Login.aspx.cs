@@ -46,7 +46,7 @@ namespace Touristation
 
                 else
                 {
-                    errorMsg.Text = "Email or password is wrong";
+                    errorMsg.Text = "Username or password is wrong";
                     errorMsg.ForeColor = Color.Red;
                      
                 }
@@ -54,7 +54,7 @@ namespace Touristation
 
             else
             {
-                errorMsg.Text = "User does not exist";
+                errorMsg.Text = "Username or password is wrong";
                 errorMsg.ForeColor = Color.Red;
             }
             

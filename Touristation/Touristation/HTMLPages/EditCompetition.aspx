@@ -58,7 +58,7 @@
             </asp:Calendar>
                   
                     <asp:Button CssClass="btn btn-primary col-xs-5" ID="btnSave" Visible="true" runat="server" Text="Save" OnClick="btnSave_Click" />
-                    
+                    <asp:Label runat="server" CssClass="h5" ID="LblMsg"></asp:Label>
                  
                     </div>
             </ContentTemplate>

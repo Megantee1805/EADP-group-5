@@ -98,6 +98,8 @@ namespace Touristation.HTMLPages
                 cast.EntryId = upEnt.Id;
                 cast.CastVotes(cast); 
                 voted.countVotes(upEnt.Id);
+                    LblMsg.Text = "Success";
+                    LblMsg.ForeColor = Color.Green;
                 }
                 
                 // Response.Redirect("ViewEntries.aspx?Competition=" + ComId);
