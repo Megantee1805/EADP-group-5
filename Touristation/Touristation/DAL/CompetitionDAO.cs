@@ -15,7 +15,7 @@ namespace Touristation.DAL
             DateTime today = DateTime.Now;
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
-                available = db.Competitions.Where(c => c.endDate >= today && c.judges != userId && c.isDeleted == false).Select(x => x).ToList();
+                available = db.Competitions.Where(c => c.endDate >= today && c.startDate < today && c.judges != userId && c.isDeleted == false).Select(x => x).ToList();
 
             }
 

@@ -77,7 +77,7 @@ namespace Touristation.HTMLPages
                 GridViewRow gvr = gvViewCompetitions.Rows[Index]; 
                 int ComId = int.Parse(gvr.Cells[0].Text);
                 string Name = gvr.Cells[1].Text; 
-                int entNo = int.Parse(gvr.Cells[4].Text);
+                int entNo = int.Parse(gvr.Cells[5].Text);
                 Response.Redirect("SubmitEntry.aspx?Competition=" + ComId); 
             }
 

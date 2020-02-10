@@ -89,7 +89,7 @@ namespace Touristation.HTMLPages
 
             else
             {
-                if (DateTime.Parse(tbStart.Text.ToString()) <= DateTime.Now)
+                if (DateTime.Parse(tbStart.Text.ToString()) < DateTime.Today)
                 {
                     result = true;
                     LblMsg.Text += "start date cannot be in the past <br/>";

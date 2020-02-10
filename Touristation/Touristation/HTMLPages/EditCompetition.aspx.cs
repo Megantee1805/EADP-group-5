@@ -136,19 +136,24 @@ namespace Touristation.HTMLPages
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("PickWinners.aspx"); 
+            Response.Redirect("ManageCompetitions.aspx"); 
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            Competition updateComp = new Competition();
-            updateComp.Id = Id;
-            updateComp.name = tbComName.Text;
-            updateComp.description = tbComDesc.Text;
-            updateComp.startDate = DateTime.Parse(tbStart.Text);
-            updateComp.endDate = DateTime.Parse(tbEnd.Text);
-            updateComp.Update(updateComp);
-            Response.Redirect("ManageCompetitions.aspx");
+            bool result = validation();
+            if (result == false)
+            {
+                Competition updateComp = new Competition();
+                updateComp.Id = Id;
+                updateComp.name = tbComName.Text;
+                updateComp.description = tbComDesc.Text;
+                updateComp.startDate = DateTime.Parse(tbStart.Text);
+                updateComp.endDate = DateTime.Parse(tbEnd.Text);
+                updateComp.Update(updateComp);
+                Response.Redirect("ManageCompetitions.aspx");
+            }
+            
         }
     }
 }
