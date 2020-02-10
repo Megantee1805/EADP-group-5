@@ -124,6 +124,7 @@
     <Content Include="HTMLPages\JudgeEntry.aspx" />
     <Content Include="HTMLPages\Login.aspx" />
     <Content Include="HTMLPages\Logout.aspx" />
+    <Content Include="HTMLPages\PickPrize.aspx" />
     <Content Include="HTMLPages\Profile.aspx" />
     <Content Include="HTMLPages\Register.aspx" />
     <Content Include="HTMLPages\SubmitEntry.aspx" />
@@ -205,6 +206,13 @@
     </Compile>
     <Compile Include="HTMLPages\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HTMLPages\PickPrize.aspx.cs">
+      <DependentUpon>PickPrize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTMLPages\PickPrize.aspx.designer.cs">
+      <DependentUpon>PickPrize.aspx</DependentUpon>
     </Compile>
     <Compile Include="HTMLPages\ViewCompetitions.aspx.cs">
       <DependentUpon>ViewCompetitions.aspx</DependentUpon>

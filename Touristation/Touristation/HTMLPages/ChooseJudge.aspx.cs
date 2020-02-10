@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,14 +16,14 @@ namespace Touristation.HTMLPages
         DateTime end;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string title = Session["ComTitle"].ToString();
+            string title = Session["ComTitle"].ToString() + imageLink;
             LblTitle.Text = title;
             string desc = Session["ComDesc"].ToString();
             LblDesc.Text = desc;
             start = DateTime.Parse(Session["start"].ToString());
             LblStart.Text = start.ToString("MM/dd/yyyy");
             end = DateTime.Parse(Session["end"].ToString());
-            LblEnd.Text = end.ToString("MM/dd/yyyy");
+            LblEnd.Text = end.ToString("MM/dd/yyyy");  
             if (IsPostBack == false)
             {
                 getPossibleJudges();
@@ -49,18 +50,24 @@ namespace Touristation.HTMLPages
 
         }
 
-        protected void ddJudges_SelectedIndexChanged(object sender, EventArgs e)
+        /* protected void ddJudges_SelectedIndexChanged(object sender, EventArgs e)
         {
             LblJudge.Text = ddJudges.SelectedItem.ToString();
             userId = ddJudges.SelectedValue; 
         }
 
+    */
+
         protected void btnComCreate_Click(object sender, EventArgs e)
         {
             Competition com = new Competition();
-            com.name = LblJudge.Text;
+            com.name = LblTitle.Text;
             com.description = LblDesc.Text;
             com.startDate = start;
+            string filename = Path.GetFileName(prizeLink.FileName);
+            string filePath = "~/Images" + filename;
+            prizeLink.SaveAs(Server.MapPath(filePath));
+            com.prize = filePath; 
             com.JudgingCriteria = "Judges";
             com.judges = int.Parse(ddJudges.SelectedValue.ToString()); 
             com.endDate = end;

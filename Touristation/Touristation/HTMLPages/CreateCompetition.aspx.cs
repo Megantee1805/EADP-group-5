@@ -14,6 +14,7 @@ namespace Touristation.HTMLPages
     {
         List<Competition> cList;
         string value; 
+        public static string prizes { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -48,9 +49,6 @@ namespace Touristation.HTMLPages
             bool result = validate(); 
             if (result == false)
             {
-                string filename = Path.GetFileName(prizeLink.FileName);
-                string filePath = "~/Images" + filename;
-                prizeLink.SaveAs(Server.MapPath(filePath));
                 LblMsg.Text += "Successfully Created";
                 LblMsg.ForeColor = Color.Green;
                 Competition com = new Competition();
@@ -58,7 +56,6 @@ namespace Touristation.HTMLPages
                 com.description = tbComDesc.Text;
                 com.startDate = DateTime.Parse(tbStart.Text);
                 com.JudgingCriteria = "Votes";
-                com.prize = filePath; 
                 com.endDate = DateTime.Parse(tbEnd.Text);
                 com.UserId = int.Parse(Session["Id"].ToString());
                 com.addCompetition(com); 

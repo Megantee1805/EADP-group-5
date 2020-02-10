@@ -16,8 +16,6 @@
         
             Description
             <asp:TextBox ID="tbComDesc" CssClass="form-control" runat="server"></asp:TextBox>
-
-                <asp:FileUpload ID="prizeLink" runat="server" />
            
             Judging Method 
                 <asp:RadioButtonList AutoPostBack="true" ID="rgroupJudgingMethod" runat="server" CssClass="radio" OnSelectedIndexChanged="rgroupJudgingMethod_SelectedIndexChanged"> 
@@ -30,6 +28,9 @@
             <p class="text-right"> End Date</p>   
             
                 <asp:UpdatePanel ID="UpdateCalender" runat="server" UpdateMode="Conditional">
+                    <Triggers> 
+                        <asp:PostBackTrigger ControlID="prizeLink" /> 
+                    </Triggers>
                 <ContentTemplate>
                     <div class="row">
            <div class="col-xs-5">
