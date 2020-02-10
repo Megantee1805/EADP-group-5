@@ -1,0 +1,7 @@
+﻿INSERT INTO [dbo].[comment] ([Id], [Loca], [Rate], [Com]) VALUES (1, N'zoo', 52, N'The place is good for family outing, but the place it pretty big so do bring a carriage if your kid needs one.')
+INSERT INTO [dbo].[comment] ([Id], [Loca], [Rate], [Com]) VALUES (2, N'zoo', 2, N'to many people at weekend.')
+INSERT INTO [dbo].[comment] ([Id], [Loca], [Rate], [Com]) VALUES (3, N'zoo', 8, N'The food taste good.')
+INSERT INTO [dbo].[comment] ([Id], [Loca], [Rate], [Com]) VALUES (4, N'zoo', 12, N'I like zoo :D')
+INSERT INTO [dbo].[comment] ([Id], [Loca], [Rate], [Com]) VALUES (5, N'zoo', 392, N'Singapore has the best zoo in the world, they build a good living space for those animals,and they are well taking care of. the animal here looks healthy, happy and energatic. Definatly coming back.')
+INSERT INTO [dbo].[comment] ([Id], [Loca], [Rate], [Com]) VALUES (6, N'zoo', 22, N'My boy loves the animal here.')
+INSERT INTO [dbo].[comment] ([Id], [Loca], [Rate], [Com]) VALUES (7, N'zoo', 39, N'Otters are cute but they smells soooooo bad!!!')
