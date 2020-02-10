@@ -28,9 +28,9 @@
                     <li class="active"><a href="">Home</a></li>
 			        <li class="active"><a href="">Events</a></li>
 			        <li class="active"><a href="">Deals </a></li>
-			        <li class=""><a href="ViewCompetitions.aspx">Competitions</a></li>
-                    <li class=""><a href="CreateItenary.aspx">Itinerary</a></li>
-                    <li class=""><a href="Profile.aspx"> <asp:Label runat="server" ID="Message">Welcome </asp:Label>
+			        <li class="active"><a href="ViewCompetitions.aspx">Competitions</a></li>
+                    <li class="active"><a href="CreateItenary.aspx">Itinerary</a></li>
+                    <li class="active"><a href="Profile.aspx"> <asp:Label runat="server" ID="Message">Welcome </asp:Label>
                         <li class=""><a href="Logout.aspx">Logout</a></li>
                         </a> 
                         </ul> 
@@ -51,10 +51,10 @@
                         </div>
                             <div class="col-lg-11">
                         <ul class="nav navbar-nav"> 
-                            <li class=""><a href="">Events</a></li>
-			                <li class=""><a href="">Deals </a></li>
-                            <li class=""><a href="Login.aspx">Login</a></li>
-			                <li class=""><a href="Register.aspx">Signup </a></li>
+                            <li class="active"><a href="">Events</a></li>
+			                <li class="active"><a href="">Deals </a></li>
+                            <li class="active""><a href="Login.aspx">Login</a></li>
+			                <li class="active"><a href="Register.aspx">Signup </a></li>
                         </ul>
                     </div>
                                 </div>
@@ -72,10 +72,10 @@
                         </div>
                             <div class="col-lg-11">
                             <ul class="nav navbar-nav">
-                                <li><a href="CreateCompetition.aspx"> Create Competitions </a></li>
-                                <li><a href="ManageCompetitions.aspx"> Manage Competitions </a></li>
+                                <li class="active"><a href="CreateCompetition.aspx"> Create Competitions </a></li>
+                                <li class="active"><a href="ManageCompetitions.aspx"> Manage Competitions </a></li>
                                 
-                                <li><a href="Logout.aspx"> Logout </a></li>
+                                <li class="active"><a href="Logout.aspx"> Logout </a></li>
                             </ul>
                         </div>
                                  </div>

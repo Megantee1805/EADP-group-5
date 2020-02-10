@@ -20,6 +20,7 @@
             <asp:DropDownList ID="ddJudges" CssClass="dropdown form-control" runat="server" AutoPostBack="false" OnSelectedIndexChanged="ddJudges_SelectedIndexChanged"></asp:DropDownList>
 
             <asp:Button ID="btnSubmit" runat="server" Text="Submit" class="btn btn-primary col-xs-5" OnClick="btnComCreate_Click" />
+            <asp:Label ID="LblMsg" runat="server"></asp:Label>
         </div>
     </form>
 </body>

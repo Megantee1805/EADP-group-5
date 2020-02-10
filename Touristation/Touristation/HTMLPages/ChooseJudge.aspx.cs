@@ -10,17 +10,19 @@ namespace Touristation.HTMLPages
 {
     public partial class ChooseJudge : System.Web.UI.Page
     {
-        string userId; 
+        string userId;
+        DateTime start;
+        DateTime end;
         protected void Page_Load(object sender, EventArgs e)
         {
             string title = Session["ComTitle"].ToString();
             LblTitle.Text = title;
             string desc = Session["ComDesc"].ToString();
             LblDesc.Text = desc;
-            DateTime start = DateTime.Parse(Session["start"].ToString());
-            LblStart.Text = start.ToString();
-            DateTime end = DateTime.Parse(Session["end"].ToString());
-            LblEnd.Text = end.ToString();
+            start = DateTime.Parse(Session["start"].ToString());
+            LblStart.Text = start.ToString("MM/dd/yyyy");
+            end = DateTime.Parse(Session["end"].ToString());
+            LblEnd.Text = end.ToString("MM/dd/yyyy");
             if (IsPostBack == false)
             {
                 getPossibleJudges();
@@ -58,12 +60,13 @@ namespace Touristation.HTMLPages
             Competition com = new Competition();
             com.name = LblJudge.Text;
             com.description = LblDesc.Text;
-            com.startDate = DateTime.Parse(LblStart.Text);
+            com.startDate = start;
             com.JudgingCriteria = "Judges";
             com.judges = int.Parse(ddJudges.SelectedValue.ToString()); 
-            com.endDate = DateTime.Parse(LblEnd.Text);
+            com.endDate = end;
             com.UserId = int.Parse(Session["Id"].ToString());
             com.addCompetition(com);
+            LblMsg.Text = "Successfully created"; 
         }
     }
 }
