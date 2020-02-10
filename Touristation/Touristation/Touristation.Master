@@ -21,9 +21,11 @@
                 <asp:Panel ID="userPanel" visible="false" runat="server">
 	        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
                     <div class="container col-lg-12">
-                        <div class="navbar-banner">
-                            Touristation
+                        <div class="row">
+                        <div class="navbar-banner col-lg-1">
+                            <asp:Image CssClass="icon-bar" ImageUrl="~/navbar-icon.png" runat="server" />
                         </div>
+                            <div class="col-lg-11">
                         <ul>
                     <li class="active"><a href="">Home</a></li>
 			        <li class="active"><a href="">Events</a></li>
@@ -35,7 +37,9 @@
                         </a> 
                         </ul> 
                     
-                    </div>
+                        </div>
+                        </div> 
+                </div>
                     
                     </nav> 
                     <br /> 
@@ -43,9 +47,11 @@
                     <asp:Panel ID="guestPanel" visible="false" runat="server">
                     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
                          <div class="container col-lg-12">
-                             <div class="navbar-banner">
-                            Touristation
+                            <div class="row">
+                        <div class="navbar-banner col-lg-1">
+                            <asp:Image CssClass="icon-bar" ImageUrl="~/navbar-icon.png" runat="server" />
                         </div>
+                            <div class="col-lg-11">
                         <ul> 
                             <li class=""><a href="">Events</a></li>
 			                <li class=""><a href="">Deals </a></li>
@@ -53,16 +59,20 @@
 			                <li class=""><a href="Register.aspx">Signup </a></li>
                         </ul>
                     </div>
+                                </div>
+                        </div> 
 	                </nav> 
-                        <br /> 
+                        <br />
                     </asp:Panel>
                     
                 <asp:Panel Visible="false" Id="adminPanel" runat="server"> 
                     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
                         <div class="container col-lg-12"> 
-                            <div class="navbar-banner">
-                            Touristation
+                             <div class="row">
+                        <div class="navbar-banner col-lg-1">
+                            <asp:Image CssClass="icon-bar" ImageUrl="~/navbar-icon.png" runat="server" />
                         </div>
+                            <div class="col-lg-11">
                             <ul>
                                 <li><a href="CreateCompetition.aspx"> Create Competitions </a></li>
                                 <li><a href="ManageCompetitions.aspx"> Manage Competitions </a></li>
@@ -70,6 +80,8 @@
                                 <li><a href="Logout.aspx"> Logout </a></li>
                             </ul>
                         </div>
+                                 </div>
+                            </div> 
                     </nav>
                 </asp:Panel>
 		        <br />
