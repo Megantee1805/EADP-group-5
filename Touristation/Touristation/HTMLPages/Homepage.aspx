@@ -12,6 +12,7 @@
             <asp:Panel ID="userPage" Visible="false" runat="server">
             <asp:LinkButton ID="LbCompetition" CssClass="h3" runat="server" PostBackUrl="~/HTMLPages/ViewCompetitions.aspx">Enter Competitions </asp:LinkButton>
             <br />
+            <div></div>
             <asp:LinkButton ID="LbOwnEntries" CssClass="h3"  runat="server" OnClick="LbOwnEntries_Click">View Own Entries</asp:LinkButton>
         </asp:Panel>
                 </div>
