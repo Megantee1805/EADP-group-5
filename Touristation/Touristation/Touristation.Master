@@ -19,7 +19,7 @@
 	        
 	        <!-- Navigation menu-->
                 <asp:Panel ID="userPanel" visible="false" runat="server">
-	        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+	        <nav>
                     <div class="container col-lg-12">
                         <div class="row">
                         <div class="navbar-banner col-lg-1">
@@ -45,7 +45,7 @@
                     <br /> 
                     </asp:Panel>
                     <asp:Panel ID="guestPanel" visible="false" runat="server">
-                    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <nav>
                          <div class="container col-lg-12">
                             <div class="row">
                         <div class="navbar-banner col-lg-1">
@@ -66,7 +66,7 @@
                     </asp:Panel>
                     
                 <asp:Panel Visible="false" Id="adminPanel" runat="server"> 
-                    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <nav>
                         <div class="container col-lg-12"> 
                              <div class="row">
                         <div class="navbar-banner col-lg-1">
