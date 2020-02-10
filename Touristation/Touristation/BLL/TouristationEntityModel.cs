@@ -14,6 +14,7 @@ namespace Touristation.BLL
 
         public virtual DbSet<Competition> Competitions { get; set; }
         public virtual DbSet<Entry> Entries { get; set; }
+        public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<Itinerary> Itineraries { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Vote> Votes { get; set; }
@@ -26,6 +27,10 @@ namespace Touristation.BLL
 
             modelBuilder.Entity<Competition>()
                 .Property(e => e.description)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Competition>()
+                .Property(e => e.prize)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Competition>()
@@ -48,6 +53,14 @@ namespace Touristation.BLL
                 .HasMany(e => e.Votes1)
                 .WithRequired(e => e.Entry)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Event>()
+                .Property(e => e.location)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Event>()
+                .Property(e => e.comment)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Itinerary>()
                 .Property(e => e.Date)

@@ -21,6 +21,8 @@ namespace Touristation.BLL
 
         public int? winners { get; set; }
 
+        public string prize { get; set; }
+
         public DateTime startDate { get; set; }
 
         public DateTime endDate { get; set; }
