@@ -38,8 +38,12 @@ namespace Touristation.DAL
         {
             using (TouristationEntityModel db = new TouristationEntityModel())
             {
+             
                 db.Itineraries.Add(itn);
                 db.SaveChanges();
+               
+
+
             }
         }
         public Itinerary SelectById(int id)

@@ -49,12 +49,13 @@ namespace Touristation.HTMLPages
         protected void BtnAdd_Click(object sender, EventArgs e)
         {
             Itinerary itn = new Itinerary();
-            if (itn.GetEmployeeById(int.Parse(TimeTB.Text)) != null)
+            /* if (itn.GetEmployeeById(int.Parse(TimeTB.Text)) != null)
             {
                 LblMsg.Text = "Record already exists!";
 
             }
             else
+            */
             if (ValidateInput())
             {
                 DateTime doe = Convert.ToDateTime(DateTB.Text);
@@ -62,8 +63,12 @@ namespace Touristation.HTMLPages
                 Itinerary newItn = new Itinerary();
                 newItn.NamePlace = NOPTB.Text;
                 newItn.Location = LocationTB.Text;
-                newItn.Date = DateTB.Text;
-                newItn.Time = TimeTB.Text; 
+                DateTime dateOnly;
+                TimeSpan timeOnly;
+                dateOnly = DateTime.Parse(DateTB.Text);
+                timeOnly = TimeSpan.Parse(TimeTB.Text);
+                newItn.Date = dateOnly; 
+                newItn.Time = timeOnly; 
                 newItn.AddItinerary(newItn);
                 /* 
                 {

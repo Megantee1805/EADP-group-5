@@ -64,20 +64,12 @@ namespace Touristation.BLL
                 .IsUnicode(false);
 
             modelBuilder.Entity<Itinerary>()
-                .Property(e => e.Date)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Itinerary>()
-                .Property(e => e.Time)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Itinerary>()
                 .Property(e => e.NamePlace)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<Itinerary>()
                 .Property(e => e.Location)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<User>()
                 .Property(e => e.username)

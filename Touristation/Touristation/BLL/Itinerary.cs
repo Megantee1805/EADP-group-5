@@ -11,20 +11,15 @@ namespace Touristation.BLL
     {
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(10)]
-        public string Date { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime Date { get; set; }
+
+        public TimeSpan Time { get; set; }
 
         [Required]
-        [StringLength(10)]
-        public string Time { get; set; }
-
-        [Required]
-        [StringLength(10)]
         public string NamePlace { get; set; }
 
         [Required]
-        [StringLength(10)]
         public string Location { get; set; }
     }
 }
