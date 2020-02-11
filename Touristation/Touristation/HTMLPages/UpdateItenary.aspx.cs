@@ -40,8 +40,8 @@ namespace Touristation.HTMLPages
 
                 Itinerary itn = new Itinerary();
                 itn.NamePlace = NOPTB.Text;
-                itn.Time = TbTime.Text;
-                itn.Date = doe.ToShortDateString();
+                itn.Time = TimeSpan.Parse(TbTime.Text);
+                itn.Date = DateTime.Parse(doe.ToShortDateString());
                 itn.Location = TBLocation.Text; 
                 itn.UpdateItinerary(itn);
                 /* if (result == 1)
